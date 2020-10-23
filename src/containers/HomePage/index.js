@@ -4,6 +4,10 @@ import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {getRealtimeChats, getRealtimeUsers, updateMessage} from "../../actions";
 
+// FontAwesome
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faUser} from '@fortawesome/free-solid-svg-icons';
+
 /**
  * @author
  * @function HomePage
@@ -15,10 +19,8 @@ const User = (props) => {
 
     return (
         <div onClick={() => onClick(user)} className="displayName">
-            <div className="displayPic">
-                <img
-                    src="https://i.pinimg.com/originals/be/ac/96/beac96b8e13d2198fd4bb1d5ef56cdcf.jpg"
-                    alt=""/>
+            <div className="displayProfilePic">
+                <FontAwesomeIcon icon={faUser}/>
             </div>
             <div style={{
                 display: 'flex',
@@ -127,7 +129,7 @@ const HomePage = (props) => {
                                 user.chats.map((chat, index) =>
                                     <div style={{textAlign: chat.user_uid_Sender === auth.uid ? 'right' : 'left'}}
                                          key={index}>
-                                        <p className="messageStyle">
+                                        <p className={chat.user_uid_Sender === auth.uid ? 'messageStyle sender' : 'messageStyle receiver'}>
                                             {chat.message}
                                         </p>
                                     </div>)

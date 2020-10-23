@@ -6,8 +6,8 @@ import {isLoggedInUser, signin, updateMessage} from "../../actions";
 import {Redirect} from "react-router-dom";
 
 // FontAwesome
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 
 
 /**
