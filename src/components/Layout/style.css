@@ -1,0 +1,68 @@
+.Layout {
+    margin: 0;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+}
+
+.links {
+    color: white;
+    text-decoration: none;
+    padding-bottom: 2px;
+    border-bottom: 2px solid white;
+    transition: 0.4s ease;
+}
+
+.links:hover {
+    transform: scale(1.09);
+    color: #cdcdcd;
+    border-bottom: 2px solid #cdcdcd;
+}
+
+.app-btn {
+    border: none;
+    display: inline-block;
+    border-radius: 99px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    font-size: 10px;
+    padding: 15px 35px;
+    font-weight: 100;
+    text-transform: uppercase;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    letter-spacing: 2px;
+    cursor: pointer;
+    outline: none;
+}
+
+.app-btn:before,
+.app-btn:after {
+    content: ' ';
+    position: absolute;
+    border-radius: 99px;
+}
+
+.app-btn:before {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -2;
+}
+
+.app-btn:after {
+    top: 2px;
+    bottom: 2px;
+    left: 2px;
+    right: 2px;
+    background-color: #323232;
+    z-index: -1;
+    opacity: 1;
+    transition: all 0.6s ease-in-out;
+}
+
+.app-btn:hover:after {
+    opacity: 0;
+}
