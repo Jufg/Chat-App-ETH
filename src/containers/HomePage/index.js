@@ -15,21 +15,31 @@ import {faUser} from '@fortawesome/free-solid-svg-icons';
 
 const User = (props) => {
 
-    const {user, onClick} = props;
+    let {user, onClick, chatUser} = props;
 
     return (
         <div onClick={() => onClick(user)} className="displayName">
             <div className="displayProfilePic">
                 <FontAwesomeIcon icon={faUser}/>
             </div>
+            <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}/>
             <div style={{
                 display: 'flex',
                 flex: 1,
                 justifyContent: 'space-between',
                 margin: '0 10px'
             }}>
-                <span style={{fontWeight: 500}}>{user.username}</span>
-                <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}/>
+                <span style={chatUser === user.username ?
+                    {fontWeight: 700} :
+                    {
+                        fontWeight: 500,
+                        color: '#6b8095'
+                    }
+                }
+                      className="username"
+                >
+                    {user.username}
+                </span>
             </div>
         </div>
     );
@@ -97,6 +107,34 @@ const HomePage = (props) => {
         //console.log(msgObj);
     }
 
+    function returnTime(pTime) {
+        let difference = Date.now() - pTime.toDate();
+
+        let daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+        difference -= daysDifference * 1000 * 60 * 60 * 24
+
+        let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+        difference -= hoursDifference * 1000 * 60 * 60
+
+        let minutesDifference = Math.floor(difference / 1000 / 60);
+        difference -= minutesDifference * 1000 * 60
+
+        let secondsDifference = Math.floor(difference / 1000);
+
+        if (daysDifference < 1) {
+            if (hoursDifference > 0) {
+                return pTime.toDate().toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'})
+            } else if (minutesDifference > 0) {
+                return `${minutesDifference}min ago`
+            } else if (secondsDifference > -1) {
+                return `${secondsDifference}sec ago`
+            }
+        } else {
+            return pTime.toDate().toLocaleDateString();
+        }
+
+    }
+
     return (
         <Layout>
             <section className="container">
@@ -110,6 +148,7 @@ const HomePage = (props) => {
                                         onClick={initChat}
                                         key={user.uid}
                                         user={user}
+                                        chatUser={chatUser}
                                     />
                                 );
                             }) : null
@@ -127,10 +166,18 @@ const HomePage = (props) => {
                         {
                             chatStarted ?
                                 user.chats.map((chat, index) =>
-                                    <div style={{textAlign: chat.user_uid_Sender === auth.uid ? 'right' : 'left'}}
+                                    <div style={{
+                                        alignItems: chat.user_uid_Sender === auth.uid ? 'flex-end' : 'flex-start',
+                                        width: '100%',
+                                        display: 'flex',
+                                        flexDirection: 'column'
+                                    }}
                                          key={index}>
                                         <p className={chat.user_uid_Sender === auth.uid ? 'messageStyle sender' : 'messageStyle receiver'}>
                                             {chat.message}
+                                        </p>
+                                        <p className="message-Time">
+                                            {returnTime(chat.createdAt)}
                                         </p>
                                     </div>)
                                 : null

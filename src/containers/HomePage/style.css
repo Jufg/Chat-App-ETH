@@ -1,3 +1,4 @@
+/* Containers */
 .container {
     display: flex;
     position: absolute;
@@ -20,6 +21,10 @@
     position: relative;
 }
 
+/* ChatArea */
+
+/* Header */
+
 .chatHeader {
     position: fixed;
     width: 70%;
@@ -31,6 +36,47 @@
     font-weight: bold;
     font-family: sans-serif;
 }
+
+/* Message */
+
+.messageSections {
+    height: calc(100% - 90px);
+    width: 100%;
+    overflow-x: hidden;
+    position: relative;
+    top: 40px;
+}
+
+.messageStyle {
+    display: inline-block;
+    text-align: left;
+    max-width: 35%;
+    padding: 1.3vh 1.3vh;
+    margin: 20px 10px 5px 10px;
+    font-size: 100%;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    width: fit-content;
+}
+
+.sender {
+    background: #1a233b;
+    color: white;
+}
+
+.receiver {
+    box-shadow: 1px 2px 5px 3px #dfe0e2;
+    color: black;
+}
+
+.message-Time {
+    margin: 0 25px;
+    font-size: 90%;
+    color: #A8B6D4;
+    letter-spacing: 1px;
+}
+
+/* ChatControls */
 
 .chatControls {
     display: flex;
@@ -48,10 +94,13 @@
     width: 10%;
 }
 
+/* User */
+
 .displayName {
     display: flex;
     align-items: center;
     padding: 5px 10px;
+    margin: 10px 0;
     box-sizing: border-box;
     cursor: pointer;
 }
@@ -73,52 +122,21 @@
     object-fit: cover;
 }
 
-.messageStyle {
-    display: inline-block;
-    padding: 10px 15px;
-    margin: 20px 10px;
-    display: inline-block;
-    font-size: 15px;
-    font-weight: bold;
-}
-
-.sender {
-    background: #DFDFDF;
-    border-radius: 26px 0 26px 26px;
-    border: #BFBFBF solid;
-}
-
-.receiver {
-    background: #4A67F7;
-    background: -moz-linear-gradient(135deg, #4A67F7 0%, #13CFF2 100%);
-    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #4A67F7), color-stop(100%, #13CFF2));
-    background: -webkit-linear-gradient(135deg, #4A67F7 0%, #13CFF2 100%);
-    background: -o-linear-gradient(135deg, #4A67F7 0%, #13CFF2 100%);
-    background: -ms-linear-gradient(135deg, #4A67F7 0%, #13CFF2 100%);
-    background: linear-gradient(135deg, #4A67F7 0%, #13CFF2 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4A67F7', endColorstr='#13CFF2', GradientType=1);
-    color: white;
-    border-radius: 0 26px 26px 26px;
-}
-
-.messageSections {
-    height: calc(100% - 90px);
-    width: 100%;
-    overflow-x: hidden;
-    position: relative;
-    top: 40px;
+.username {
+    letter-spacing: 1px;
 }
 
 .onlineStatus {
+    z-index: 11;
+    transform: translateX(-15px) translateY(20px);
+    box-shadow: 0 0 0 2px white;
     display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: #16e316;
+    width: 8px;
+    height: 8px;
+    background: #00bb9d;
     border-radius: 5px;
-    box-shadow: 0 0 16px 0 #16e316;
 }
 
 .onlineStatus.off {
-    background: #e39116;
-    box-shadow: 0 0 16px 0 #e39116;
+    background: #ff7755;
 }
