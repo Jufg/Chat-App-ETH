@@ -132,7 +132,8 @@ export const logout = (uid) => {
         db.collection('users')
             .doc(uid)
             .update({
-                isOnline: false
+                isOnline: false,
+                lastOnline: new Date()
             })
             .then(() => {
 

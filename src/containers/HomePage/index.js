@@ -6,7 +6,7 @@ import {getRealtimeChats, getRealtimeUsers, updateMessage} from "../../actions";
 
 // FontAwesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
-import {faUser} from '@fortawesome/free-solid-svg-icons';
+import {faPaperPlane, faUser} from '@fortawesome/free-solid-svg-icons';
 
 /**
  * @author
@@ -30,7 +30,7 @@ const User = (props) => {
                 margin: '0 10px'
             }}>
                 <span style={chatUser === user.username ?
-                    {fontWeight: 700} :
+                    {fontWeight: 800} :
                     {
                         fontWeight: 500,
                         color: '#6b8095'
@@ -107,34 +107,6 @@ const HomePage = (props) => {
         //console.log(msgObj);
     }
 
-    function returnTime(pTime) {
-        let difference = Date.now() - pTime.toDate();
-
-        let daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
-        difference -= daysDifference * 1000 * 60 * 60 * 24
-
-        let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
-        difference -= hoursDifference * 1000 * 60 * 60
-
-        let minutesDifference = Math.floor(difference / 1000 / 60);
-        difference -= minutesDifference * 1000 * 60
-
-        let secondsDifference = Math.floor(difference / 1000);
-
-        if (daysDifference < 1) {
-            if (hoursDifference > 0) {
-                return pTime.toDate().toLocaleTimeString('en-US', {hour: '2-digit', minute: '2-digit'})
-            } else if (minutesDifference > 0) {
-                return `${minutesDifference}min ago`
-            } else if (secondsDifference > -1) {
-                return `${secondsDifference}sec ago`
-            }
-        } else {
-            return pTime.toDate().toLocaleDateString();
-        }
-
-    }
-
     return (
         <Layout>
             <section className="container">
@@ -158,8 +130,28 @@ const HomePage = (props) => {
                 <div className="chatArea">
                     <div className="chatHeader">
                         {
-                            chatStarted ? chatUser : ''
-
+                            chatStarted ?
+                                <div className="ChatHeader-Profile">
+                                    <div className="ProfilePic">
+                                        <FontAwesomeIcon icon={faUser}/>
+                                    </div>
+                                    <span
+                                        className={user.users.find(({uid}) => uid === userUid).isOnline ? `onlineStatus` : `onlineStatus off`}/>
+                                    <div>
+                                        <p>{chatUser}</p>
+                                        <p style={{
+                                            fontWeight: '300'
+                                        }}>
+                                            {
+                                                user.users.find(({uid}) => uid === userUid).isOnline ?
+                                                    'online'
+                                                    :
+                                                    returnTime(user.users.find(({uid}) => uid === userUid).lastOnline)
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                                : ''
                         }
                     </div>
                     <div className="messageSections">
@@ -191,14 +183,57 @@ const HomePage = (props) => {
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Write Message"
                                 />
-                                <button onClick={submitMessage}>Send</button>
+                                <button onClick={submitMessage}>Send <FontAwesomeIcon icon={faPaperPlane}/></button>
                             </div> : null
                     }
 
                 </div>
             </section>
         </Layout>
-    )
+    );
+
+    // Timestamp to TimeString
+    function returnTime(pTimeStamp) {
+        let difference = Date.now() - pTimeStamp.toDate();
+
+        let daysDifference = Math.floor(difference / 1000 / 60 / 60 / 24);
+        difference -= daysDifference * 1000 * 60 * 60 * 24
+
+        let hoursDifference = Math.floor(difference / 1000 / 60 / 60);
+        difference -= hoursDifference * 1000 * 60 * 60
+
+        let minutesDifference = Math.floor(difference / 1000 / 60);
+        difference -= minutesDifference * 1000 * 60
+
+        let secondsDifference = Math.floor(difference / 1000);
+
+        if (new Date().getDay() === pTimeStamp.toDate().getDay()) {
+            if (hoursDifference > 0) {
+                return pTimeStamp.toDate().toLocaleTimeString('en-US', {
+                    hour: '2-digit',
+                    minute: '2-digit'
+                });
+            } else if (minutesDifference > 0) {
+                return `${minutesDifference} min ago`;
+            } else if (secondsDifference > -1) {
+                return `${secondsDifference} sec ago`;
+            }
+        } else {
+            if (new Date().getFullYear() === pTimeStamp.toDate().getFullYear()) {
+                return pTimeStamp.toDate().toLocaleDateString('en-US', {
+                    month: 'numeric',
+                    day: 'numeric',
+                });
+            } else {
+                return pTimeStamp.toDate().toLocaleDateString('en-US', {
+                    month: 'numeric',
+                    day: 'numeric',
+                    year: 'numeric'
+                });
+            }
+        }
+
+    }
 }
 
 export default HomePage
