@@ -3,9 +3,9 @@
     display: flex;
     position: absolute;
     width: 100%;
-    height: calc(100% - 5vh);
+    height: calc(100% - 70px);
     overflow: hidden;
-    font-family: Roboto, serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 .listOfUsers {
@@ -30,12 +30,13 @@
 /* Header */
 
 .chatHeader {
-    width: 70%;
+    width: 100%;
     height: fit-content;
     color: #8c91a7;
     font-weight: 500;
     background: white;
     z-index: 11;
+    border-bottom: 1px solid #ccc;
 }
 
 .ChatHeader-Profile {
@@ -71,9 +72,10 @@
 /* Message */
 
 .messageSections {
-    height: auto;
+    height: 100%;
     width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
 }
 
 .messageStyle {

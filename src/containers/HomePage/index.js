@@ -30,10 +30,14 @@ const User = (props) => {
                 margin: '0 10px'
             }}>
                 <span style={chatUser === user.username ?
-                    {fontWeight: 800} :
+                    {
+                        fontWeight: 600,
+                        fontSize: '15px'
+                    } :
                     {
                         fontWeight: 500,
-                        color: '#6b8095'
+                        color: '#6f8398',
+                        fontSize: '15px'
                     }
                 }
                       className="username"
