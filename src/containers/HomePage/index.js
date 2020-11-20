@@ -3,6 +3,7 @@ import './style.css'
 import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {getRealtimeChats, getRealtimeUsers, updateMessage} from "../../actions";
+import Web3 from "web3";
 
 // FontAwesome
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
@@ -51,6 +52,7 @@ const User = (props) => {
 
 const HomePage = (props) => {
 
+    //const web3 = new Web3(window.web3.currentProvider);
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
     const user = useSelector(state => state.user);
@@ -110,6 +112,9 @@ const HomePage = (props) => {
 
         //console.log(msgObj);
     }
+
+    // Web3
+
 
     return (
         <Layout>
