@@ -80,3 +80,23 @@ export const getRealtimeChats = (user) => {
             })
     }
 }
+
+//
+export const updateAdress = (uid, adress) => {
+    return async dispatch => {
+
+        const db = firestore();
+        db.collection('users')
+            .doc(uid)
+            .update({
+                ETH_Adress: adress
+            })
+            .then(() => {
+                //console.log('Adress updated')
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
+}
+

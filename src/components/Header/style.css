@@ -4,12 +4,6 @@
     height: 70px;
     display: flex;
     background-color: #323232;
-    background: linear-gradient(90deg, #89aeee 10%, #3c3c3c 50%, #1a233b 100%);
-    background: -moz-linear-gradient(90deg, #9089ee 10%, #3c3c3c 50%, #1a233b 100%);
-    background: -webkit-linear-gradient(90deg, #9089ee 10%, #3c3c3c 50%, #1a233b 100%);
-    background: -ms-linear-gradient(90deg, #9089ee 10%, #3c3c3c 50%, #1a233b 100%);
-    background: -o-linear-gradient(90deg, #9089ee 10%, #3c3c3c 50%, #1a233b 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#9089ee, endColorstr=#1a233b, GradientType=1);
     justify-content: space-between;
     box-sizing: border-box;
 }
@@ -42,5 +36,5 @@
 }
 
 .logout-btn:after {
-    background-color: #1a233b;
+    background-color: #323232;
 }

@@ -4,6 +4,7 @@ import './App.css';
 import HomePage from "./containers/HomePage";
 import LoginPage from "./containers/LoginPage";
 import RegisterPage from "./containers/RegisterPage";
+import SettingsPage from "./containers/SettingsPage";
 import PrivateRoute from "./components/PrivateRoute";
 import {isLoggedInUser} from "./actions";
 import {useDispatch, useSelector} from "react-redux";
@@ -24,6 +25,7 @@ function App() {
             <Router>
                 {/* Only logged in User */}
                 <PrivateRoute path="/" exact component={HomePage}/>
+                <PrivateRoute path="/settings" exact component={SettingsPage}/>
 
                 {/* Every User */}
                 <Route path="/login" component={LoginPage}/>
