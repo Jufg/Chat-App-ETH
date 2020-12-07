@@ -1,9 +1,9 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import './style.css'
 import Layout from "../../components/Layout";
 import Web3 from "web3";
 import {useDispatch, useSelector} from "react-redux";
-import {updateAdress} from "../../actions";
+import {getRealtimeUsers, updateAdress} from "../../actions";
 
 /**
  * @author
@@ -14,16 +14,45 @@ const SettingsPage = (props) => {
 
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
+    const user = useSelector(state => state.user);
+    const ethereum = window.ethereum;
+
+    let unsubscribe;
+
+    useEffect(() => {
+
+        unsubscribe = dispatch(getRealtimeUsers())
+            .then(unsubscribe => {
+                return unsubscribe;
+            })
+            .catch(error => {
+                console.log(error)
+            })
+
+    }, []);
 
     // Web3
-    const connectWallet = async () => {
-         if (window.web3) {
-            window.web3 = new Web3(window.web3.currentProvider);
-            window.ethereum.enable();
+    if (window.web3) {
+        ethereum
+            .request({method: 'eth_accounts'})
+            .then((accounts) => {
+                if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
+                    dispatch(updateAdress(auth.uid, accounts));
+                }
+            })
+            .catch((error) => {
+                console.error(
+                    `Error fetching accounts: ${error.message}.
+       Code: ${error.code}. Data: ${error.data}`
+                );
+            });
+    }
 
-            if (await window.web3.currentProvider.selectedAddress) {
-                dispatch(updateAdress(auth.uid, window.web3.currentProvider.selectedAddress))
-            }
+    const connectWallet = async () => {
+        if (window.web3) {
+            window.web3 = new Web3(window.web3.currentProvider);
+            ethereum.send('eth_requestAccounts');
+
             return true;
         }
         return false;
