@@ -3,6 +3,7 @@
 # IDE/Texteditor Folders
 .idea
 .vs
+debug.log
 
 # dependencies
 /node_modules
