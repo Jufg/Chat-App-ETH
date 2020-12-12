@@ -1,9 +1,9 @@
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import './style.css'
 import Layout from "../../components/Layout";
 import Web3 from "web3";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeUsers, updateAdress} from "../../actions";
+import {getRealtimeUsers, updateProfile} from "../../actions";
 
 /**
  * @author
@@ -16,6 +16,10 @@ const SettingsPage = (props) => {
     const auth = useSelector(state => state.auth);
     const user = useSelector(state => state.user);
     const ethereum = window.ethereum;
+
+    // States
+    const [email, setEmail] = useState('');
+    const [pass, setPass] = useState('');
 
     let unsubscribe;
 
@@ -31,13 +35,22 @@ const SettingsPage = (props) => {
 
     }, []);
 
+    // state handlers
+
+
+    // DB communication
+    const updateUser = (pField, pValue) => {
+        dispatch(updateProfile(auth.uid, pField, pValue, pass));
+    }
+
     // Web3
     if (window.web3) {
         ethereum
             .request({method: 'eth_accounts'})
             .then((accounts) => {
                 if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
-                    dispatch(updateAdress(auth.uid, accounts));
+                    console.log(auth.uid)
+                    dispatch(updateProfile(auth.uid, 'ETH_Adress', accounts[0]));
                 }
             })
             .catch((error) => {
@@ -79,7 +92,23 @@ const SettingsPage = (props) => {
                     change username
                 </div>
                 <div>
-                    change email
+                    <label>E-mail</label>
+                    <input
+                        type='text'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                    />
+                    <label>Password</label>
+                    <input
+                        type='text'
+                        value={pass}
+                        onChange={(e) => setPass(e.target.value)}
+                    />
+                    <button
+                        onClick={(e) => updateUser('eMail', email)}
+                    >
+                        change email
+                    </button>
                 </div>
                 <div>
                     change password

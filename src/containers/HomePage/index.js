@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import './style.css'
 import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeChats, getRealtimeUsers, updateAdress, updateMessage} from "../../actions";
+import {getRealtimeChats, getRealtimeUsers, updateMessage, updateProfile} from "../../actions";
 import Web3 from "web3";
 
 // FontAwesome
@@ -69,7 +69,7 @@ const HomePage = (props) => {
             .request({method: 'eth_accounts'})
             .then((accounts) => {
                 if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
-                    dispatch(updateAdress(auth.uid, accounts));
+                    dispatch(updateProfile(auth.uid, accounts));
                 }
             })
             .catch((error) => {
@@ -106,8 +106,6 @@ const HomePage = (props) => {
         setChatStarted(true);
         setChatUser(user.username);
         setUserUid(user.uid);
-
-        //console.log(user);
 
         dispatch(getRealtimeChats({uid_Sender: auth.uid, uid_Receiver: user.uid}))
     }

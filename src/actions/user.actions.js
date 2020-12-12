@@ -1,5 +1,6 @@
 import {userConstant} from "./constants";
-import {firestore} from 'firebase';
+import {auth, firestore} from 'firebase';
+import * as firebase from "firebase";
 
 // Fetch the Users from Firestore
 export const getRealtimeUsers = (uid) => {
@@ -81,22 +82,101 @@ export const getRealtimeChats = (user) => {
     }
 }
 
-//
-export const updateAdress = (uid, adress) => {
+// update a specific field
+export const updateProfile = (uid, field, value, optPass) => {
     return async dispatch => {
 
         const db = firestore();
-        db.collection('users')
-            .doc(uid)
-            .update({
-                ETH_Adress: adress
-            })
-            .then(() => {
-                //console.log('Adress updated')
-            })
-            .catch(error => {
-                console.log(error)
-            })
+        const user = auth().currentUser;
+
+        try {
+
+            const credential = firebase.auth.EmailAuthProvider.credential(
+                user.email,
+                optPass
+            );
+
+            if (field != null) {
+                switch (field) {
+                    case 'ETH_Adress': {
+                        db.collection('users')
+                            .doc(uid)
+                            .update({
+                                ETH_Adress: value
+                            })
+                            .then()
+                            .catch(error => {
+                                console.log(error)
+                            })
+
+                        break;
+                    }
+                    case'username': {
+                        if (credential) {
+                            user.reauthenticateWithCredential(credential).then(function () {
+                                // User re-authenticated.
+                                user.updateProfile(
+                                    {
+                                        displayName: value
+                                    }
+                                ).then(function () {
+                                    // Update successful.
+                                    db.collection('users')
+                                        .doc(uid)
+                                        .update({
+                                            username: value
+                                        })
+                                        .then()
+                                        .catch(error => {
+                                            console.log(error)
+                                        })
+                                }).catch(function (error) {
+                                    console.log(error)
+                                });
+                            }).catch(function (error) {
+                                console.log(error)
+                            });
+                        }
+                        break;
+                    }
+                    case 'eMail': {
+                        if (credential) {
+                            user.reauthenticateWithCredential(credential).then(function () {
+                                // User re-authenticated.
+                                user.updateEmail(value).then(function () {
+                                    // Update successful.
+                                }).catch(function (error) {
+                                    console.log(error)
+                                });
+                            }).catch(function (error) {
+                                console.log(error)
+                            });
+                        }
+                        break;
+                    }
+                    case 'password': {
+                        if (credential) {
+                            user.reauthenticateWithCredential(credential).then(function () {
+                                // User re-authenticated.
+                                user.updatePassword(value).then(function () {
+                                    // Update successful.
+                                }).catch(function (error) {
+                                    console.log(error)
+                                });
+                            }).catch(function (error) {
+                                console.log(error)
+                            });
+                        }
+                        break;
+                    }
+                    default:
+                        console.log('Field is not a String or Empty.')
+                        console.log('Field: ' + field)
+                }
+            }
+        } catch (e) {
+            console.log(e)
+        }
     }
 }
 

@@ -55,35 +55,38 @@ const RegisterPage = (props) => {
 
                         <div className="input-form">
                             <input
+                                className="login-input"
                                 name="username"
                                 type="text"
                                 value={username}
                                 onChange={(e) => setUsername(e.target.value)}
                                 placeholder="Username"
                             />
-                            <label htmlFor="username">Username</label>
+                            <label className="login-label" htmlFor="username">Username</label>
                         </div>
 
                         <div className="input-form" style={{marginBottom: 0}}>
                             <input
+                                className="login-input"
                                 name="email"
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email"
                             />
-                            <label htmlFor="email">Email Adresse</label>
+                            <label className="login-label" htmlFor="email">Email Adresse</label>
                         </div>
 
                         <div className="input-form" style={{marginTop: 0}}>
                             <input
+                                className="login-input"
                                 name="password"
                                 type={show ? 'text' : 'password'}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Password"
                             />
-                            <label htmlFor="password">Password</label>
+                            <label className="login-label" htmlFor="password">Password</label>
 
                             <button id="eye-btn" type="button" onClick={showPass}>
                                 {
