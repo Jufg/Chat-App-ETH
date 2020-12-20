@@ -73,49 +73,80 @@ const SettingsPage = (props) => {
 
     return (
         <Layout>
-            <div>
-                <div>
-                    {
-                        window.web3 !== undefined ?
-                            window.web3.currentProvider.selectedAddress ?
-                                null
+            <div className="settings-container">
+                <div className="settings-box">
+                    <div className="settings-header">
+                        Wallet Settings
+                    </div>
+                </div>
+                <div className="settings-box">
+                    <div className="settings-child">
+                        {
+                            window.web3 !== undefined ?
+                                window.web3.currentProvider.selectedAddress ?
+                                    <button
+                                        className="wallet-button"
+                                        style={{
+                                            cursor: 'not-allowed'
+                                        }}>
+                                        Connect
+                                    </button>
+                                    :
+                                    <button
+                                        className="wallet-button"
+                                        onClick={connectWallet}
+                                    >
+                                        Connect
+                                    </button>
                                 :
-                                <button onClick={connectWallet}>Connect</button>
-                            :
-                            null
-                    }
+                                <button
+                                    className="wallet-button"
+                                    style={{
+                                        cursor: 'not-allowed',
+                                    }}>
+                                    Connect
+                                </button>
+                        }
+                    </div>
+                    <div className="settings-child">
+                        <button className="wallet-button">change Wallet</button>
+                    </div>
                 </div>
-                <div>
-                    <button>change Wallet</button>
+                <hr className="settings-line"/>
+                <div className="settings-box">
+                    <div className="settings-header">
+                        Personal Information
+                    </div>
                 </div>
-                <div>
-                    change username
-                </div>
-                <div>
-                    <label>E-mail</label>
-                    <input
-                        type='text'
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <label>Password</label>
-                    <input
-                        type='text'
-                        value={pass}
-                        onChange={(e) => setPass(e.target.value)}
-                    />
-                    <button
-                        onClick={(e) => updateUser('eMail', email)}
-                    >
-                        change email
-                    </button>
-                </div>
-                <div>
-                    change password
+                <div className="settings-box">
+                    <div className="settings-child">
+                        change username
+                    </div>
+                    <div className="settings-child">
+                        <label>E-mail</label>
+                        <input
+                            type='text'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                        <label>Password</label>
+                        <input
+                            type='text'
+                            value={pass}
+                            onChange={(e) => setPass(e.target.value)}
+                        />
+                        <button
+                            onClick={(e) => updateUser('eMail', email)}
+                        >
+                            change email
+                        </button>
+                    </div>
+                    <div className="settings-child">
+                        change password
+                    </div>
                 </div>
             </div>
         </Layout>
-
     );
 };
 
