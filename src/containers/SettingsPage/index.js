@@ -49,7 +49,6 @@ const SettingsPage = (props) => {
             .request({method: 'eth_accounts'})
             .then((accounts) => {
                 if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
-                    console.log(auth.uid)
                     dispatch(updateProfile(auth.uid, 'ETH_Adress', accounts[0]));
                 }
             })
