@@ -69,7 +69,7 @@ const HomePage = (props) => {
             .request({method: 'eth_accounts'})
             .then((accounts) => {
                 if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
-                    dispatch(updateProfile(auth.uid, accounts));
+                    dispatch(updateProfile(auth.uid, 'ETH_Adress', accounts[0]));
                 }
             })
             .catch((error) => {
@@ -127,9 +127,6 @@ const HomePage = (props) => {
 
         //console.log(msgObj);
     }
-
-    // Web3
-
 
     return (
         <Layout>
@@ -207,6 +204,15 @@ const HomePage = (props) => {
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Write Message"
                                 />
+                                {
+                                    window.web3 !== undefined ?
+                                        window.web3.currentProvider.selectedAddress ?
+                                            <button>ETH</button>
+                                            :
+                                            null
+                                        :
+                                        null
+                                }
                                 <button onClick={submitMessage}>Send <FontAwesomeIcon icon={faPaperPlane}/></button>
                             </div> : null
                     }

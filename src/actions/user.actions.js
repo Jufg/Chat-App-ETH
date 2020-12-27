@@ -88,91 +88,95 @@ export const updateProfile = (uid, field, value, optPass) => {
 
         const db = firestore();
         const user = auth().currentUser;
+        let credential;
 
         try {
-
-            const credential = firebase.auth.EmailAuthProvider.credential(
+            credential = firebase.auth.EmailAuthProvider.credential(
                 user.email,
                 optPass
             );
+        } catch (e) {
+            credential = null;
+        }
 
-            if (field != null) {
-                switch (field) {
-                    case 'ETH_Adress': {
-                        db.collection('users')
-                            .doc(uid)
-                            .update({
-                                ETH_Adress: value
-                            })
-                            .then()
-                            .catch(error => {
-                                console.log(error)
-                            })
+        try {
 
-                        break;
-                    }
-                    case'username': {
-                        if (credential) {
-                            user.reauthenticateWithCredential(credential).then(function () {
-                                // User re-authenticated.
-                                user.updateProfile(
-                                    {
-                                        displayName: value
-                                    }
-                                ).then(function () {
-                                    // Update successful.
-                                    db.collection('users')
-                                        .doc(uid)
-                                        .update({
-                                            username: value
-                                        })
-                                        .then()
-                                        .catch(error => {
-                                            console.log(error)
-                                        })
-                                }).catch(function (error) {
-                                    console.log(error)
-                                });
-                            }).catch(function (error) {
-                                console.log(error)
-                            });
-                        }
-                        break;
-                    }
-                    case 'eMail': {
-                        if (credential) {
-                            user.reauthenticateWithCredential(credential).then(function () {
-                                // User re-authenticated.
-                                user.updateEmail(value).then(function () {
-                                    // Update successful.
-                                }).catch(function (error) {
-                                    console.log(error)
-                                });
-                            }).catch(function (error) {
-                                console.log(error)
-                            });
-                        }
-                        break;
-                    }
-                    case 'password': {
-                        if (credential) {
-                            user.reauthenticateWithCredential(credential).then(function () {
-                                // User re-authenticated.
-                                user.updatePassword(value).then(function () {
-                                    // Update successful.
-                                }).catch(function (error) {
-                                    console.log(error)
-                                });
-                            }).catch(function (error) {
-                                console.log(error)
-                            });
-                        }
-                        break;
-                    }
-                    default:
-                        console.log('Field is not a String or Empty.')
-                        console.log('Field: ' + field)
+            switch (field) {
+                case 'ETH_Adress': {
+
+                    db.collection('users')
+                        .doc(uid)
+                        .update({
+                            ETH_Adress: value
+                        })
+                        .then()
+                        .catch(error => {
+                            console.log(error)
+                        })
+
+                    break;
                 }
+                case'username': {
+                    if (credential) {
+                        user.reauthenticateWithCredential(credential).then(function () {
+                            // User re-authenticated.
+                            user.updateProfile(
+                                {
+                                    displayName: value
+                                }
+                            ).then(function () {
+                                // Update successful.
+                                db.collection('users')
+                                    .doc(uid)
+                                    .update({
+                                        username: value
+                                    })
+                                    .then()
+                                    .catch(error => {
+                                        console.log(error)
+                                    })
+                            }).catch(function (error) {
+                                console.log(error)
+                            });
+                        }).catch(function (error) {
+                            console.log(error)
+                        });
+                    }
+                    break;
+                }
+                case 'eMail': {
+                    if (credential) {
+                        user.reauthenticateWithCredential(credential).then(function () {
+                            // User re-authenticated.
+                            user.updateEmail(value).then(function () {
+                                // Update successful.
+                            }).catch(function (error) {
+                                console.log(error)
+                            });
+                        }).catch(function (error) {
+                            console.log(error)
+                        });
+                    }
+                    break;
+                }
+                case 'password': {
+                    if (credential) {
+                        user.reauthenticateWithCredential(credential).then(function () {
+                            // User re-authenticated.
+                            user.updatePassword(value).then(function () {
+                                // Update successful.
+                            }).catch(function (error) {
+                                console.log(error)
+                            });
+                        }).catch(function (error) {
+                            console.log(error)
+                        });
+                    }
+                    break;
+                }
+                default:
+                    console.log('Field is not a String or Empty.')
+                    console.log('Field: ' + field)
             }
         } catch (e) {
             console.log(e)
