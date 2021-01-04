@@ -60,16 +60,19 @@ const HomePage = (props) => {
     const [chatUser, setChatUser] = useState('');
     const [message, setMessage] = useState('');
     const [userUid, setUserUid] = useState(null);
+    const [accounts, setAccounts] = useState([]);
 
     let unsubscribe;
 
     // Web3
+    // upload ETH Adress
     if (window.web3) {
         ethereum
             .request({method: 'eth_accounts'})
             .then((accounts) => {
-                if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
+                if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress !== accounts[0]) {
                     dispatch(updateProfile(auth.uid, 'ETH_Adress', accounts[0]));
+                    setAccounts(accounts);
                 }
             })
             .catch((error) => {
@@ -78,6 +81,23 @@ const HomePage = (props) => {
        Code: ${error.code}. Data: ${error.data}`
                 );
             });
+    }
+
+    // ETH Transaction
+    const sendETH = () => {
+        ethereum
+            .request({
+                method: 'eth_sendTransaction',
+                params: [
+                    {
+                        from: accounts[0],
+                        to: chatUser.ETH_Adress,
+                        value: '0x29a2241af62c0000'
+                    },
+                ],
+            })
+            .then((txHash) => console.log(txHash))
+            .catch((error) => console.error);
     }
 
     useEffect(() => {
@@ -104,7 +124,7 @@ const HomePage = (props) => {
     // initialize Chat
     const initChat = (user) => {
         setChatStarted(true);
-        setChatUser(user.username);
+        setChatUser(user);
         setUserUid(user.uid);
 
         dispatch(getRealtimeChats({uid_Sender: auth.uid, uid_Receiver: user.uid}))
@@ -141,7 +161,7 @@ const HomePage = (props) => {
                                         onClick={initChat}
                                         key={user.uid}
                                         user={user}
-                                        chatUser={chatUser}
+                                        chatUser={chatUser.username}
                                     />
                                 );
                             }) : null
@@ -159,7 +179,7 @@ const HomePage = (props) => {
                                     <span
                                         className={user.users.find(({uid}) => uid === userUid).isOnline ? `onlineStatus` : `onlineStatus off`}/>
                                     <div>
-                                        <p>{chatUser}</p>
+                                        <p>{chatUser.username}</p>
                                         <p style={{
                                             fontWeight: '300'
                                         }}>
@@ -207,7 +227,7 @@ const HomePage = (props) => {
                                 {
                                     window.web3 !== undefined ?
                                         window.web3.currentProvider.selectedAddress ?
-                                            <button>ETH</button>
+                                            <button onClick={sendETH}>ETH</button>
                                             :
                                             null
                                         :
