@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import './style.css'
 import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeChats, getRealtimeUsers, updateMessage, updateProfile} from "../../actions";
+import {getRealtimeChats, getRealtimeUsers, updateMessage} from "../../actions";
 import Web3 from "web3";
 
 // FontAwesome
@@ -65,23 +65,6 @@ const HomePage = (props) => {
     let unsubscribe;
 
     // Web3
-    // upload ETH Adress
-    if (window.web3) {
-        ethereum
-            .request({method: 'eth_accounts'})
-            .then((accounts) => {
-                if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress !== accounts[0]) {
-                    dispatch(updateProfile(auth.uid, 'ETH_Adress', accounts[0]));
-                    setAccounts(accounts);
-                }
-            })
-            .catch((error) => {
-                console.error(
-                    `Error fetching accounts: ${error.message}.
-       Code: ${error.code}. Data: ${error.data}`
-                );
-            });
-    }
 
     // ETH Transaction
     const sendETH = () => {
