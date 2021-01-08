@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from "react";
 import './style.css'
 import Layout from "../../components/Layout";
+import User from "../../components/UI/User";
 import {useDispatch, useSelector} from "react-redux";
 import {getRealtimeChats, getRealtimeUsers, updateChats} from "../../actions";
 import Web3 from "web3";
@@ -14,46 +15,9 @@ import {faPaperPlane, faUser} from '@fortawesome/free-solid-svg-icons';
  * @function HomePage
  **/
 
-const User = (props) => {
-
-    let {user, onClick, chatUser} = props;
-
-    return (
-        <div onClick={() => onClick(user)} className="displayName">
-            <div className="displayProfilePic">
-                <FontAwesomeIcon icon={faUser}/>
-            </div>
-            <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}/>
-            <div style={{
-                display: 'flex',
-                flex: 1,
-                justifyContent: 'space-between',
-                margin: '0 10px'
-            }}>
-                <span style={chatUser === user.username ?
-                    {
-                        fontWeight: 600,
-                        fontSize: '15px'
-                    } :
-                    {
-                        fontWeight: 500,
-                        color: '#6f8398',
-                        fontSize: '15px'
-                    }
-                }
-                      className="username"
-                >
-                    {user.username}
-                </span>
-            </div>
-        </div>
-    );
-}
-
 const HomePage = (props) => {
 
-    const ethereum = window.ethereum;
-    const web3 = new Web3(window.web3.currentProvider);
+
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
     const user = useSelector(state => state.user);
@@ -67,6 +31,13 @@ const HomePage = (props) => {
     let unsubscribe;
 
     // Web3
+    let ethereum,web3;
+
+    if (window.web3) {
+        ethereum = window.ethereum;
+        web3 = new Web3(window.web3.currentProvider);
+    }
+
     useEffect(() => {
 
         if (window.web3) {
@@ -89,7 +60,7 @@ const HomePage = (props) => {
     // ETH Transaction
     const sendETH = () => {
 
-        if (!isNaN(amount)) {
+        if (!isNaN(amount) && !amount === '') {
             ethereum
                 .request({
                     method: 'eth_sendTransaction',
