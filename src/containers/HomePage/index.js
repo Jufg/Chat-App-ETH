@@ -53,21 +53,42 @@ const User = (props) => {
 const HomePage = (props) => {
 
     const ethereum = window.ethereum;
+    const web3 = new Web3(window.web3.currentProvider);
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
     const user = useSelector(state => state.user);
     const [chatStarted, setChatStarted] = useState(false);
     const [chatUser, setChatUser] = useState('');
     const [message, setMessage] = useState('');
+    const [amount, setAmount] = useState('');
     const [userUid, setUserUid] = useState(null);
     const [accounts, setAccounts] = useState([]);
 
     let unsubscribe;
 
     // Web3
+    useEffect(() => {
+
+        if (window.web3) {
+            ethereum
+                .request({method: 'eth_accounts'})
+                .then((accounts) => {
+                    setAccounts(accounts)
+                })
+                .catch((error) => {
+                    console.error(
+                        `Error fetching accounts: ${error.message}.
+       Code: ${error.code}. Data: ${error.data}`
+                    );
+                });
+        }
+
+    }, []);
+
 
     // ETH Transaction
     const sendETH = () => {
+
         ethereum
             .request({
                 method: 'eth_sendTransaction',
@@ -75,7 +96,7 @@ const HomePage = (props) => {
                     {
                         from: accounts[0],
                         to: chatUser.ETH_Adress,
-                        value: '0x29a2241af62c0000'
+                        value: web3.utils.toHex(web3.utils.toWei(amount))
                     },
                 ],
             })
@@ -207,16 +228,26 @@ const HomePage = (props) => {
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Write Message"
                                 />
+                                <button onClick={submitMessage}>Send <FontAwesomeIcon icon={faPaperPlane}/></button>
                                 {
                                     window.web3 !== undefined ?
                                         window.web3.currentProvider.selectedAddress ?
-                                            <button onClick={sendETH}>ETH</button>
+                                            <>
+                                                <textarea
+                                                    style={{
+                                                        width: '15%'
+                                                    }}
+                                                    value={amount}
+                                                    onChange={(e) => setAmount(e.target.value)}
+                                                    placeholder="Amount of ETH"
+                                                />
+                                                <button onClick={sendETH}>ETH</button>
+                                            </>
                                             :
                                             null
                                         :
                                         null
                                 }
-                                <button onClick={submitMessage}>Send <FontAwesomeIcon icon={faPaperPlane}/></button>
                             </div> : null
                     }
 
