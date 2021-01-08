@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import './style.css'
 import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeChats, getRealtimeUsers, updateMessage} from "../../actions";
+import {getRealtimeChats, getRealtimeUsers, updateChats} from "../../actions";
 import Web3 from "web3";
 
 // FontAwesome
@@ -89,19 +89,28 @@ const HomePage = (props) => {
     // ETH Transaction
     const sendETH = () => {
 
-        ethereum
-            .request({
-                method: 'eth_sendTransaction',
-                params: [
-                    {
-                        from: accounts[0],
-                        to: chatUser.ETH_Adress,
-                        value: web3.utils.toHex(web3.utils.toWei(amount))
-                    },
-                ],
-            })
-            .then((txHash) => console.log(txHash))
-            .catch((error) => console.error);
+        if (!isNaN(amount)) {
+            ethereum
+                .request({
+                    method: 'eth_sendTransaction',
+                    params: [
+                        {
+                            from: accounts[0],
+                            to: chatUser.ETH_Adress,
+                            value: web3.utils.toHex(web3.utils.toWei(amount))
+                        },
+                    ],
+                })
+                .then((txHash) => {
+                    web3.eth.getTransactionReceipt(txHash, (e) => e)
+                        .then(result => {
+                            submitTransaction(txHash, web3.utils.fromWei(result.gasUsed.toString()));
+                        })
+                })
+                .catch((error) => console.error);
+        } else {
+            console.log('amount is not a number')
+        }
     }
 
     useEffect(() => {
@@ -139,17 +148,37 @@ const HomePage = (props) => {
         const msgObj = {
             user_uid_Sender: auth.uid,
             user_uid_Receiver: userUid,
+            type: 'text',
             message
         }
 
         if (message !== "") {
-            dispatch(updateMessage(msgObj))
+            dispatch(updateChats(msgObj))
                 .then(() => {
                     setMessage('')
                 });
         }
+    }
 
-        //console.log(msgObj);
+    // send Transaction
+    const submitTransaction = (txHash, gasUsed) => {
+        const msgObj = {
+            user_uid_Sender: auth.uid,
+            user_uid_Receiver: userUid,
+            type: 'transaction',
+            txHash: txHash,
+            from: accounts[0],
+            to: chatUser.ETH_Adress,
+            value: amount,
+            gasUsed
+        }
+
+        if (msgObj) {
+            dispatch(updateChats(msgObj))
+                .then(() => {
+                    setAmount('')
+                });
+        }
     }
 
     return (
@@ -228,7 +257,10 @@ const HomePage = (props) => {
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Write Message"
                                 />
-                                <button onClick={submitMessage}>Send <FontAwesomeIcon icon={faPaperPlane}/></button>
+                                <button onClick={(e) => submitMessage(e)}>
+                                    Send
+                                    <FontAwesomeIcon icon={faPaperPlane}/>
+                                </button>
                                 {
                                     window.web3 !== undefined ?
                                         window.web3.currentProvider.selectedAddress ?

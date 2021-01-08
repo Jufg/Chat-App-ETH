@@ -33,7 +33,7 @@ export const getRealtimeUsers = (uid) => {
 }
 
 // Push the Message to Firestore
-export const updateMessage = (msgObj) => {
+export const updateChats = (msgObj) => {
     return async dispatch => {
 
         const db = firestore();
@@ -44,8 +44,6 @@ export const updateMessage = (msgObj) => {
                 createdAt: new Date()
             })
             .then((data) => {
-                //console.log(data)
-
             })
             .catch(error => {
                 console.log(error)
