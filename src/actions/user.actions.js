@@ -190,3 +190,23 @@ export const updateProfile = (uid, userDetails) => {
     }
 }
 
+export const updateAdresse = (uid, account) => {
+    return async dispatch => {
+
+        const db = firestore();
+
+        if (account !== '') {
+            db.collection('users')
+                .doc(uid)
+                .update({
+                    ETH_Adress: account
+                })
+                .then()
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+
+    }
+}
+

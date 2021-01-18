@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import './style.css'
 import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeUsers, updateProfile} from "../../actions";
+import {getRealtimeUsers, updateAdresse, updateProfile} from "../../actions";
 import Web3 from "web3";
 
 /**
@@ -15,7 +15,6 @@ const SettingsPage = (props) => {
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
     const user = useSelector(state => state.user);
-    const ethereum = window.ethereum;
 
     // States
     const [username, setUsername] = useState('');
@@ -59,6 +58,11 @@ const SettingsPage = (props) => {
     }
 
     // Web3
+    let ethereum;
+
+    if (window.web3) {
+        ethereum = window.ethereum;
+    }
 
     const connectWallet = () => {
         if (window.web3) {
@@ -69,7 +73,7 @@ const SettingsPage = (props) => {
                     ethereum.request({method: 'eth_accounts'})
                         .then((accounts) => {
                             if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
-                                dispatch(updateProfile(auth.uid, 'ETH_Adress', accounts[0]));
+                                dispatch(updateAdresse(auth.uid, accounts[0]));
                             }
                         })
                         .catch((error) => {
