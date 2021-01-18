@@ -1,4 +1,4 @@
-import {userConstant} from "./constants";
+import {authConstant, userConstant} from "./constants";
 import {auth, firestore} from 'firebase';
 import * as firebase from "firebase";
 
@@ -80,8 +80,8 @@ export const getRealtimeChats = (user) => {
     }
 }
 
-// update a specific field
-export const updateProfile = (uid, field, value, optPass) => {
+// update UserProfile
+export const updateProfile = (uid, userDetails) => {
     return async dispatch => {
 
         const db = firestore();
@@ -91,92 +91,100 @@ export const updateProfile = (uid, field, value, optPass) => {
         try {
             credential = firebase.auth.EmailAuthProvider.credential(
                 user.email,
-                optPass
+                userDetails.pass
             );
         } catch (e) {
             credential = null;
         }
 
         try {
+            if (credential) {
 
-            switch (field) {
-                case 'ETH_Adress': {
+                // Change Username
+                if (userDetails.username !== '') {
+                    user.reauthenticateWithCredential(credential).then(() => {
+                        // User re-authenticated.
+                        user.updateProfile({
+                            displayName: `${userDetails.username}`
+                        }).then(() => {
+                            // Update successful.
+                            db.collection('users')
+                                .doc(uid)
+                                .update({
+                                    username: userDetails.username
+                                })
+                                .then(() => {
+                                    // successful
+                                    const loggedInUser = {
+                                        username: user.displayName,
+                                        uid: user.uid,
+                                        email: user.email
+                                    }
 
-                    db.collection('users')
-                        .doc(uid)
-                        .update({
-                            ETH_Adress: value
-                        })
-                        .then()
-                        .catch(error => {
-                            console.log(error)
-                        })
+                                    localStorage.setItem('user', JSON.stringify(loggedInUser));
 
-                    break;
-                }
-                case'username': {
-                    if (credential) {
-                        user.reauthenticateWithCredential(credential).then(function () {
-                            // User re-authenticated.
-                            user.updateProfile(
-                                {
-                                    displayName: value
-                                }
-                            ).then(function () {
-                                // Update successful.
-                                db.collection('users')
-                                    .doc(uid)
-                                    .update({
-                                        username: value
+                                    dispatch({
+                                        type: `${authConstant.USER_LOGIN}_SUCCESS`,
+                                        payload: {user: loggedInUser}
                                     })
-                                    .then()
-                                    .catch(error => {
-                                        console.log(error)
+                                })
+                                .catch(error => {
+                                    console.log(error)
+                                })
+                        }).catch((error) => {
+                            console.log(error)
+                        });
+                    }).catch((error) => {
+                        console.log(error)
+                    });
+
+                }
+
+                // Change Email
+                if (userDetails.email !== '') {
+                    user.reauthenticateWithCredential(credential)
+                        .then(() => {
+                            // User re-authenticated.
+                            user.updateEmail(userDetails.email)
+                                .then(() => {
+                                    // Update successful.
+                                    // successful
+                                    const loggedInUser = {
+                                        username: user.displayName,
+                                        uid: user.uid,
+                                        email: user.email
+                                    }
+
+                                    localStorage.setItem('user', JSON.stringify(loggedInUser));
+
+                                    dispatch({
+                                        type: `${authConstant.USER_LOGIN}_SUCCESS`,
+                                        payload: {user: loggedInUser}
                                     })
-                            }).catch(function (error) {
+                                }).catch((error) => {
                                 console.log(error)
                             });
-                        }).catch(function (error) {
+                        }).catch((error) => {
+                        console.log(error)
+                    });
+                }
+
+                // Change Pass
+                if (userDetails.newPass !== '') {
+                    user.reauthenticateWithCredential(credential).then(() => {
+                        // User re-authenticated.
+                        user.updatePassword(userDetails.newPass).then(() => {
+                            // Update successful.
+                        }).catch((error) => {
                             console.log(error)
                         });
-                    }
-                    break;
+                    }).catch((error) => {
+                        console.log(error)
+                    });
                 }
-                case 'eMail': {
-                    if (credential) {
-                        user.reauthenticateWithCredential(credential).then(function () {
-                            // User re-authenticated.
-                            user.updateEmail(value).then(function () {
-                                // Update successful.
-                            }).catch(function (error) {
-                                console.log(error)
-                            });
-                        }).catch(function (error) {
-                            console.log(error)
-                        });
-                    }
-                    break;
-                }
-                case 'password': {
-                    if (credential) {
-                        user.reauthenticateWithCredential(credential).then(function () {
-                            // User re-authenticated.
-                            user.updatePassword(value).then(function () {
-                                // Update successful.
-                            }).catch(function (error) {
-                                console.log(error)
-                            });
-                        }).catch(function (error) {
-                            console.log(error)
-                        });
-                    }
-                    break;
-                }
-                default:
-                    console.log('Field is not a String or Empty.')
-                    console.log('Field: ' + field)
             }
-        } catch (e) {
+        } catch
+            (e) {
             console.log(e)
         }
     }

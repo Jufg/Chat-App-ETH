@@ -18,7 +18,9 @@ const SettingsPage = (props) => {
     const ethereum = window.ethereum;
 
     // States
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
+    const [newPass, setNewPass] = useState('');
     const [pass, setPass] = useState('');
 
     let unsubscribe;
@@ -35,12 +37,25 @@ const SettingsPage = (props) => {
 
     }, []);
 
-    // state handlers
-
-
     // DB communication
-    const updateUser = (pField, pValue) => {
-        dispatch(updateProfile(auth.uid, pField, pValue, pass));
+    const updateUser = (e) => {
+        e.preventDefault();
+
+        let userDetails = {
+            username,
+            email,
+            newPass,
+            pass
+        }
+
+        if (userDetails.pass !== '') {
+            dispatch(updateProfile(auth.uid, userDetails));
+        }
+
+        setUsername('');
+        setEmail('');
+        setNewPass('');
+        setPass('');
     }
 
     // Web3
@@ -117,33 +132,50 @@ const SettingsPage = (props) => {
                         Personal Information
                     </div>
                 </div>
-                <div className="settings-box">
-                    <div className="settings-child">
-                        change username
+                <form onSubmit={updateUser}>
+                    <div className="settings-box">
+                        <div className="settings-child">
+                            <label>change username</label>
+                            <input
+                                type='text'
+                                value={username}
+                                onChange={(e) => setUsername(e.target.value)}
+                            />
+                        </div>
+                        <div className="settings-child">
+                            <label>E-mail</label>
+                            <input
+                                type='email'
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
+                        </div>
+                        <div className="settings-child">
+                            change password
+                            <label>new Password</label>
+                            <input
+                                type='text'
+                                value={newPass}
+                                onChange={(e) => setNewPass(e.target.value)}
+                            />
+                        </div>
+                        <div className="settings-child">
+                            Confirm settings
+                            <label>Current Password</label>
+                            <input
+                                type='text'
+                                required={true}
+                                value={pass}
+                                onChange={(e) => setPass(e.target.value)}
+                            />
+                            <button
+                                type="submit"
+                            >
+                                Confirm
+                            </button>
+                        </div>
                     </div>
-                    <div className="settings-child">
-                        <label>E-mail</label>
-                        <input
-                            type='text'
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
-                        <label>Password</label>
-                        <input
-                            type='text'
-                            value={pass}
-                            onChange={(e) => setPass(e.target.value)}
-                        />
-                        <button
-                            onClick={(e) => updateUser('eMail', email)}
-                        >
-                            change email
-                        </button>
-                    </div>
-                    <div className="settings-child">
-                        change password
-                    </div>
-                </div>
+                </form>
             </div>
         </Layout>
     );
