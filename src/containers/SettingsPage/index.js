@@ -167,7 +167,7 @@ const SettingsPage = (props) => {
                             Confirm settings
                             <label>Current Password</label>
                             <input
-                                type='text'
+                                type='password'
                                 required={true}
                                 value={pass}
                                 onChange={(e) => setPass(e.target.value)}
