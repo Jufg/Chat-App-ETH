@@ -1,0 +1,26 @@
+[
+  {
+    "createdAt": "02.03.2022",
+    "isViewed": "false",
+    "message": "Hi",
+    "type": "text",
+    "user_uid_Receiver": "aoa6g1HQajfXi704EGxt3vnjix93",
+    "user_uid_Sender": "k5ZZbq3ZeERT1L91l9fJk4bIFOA3",
+    "uid": "ed21af664939158df27776873f129999bec3e41b6b0d554a10e4b3411bc7b689"
+  },
+  {
+    "createdAt": "03.03.2022",
+    "isViewed": "false",
+    "transaction": {
+      "txHash": "0x235d31cbedac86418c7fa852a5842ade17c026ca6bb377b36dabef13210ff053",
+      "from": "0x18ed89f4b1e7b2230c9d13e3121f5ba9fcab544b",
+      "to": "0xe66ad4a5dc0afd16d8a8f1c3339c48ccce7946f3",
+      "value": 14.9995,
+      "gasUsed": 0.000000000000021
+    },
+    "type": "transaction",
+    "user_uid_Receiver": "kFKiZIWgRceJvwUDSgOzv3bzBsI3",
+    "user_uid_Sender": "CAfZzBmCbKUgNnnygvTrm8rRvQL2",
+    "uid": "27a73e24a3e5b8806697d54ade102182b6921bfdcef4629ef4741c816fa9f3fb"
+  }
+]

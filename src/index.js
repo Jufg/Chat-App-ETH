@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import firebase from "firebase";
 import {Provider} from 'react-redux';
 import store from "./store";
+import ipfs from "ipfs";
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -21,6 +22,26 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
+firebase.analytics();
+
+// Ipfs Setup
+const cat = async (hash) => {
+    const node = await ipfs.create()
+
+    const stream = node.cat('QmYKtvp8XiBEVrPK3X9ZQZ1znMuBsKMesUViZ93eGenhGK')
+    let data = '';
+
+    for await (const chunk of stream) {
+        // chunks of data are returned as a Buffer, convert it back to a string
+        data += chunk.toString()
+    }
+
+    return data;
+}
+cat().then(data => {
+    console.log(data);
+
+});
 
 window.store = store;
 
@@ -30,7 +51,7 @@ ReactDOM.render(
             <App/>
         </React.StrictMode>
     </Provider>,
-document.getElementById('root')
+    document.getElementById('root')
 )
 ;
 

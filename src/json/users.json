@@ -1,0 +1,26 @@
+[
+  {
+    "username": "Kai",
+    "email": "kai@gmx.de",
+    "password": "123456",
+    "isOnline": true,
+    "timeStamp": "01.05.2020",
+    "uid": "d53617a6bc29f8c09890f771941a45c0dfa39b65a5807f00749ea2043c385802"
+  },
+  {
+    "username": "Jufg",
+    "email": "jufg@gmx.de",
+    "password": "123456",
+    "isOnline": true,
+    "createdAt": "01.05.2020",
+    "uid": "16bfd59ec59253d63eb57236b033695792637e4d454cc6300a3548cab09be158"
+  },
+  {
+    "username": "Paul",
+    "email": "paul@gmx.de",
+    "password": "123456",
+    "isOnline": true,
+    "createdAt": "29.03.2021",
+    "uid": "0831922d62eee3457fa885ce1002efa3a09096bdfd169cdf974aa17d93aac72a"
+  }
+]
