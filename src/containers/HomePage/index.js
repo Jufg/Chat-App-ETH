@@ -62,7 +62,7 @@ const HomePage = (props) => {
     // ETH Transaction
     const sendETH = () => {
 
-        if (!isNaN(amount) && !amount === '') {
+        if (!isNaN(amount) && !amount == '') {
             ethereum
                 .request({
                     method: 'eth_sendTransaction',
