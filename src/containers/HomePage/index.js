@@ -224,7 +224,7 @@ const HomePage = (props) => {
                                 </button>
                                 {
                                     window.web3 !== undefined ?
-                                        window.web3.currentProvider.selectedAddress ?
+                                        window.web3.currentProvider.selectedAddress && web3.utils.isAddress(chatUser.ETH_Adress)?
                                             <>
                                                 <textarea
                                                     style={{
