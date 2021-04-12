@@ -2,10 +2,11 @@
   {
     "username": "Kai",
     "email": "kai@gmx.de",
-    "password": "123456",
+    "ETH_Address": "0x18ed89f4b1e7b2230c9d13e3121f5ba9fcab544b",
+    "password": "E10ADC3949BA59ABBE56E057F20F883E",
     "isOnline": true,
-    "timeStamp": "01.05.2020",
-    "uid": "d53617a6bc29f8c09890f771941a45c0dfa39b65a5807f00749ea2043c385802"
+    "createdAt": 1617974144224,
+    "uid": "aoa6g1HQajfXi704EGxt3vnjix93"
   },
   {
     "username": "Jufg",

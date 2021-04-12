@@ -1,7 +1,7 @@
 [
   {
-    "createdAt": "02.03.2022",
-    "isViewed": "false",
+    "createdAt": 1617974210368,
+    "isViewed": false,
     "message": "Hi",
     "type": "text",
     "user_uid_Receiver": "aoa6g1HQajfXi704EGxt3vnjix93",
@@ -9,8 +9,8 @@
     "uid": "ed21af664939158df27776873f129999bec3e41b6b0d554a10e4b3411bc7b689"
   },
   {
-    "createdAt": "03.03.2022",
-    "isViewed": "false",
+    "createdAt": 1617974185888,
+    "isViewed": true,
     "transaction": {
       "txHash": "0x235d31cbedac86418c7fa852a5842ade17c026ca6bb377b36dabef13210ff053",
       "from": "0x18ed89f4b1e7b2230c9d13e3121f5ba9fcab544b",
