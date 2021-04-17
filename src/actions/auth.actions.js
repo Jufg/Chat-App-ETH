@@ -25,7 +25,8 @@ export const signup = (user) => {
                                 username: user.username,
                                 uid: data.user.uid,
                                 createdAt: new Date(),
-                                isOnline: true
+                                isOnline: true,
+                                ETH_Adress: null
                             })
                             .then(() => {
                                 // successful
@@ -132,7 +133,8 @@ export const logout = (uid) => {
         db.collection('users')
             .doc(uid)
             .update({
-                isOnline: false
+                isOnline: false,
+                lastOnline: new Date()
             })
             .then(() => {
 

@@ -24,12 +24,12 @@
     margin: 1.2em 0;
 }
 
-input,
-label {
+.login-input,
+.login-label {
     transition: 0.4s ease;
 }
 
-label {
+.login-label {
     padding-left: 10px;
     transform: translate(4px, -14px) scale(1.02);
     margin-bottom: 2px;
@@ -39,7 +39,7 @@ label {
     position: absolute;
 }
 
-input {
+.login-input {
     font-size: 1.2em;
     padding: 30px 10px 10px 10px;
     border: none;
@@ -51,17 +51,17 @@ input {
     border-radius: 5px 5px 0 0;
 }
 
-input::placeholder {
+.login-input::placeholder {
     opacity: 0;
 }
 
-input:focus,
-input:not(:placeholder-shown) {
+.login-input:focus,
+.login-input:not(:placeholder-shown) {
     border-bottom: 2px solid #ffffff;
 }
 
-input:not(:placeholder-shown) ~ label,
-input:focus ~ label {
+.login-input:not(:placeholder-shown) ~ .login-label,
+.login-input:focus ~ .login-label {
     transform: translate(10px, -35px) scale(0.8);
     padding-left: 0;
     color: #ffffff;
@@ -98,4 +98,8 @@ input:focus ~ label {
     background: -ms-linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     background: linear-gradient(135deg, #8BC6EC 0%, #9599E2 100%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#8BC6EC', endColorstr='#9599E2', GradientType=1);
+}
+
+.submit:after {
+    background-color: #323232;
 }

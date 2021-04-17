@@ -6,8 +6,8 @@ import {isLoggedInUser, signin, updateMessage} from "../../actions";
 import {Redirect} from "react-router-dom";
 
 // FontAwesome
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome'
-import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons'
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faEye, faEyeSlash} from '@fortawesome/free-solid-svg-icons';
 
 
 /**
@@ -61,24 +61,26 @@ const LoginPage = (props) => {
 
                         <div className="input-form">
                             <input
+                                className="login-input"
                                 name="email"
                                 type="text"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 placeholder="Email"
                             />
-                            <label htmlFor="email">Email Adress</label>
+                            <label className="login-label" htmlFor="email">Email Adress</label>
                         </div>
 
                         <div className="input-form">
                             <input
+                                className="login-input"
                                 name="password"
                                 type={show ? 'text' : 'password'}
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 placeholder="Password"
                             />
-                            <label htmlFor="password">Password</label>
+                            <label className="login-label" htmlFor="password">Password</label>
 
                             <button id="eye-btn" type="button" onClick={showPass}>
                                 {

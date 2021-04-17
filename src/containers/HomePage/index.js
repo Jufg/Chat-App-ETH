@@ -1,39 +1,24 @@
 import React, {useEffect, useState} from "react";
 import './style.css'
 import Layout from "../../components/Layout";
+import User from "../../components/UI/User";
+import Message from "../../components/UI/Message";
+import returnTime from "../../utils/chatUtils";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeChats, getRealtimeUsers, updateMessage} from "../../actions";
+import {getRealtimeChats, getRealtimeUsers, updateChats} from "../../actions";
+import Web3 from "web3";
+
+// FontAwesome
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import {faPaperPlane, faUser} from '@fortawesome/free-solid-svg-icons';
 
 /**
  * @author
  * @function HomePage
  **/
 
-const User = (props) => {
-
-    const {user, onClick} = props;
-
-    return (
-        <div onClick={() => onClick(user)} className="displayName">
-            <div className="displayPic">
-                <img
-                    src="https://i.pinimg.com/originals/be/ac/96/beac96b8e13d2198fd4bb1d5ef56cdcf.jpg"
-                    alt=""/>
-            </div>
-            <div style={{
-                display: 'flex',
-                flex: 1,
-                justifyContent: 'space-between',
-                margin: '0 10px'
-            }}>
-                <span style={{fontWeight: 500}}>{user.username}</span>
-                <span className={user.isOnline ? `onlineStatus` : `onlineStatus off`}/>
-            </div>
-        </div>
-    );
-}
-
 const HomePage = (props) => {
+
 
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
@@ -41,9 +26,65 @@ const HomePage = (props) => {
     const [chatStarted, setChatStarted] = useState(false);
     const [chatUser, setChatUser] = useState('');
     const [message, setMessage] = useState('');
+    const [amount, setAmount] = useState('');
     const [userUid, setUserUid] = useState(null);
+    const [accounts, setAccounts] = useState([]);
 
     let unsubscribe;
+
+    // Web3
+    let ethereum, web3;
+
+    if (window.web3) {
+        ethereum = window.ethereum;
+        web3 = new Web3(window.web3.currentProvider);
+    }
+
+    useEffect(() => {
+
+        if (window.web3) {
+            ethereum
+                .request({method: 'eth_accounts'})
+                .then((accounts) => {
+                    setAccounts(accounts)
+                })
+                .catch((error) => {
+                    console.error(
+                        `Error fetching accounts: ${error.message}.
+       Code: ${error.code}. Data: ${error.data}`
+                    );
+                });
+        }
+
+    }, []);
+
+
+    // ETH Transaction
+    const sendETH = () => {
+
+        if (!isNaN(amount) && !amount == '') {
+            ethereum
+                .request({
+                    method: 'eth_sendTransaction',
+                    params: [
+                        {
+                            from: accounts[0],
+                            to: chatUser.ETH_Adress,
+                            value: web3.utils.toHex(web3.utils.toWei(amount))
+                        },
+                    ],
+                })
+                .then((txHash) => {
+                    web3.eth.getTransactionReceipt(txHash, (e) => e)
+                        .then(result => {
+                            submitTransaction(txHash, web3.utils.fromWei(result.gasUsed.toString()));
+                        })
+                })
+                .catch((error) => console.error);
+        } else {
+            console.log('amount is not a number')
+        }
+    }
 
     useEffect(() => {
 
@@ -69,10 +110,8 @@ const HomePage = (props) => {
     // initialize Chat
     const initChat = (user) => {
         setChatStarted(true);
-        setChatUser(user.username);
+        setChatUser(user);
         setUserUid(user.uid);
-
-        //console.log(user);
 
         dispatch(getRealtimeChats({uid_Sender: auth.uid, uid_Receiver: user.uid}))
     }
@@ -82,17 +121,37 @@ const HomePage = (props) => {
         const msgObj = {
             user_uid_Sender: auth.uid,
             user_uid_Receiver: userUid,
+            type: 'text',
             message
         }
 
         if (message !== "") {
-            dispatch(updateMessage(msgObj))
+            dispatch(updateChats(msgObj))
                 .then(() => {
                     setMessage('')
                 });
         }
+    }
 
-        //console.log(msgObj);
+    // send Transaction
+    const submitTransaction = (txHash, gasUsed) => {
+        const msgObj = {
+            user_uid_Sender: auth.uid,
+            user_uid_Receiver: userUid,
+            type: 'transaction',
+            txHash: txHash,
+            from: accounts[0],
+            to: chatUser.ETH_Adress,
+            value: amount,
+            gasUsed
+        }
+
+        if (msgObj) {
+            dispatch(updateChats(msgObj))
+                .then(() => {
+                    setAmount('')
+                });
+        }
     }
 
     return (
@@ -108,6 +167,7 @@ const HomePage = (props) => {
                                         onClick={initChat}
                                         key={user.uid}
                                         user={user}
+                                        chatUser={chatUser.username}
                                     />
                                 );
                             }) : null
@@ -117,20 +177,36 @@ const HomePage = (props) => {
                 <div className="chatArea">
                     <div className="chatHeader">
                         {
-                            chatStarted ? chatUser : ''
-
+                            chatStarted ?
+                                <div className="ChatHeader-Profile">
+                                    <div className="ProfilePic">
+                                        <FontAwesomeIcon icon={faUser}/>
+                                    </div>
+                                    <span
+                                        className={user.users.find(({uid}) => uid === userUid).isOnline ? `onlineStatus` : `onlineStatus off`}/>
+                                    <div>
+                                        <p>{chatUser.username}</p>
+                                        <p style={{
+                                            fontWeight: '300'
+                                        }}>
+                                            {
+                                                user.users.find(({uid}) => uid === userUid).isOnline ?
+                                                    'online'
+                                                    :
+                                                    returnTime(user.users.find(({uid}) => uid === userUid).lastOnline)
+                                            }
+                                        </p>
+                                    </div>
+                                </div>
+                                : ''
                         }
                     </div>
                     <div className="messageSections">
                         {
                             chatStarted ?
                                 user.chats.map((chat, index) =>
-                                    <div style={{textAlign: chat.user_uid_Sender === auth.uid ? 'right' : 'left'}}
-                                         key={index}>
-                                        <p className="messageStyle">
-                                            {chat.message}
-                                        </p>
-                                    </div>)
+                                    <Message index={index} chat={chat}/>
+                                    )
                                 : null
                         }
                     </div>
@@ -142,14 +218,36 @@ const HomePage = (props) => {
                                     onChange={(e) => setMessage(e.target.value)}
                                     placeholder="Write Message"
                                 />
-                                <button onClick={submitMessage}>Send</button>
+                                <button onClick={(e) => submitMessage(e)}>
+                                    Send
+                                    <FontAwesomeIcon icon={faPaperPlane}/>
+                                </button>
+                                {
+                                    window.web3 !== undefined ?
+                                        window.web3.currentProvider.selectedAddress && web3.utils.isAddress(chatUser.ETH_Adress)?
+                                            <>
+                                                <textarea
+                                                    style={{
+                                                        width: '15%'
+                                                    }}
+                                                    value={amount}
+                                                    onChange={(e) => setAmount(e.target.value)}
+                                                    placeholder="Amount of ETH"
+                                                />
+                                                <button onClick={sendETH}>ETH</button>
+                                            </>
+                                            :
+                                            null
+                                        :
+                                        null
+                                }
                             </div> : null
                     }
 
                 </div>
             </section>
         </Layout>
-    )
+    );
 }
 
 export default HomePage
