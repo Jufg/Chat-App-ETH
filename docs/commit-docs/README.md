@@ -1,1 +1,0 @@
-# [master-branch](https://github.com/Jufg/Chat-App-ETH/commits/main) Commit-Documentation

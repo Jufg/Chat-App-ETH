@@ -14,9 +14,9 @@ const env = process.env
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
     apiKey: env.REACT_APP_API_KEY,
-    authDomain: `${env.REACT_APP_PROJECT_NAME}.firebaseapp.com`,
-    projectId: env.REACT_APP_PROJECT_NAME,
-    storageBucket: `${env.REACT_APP_PROJECT_NAME}.appspot.com`,
+    authDomain: `${env.REACT_APP_PROJECT_ID}.firebaseapp.com`,
+    projectId: env.REACT_APP_PROJECT_ID,
+    storageBucket: `${env.REACT_APP_PROJECT_ID}.appspot.com`,
     messagingSenderId: env.REACT_APP_MESSAGING_SENDER_ID,
     appId: env.REACT_APP_APP_ID,
     measurementId: env.REACT_APP_MEASUREMENT_ID

@@ -1,37 +1,32 @@
 # Chat-App-ETH
 
-This is the repository for my Ethereum Chat App.
+This is the repository for the Ethereum Chat App, a messenger application with decentralised transactions on the
+Ethereum network.
 
 The Ethereum Chat App will be developed as a dApp (decentralised application). To make the dApp as user-friendly as
-possible, the front-end framework [React.js](https://reactjs.org/) will be used. The database used is
-google [Firebase](https://firebase.google.com/).
+possible, the front-end framework [React.js](https://reactjs.org/) will be used. Currently, the data is stored on
+Google [Firebase](https://firebase.google.com/). The aim of this project is to completely decentralise the application.
+Files, user data, chats and transactions are to function and be stored decentrally.
 
 ## Documentation
 
-[Here](docs/commit-docs/README.md) you can find the details of the individual commits in
-the [master-branch](https://github.com/Jufg/Chat-App-ETH/commits/main).
-
-## How to contribute
-
-If you want to be a contributor to this project, please read
-the [rules for commits and branches](docs/commit-rules/README.md) and find a suitable branch.
-
-If you are looking for bugs that need to be fixed, you can find them [here](https://github.com/Jufg/Chat-App-ETH/issues)
-.
+[Here](docs/application-docs/README.md) you can find the Documentation of the Project. It contains a description of what the
+application wants to achieve, why this application is needed and how it works.
 
 ## How to run the Project
 
 ### `.env`
 
-Before you can run the project, you must set up the .env file, wich must be located in the project directory. In this
-file you can safely store data for the application, such as API-KEY's or other important things.
+Before you can run the current Version of the project, you must set up the .env file, wich must be located in the
+project directory. In this file you can safely store data for the application, such as API-KEY's or other important
+things.
 
 To get the application running with [Firebase](https://firebase.google.com/) use this layout:
 
 ```
     REACT_APP_APP_ID=Your App ID
     REACT_APP_API_KEY=Your API-Key
-    REACT_APP_PROJECT_NAME=The Name of your project
+    REACT_APP_PROJECT_ID=The ID of your project
     REACT_APP_MESSAGING_SENDER_ID=The messaging-sender-id 
     REACT_APP_MEASUREMENT_ID=The Measurement-id
 ```
