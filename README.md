@@ -6,7 +6,7 @@ Ethereum network.
 The Ethereum Chat App will be developed as a dApp (decentralised application). To make the dApp as user-friendly as
 possible, the front-end framework [React.js](https://reactjs.org/) will be used. Currently, the data is stored on
 Google [Firebase](https://firebase.google.com/). The aim of this project is to completely decentralise the application.
-Files, user data, chats and transactions are to function and be stored decentrally.
+Files, user data, chats and transactions are to function and be stored decentralised.
 
 ## Documentation
 
@@ -23,7 +23,7 @@ things.
 
 To get the application running with [Firebase](https://firebase.google.com/) use this layout:
 
-```
+```dotenv
     REACT_APP_APP_ID=Your App ID
     REACT_APP_API_KEY=Your API-Key
     REACT_APP_PROJECT_ID=The ID of your project

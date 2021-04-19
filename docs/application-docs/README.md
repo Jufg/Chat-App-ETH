@@ -1,17 +1,27 @@
 *Work in Progress !*
-
-# Documentation
+# Etheruem Chat App - Documentation
 
 ## Abstract
 
-## Introduction
+## Table of Contents
 
-## Initial position
+* [Introduction](#Introduction)
+* [Initial position](#Initial position)
+* [Weaknesses of current transaction platforms](#Weaknesses of current transaction platforms)
+* [Decentralised transaction mechanisms as a solution approach](#Decentralised transaction mechanisms as a solution approach)
+* [The development of an application for decentralised transactions](#The development of an application for decentralised transactions)
+* [Evaluative summary of the result](#Evaluative summary of the result)
 
-## Weaknesses of current transaction platforms
+---
 
-## Decentralised transaction mechanisms as a solution approach
+### Introduction
 
-## The development of an application for decentralised transactions
+### Initial position
 
-## Evaluative summary of the result
+### Weaknesses of current transaction platforms
+
+### Decentralised transaction mechanisms as a solution approach
+
+### The development of an application for decentralised transactions
+
+### Evaluative summary of the result
