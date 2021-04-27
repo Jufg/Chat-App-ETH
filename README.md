@@ -1,4 +1,4 @@
-# Chat-App-ETH
+# Ethereum Chat App
 
 This is the repository for the Ethereum Chat App, a messenger application with decentralised transactions on the
 Ethereum network.
@@ -27,7 +27,7 @@ To get the application running with [Firebase](https://firebase.google.com/) use
     REACT_APP_APP_ID=Your App ID
     REACT_APP_API_KEY=Your API-Key
     REACT_APP_PROJECT_ID=The ID of your project
-    REACT_APP_MESSAGING_SENDER_ID=The messaging-sender-id 
+    REACT_APP_MESSAGING_SENDER_ID=The messaging-sender-id
     REACT_APP_MEASUREMENT_ID=The Measurement-id
 ```
 
