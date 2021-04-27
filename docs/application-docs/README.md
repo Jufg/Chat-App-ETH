@@ -1,5 +1,7 @@
 *Work in Progress !*
 
+To see the current status, click [here](https://github.com/Jufg/Chat-App-ETH/tree/docs).
+
 # Documentation
 
 ## Abstract
