@@ -35,7 +35,7 @@ const Message = (props) => {
                                     {chat.txHash}
                                 </a>
                             </p>
-                            <p>value: {chat.value}</p>
+                            <p>value: {chat.value} ETH</p>
                         </div>
                         :
                         chat.message
