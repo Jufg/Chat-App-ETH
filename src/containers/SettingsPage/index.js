@@ -2,12 +2,13 @@ import React, {useEffect, useState} from 'react';
 import './style.css'
 import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeUsers, updateAdresse, updateProfile} from "../../actions";
+import {getRealtimeUsers, updateAdresse, updateProfile, updateProfileHash} from "../../actions";
 import Web3 from "web3";
+import {IPFSaddData, IPFSfetchData} from "../../utils/IPFSfunctions";
 
 /**
- * @author
- * @function Header
+ * @author Jufg
+ * @function SettingsPage
  */
 
 const SettingsPage = (props) => {
@@ -92,6 +93,17 @@ const SettingsPage = (props) => {
         return false;
     }
 
+    const uploadImageToIPFS = () => {
+        IPFSaddData().then(hash => {
+
+        });
+
+        /*IPFSfetchData('QmYKtvp8XiBEVrPK3X9ZQZ1znMuBsKMesUViZ93eGenhGK').then(data => {
+            console.log(data)
+            dispatch(updateProfileHash(auth.uid, data));
+        });*/
+    }
+
     return (
         <Layout>
             <div className="settings-container">
@@ -128,6 +140,27 @@ const SettingsPage = (props) => {
                                     Connect
                                 </button>
                         }
+                    </div>
+                </div>
+                <hr className="settings-line"/>
+                <div className="settings-box">
+                    <div className="settings-header">
+                        Personal Information
+                    </div>
+                </div>
+                <div className="settings-box">
+                    <div className="settings-child">
+                        Profile Picture:
+                    </div>
+                    <div className="settings-child">
+                        <img src="https://photogrammer.dev/images/galerie-small/IMG_1-Small.png"
+                             style={{width: "200px"}}/>
+                    </div>
+                    <div className="settings-child">
+                        <button className="wallet-button"
+                                onClick={uploadImageToIPFS}>
+                            upload image
+                        </button>
                     </div>
                 </div>
                 <hr className="settings-line"/>

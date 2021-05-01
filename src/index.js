@@ -6,7 +6,8 @@ import * as serviceWorker from './serviceWorker';
 import firebase from "firebase";
 import {Provider} from 'react-redux';
 import store from "./store";
-import ipfs from "ipfs";
+import ipfs from 'ipfs';
+
 require('dotenv').config()
 
 const env = process.env
@@ -26,23 +27,27 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 firebase.analytics();
 
-// Ipfs Setup
-const cat = async (hash) => {
+const addData = async () => {
     const node = await ipfs.create()
 
-    const stream = node.cat('QmYKtvp8XiBEVrPK3X9ZQZ1znMuBsKMesUViZ93eGenhGK')
-    let data = '';
+    const data = 'Hello, <YOUR NAME HERE>'
 
-    for await (const chunk of stream) {
-        // chunks of data are returned as a Buffer, convert it back to a string
-        data += chunk.toString()
-    }
+// add your data to to IPFS - this can be a string, a Buffer,
+// a stream of Buffers, etc
+    const results = node.add(Buffer.from(data))
 
-    return data;
+// we loop over the results because 'add' supports multiple
+// additions, but we only added one entry here so we only see
+// one log line in the output
+    /*for await ( results) {
+        // CID (Content IDentifier) uniquely addresses the data
+        // and can be used to get it again.
+        console.log(cid.toString())
+    }*/
 }
-cat().then(data => {
-    console.log(data);
 
+addData().then(r => {
+    console.log(r);
 });
 
 window.store = store;

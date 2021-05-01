@@ -45,4 +45,4 @@ const returnTime = (pTimeStamp) => {
     }
 }
 
-export default returnTime
+export default returnTime;

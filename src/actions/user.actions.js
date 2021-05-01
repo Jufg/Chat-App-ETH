@@ -210,3 +210,23 @@ export const updateAdresse = (uid, account) => {
     }
 }
 
+export const updateProfileHash = (uid, hash) => {
+    return async dispatch => {
+
+        const db = firestore();
+
+        if (hash !== '') {
+            db.collection('users')
+                .doc(uid)
+                .update({
+                    IPFS_ProfilePicHash: hash
+                })
+                .then()
+                .catch(error => {
+                    console.log(error)
+                })
+        }
+
+    }
+}
+
