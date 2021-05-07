@@ -10,8 +10,18 @@ Files, user data, chats and transactions are to function and be stored decentral
 
 ## Documentation
 
-[Here](docs/application-docs/README.md) you can find the Documentation of the Project. It contains a description of what the
-application wants to achieve, why this application is needed and how it works.
+[Here](docs/application-docs/README.md) you can find the Documentation of the Project. It contains a description of what
+the application wants to achieve, why this application is needed and how it works.
+
+## Branches
+
+|                                     Branch                                  |                                                   Usage                                                        |
+|-----------------------------------------------------------------------------|----------------------------------------------------------------------------------------------------------------|
+|    [main](https://github.com/Jufg/Chat-App-ETH/tree/main)                   |    The main branch is the default branch and contains the latest release                                       |
+|    [docs](https://github.com/Jufg/Chat-App-ETH/tree/docs)                   |    Docs contains the current development status of the documentation                                           |
+|    [dev-frontend](https://github.com/Jufg/Chat-App-ETH/tree/dev-frontend)   |    Dev-frontentd contains the current development status of the interface and the design of the application    |
+|    [dev-backend](https://github.com/Jufg/Chat-App-ETH/tree/dev-backend)     |    Dev-backend contains the current development status of the backend                                          |
+|    [dev-IPFS](https://github.com/Jufg/Chat-App-ETH/tree/dev-IPFS)           |    Dev-IPFS contains the current state of development of decentralised data storage on IPFS                    |
 
 ## How to run the Project
 
