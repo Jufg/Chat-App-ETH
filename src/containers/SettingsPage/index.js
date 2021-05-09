@@ -1,26 +1,22 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import './style.css'
 import Layout from "../../components/Layout";
+import Personal_info_form from "../../components/UI/Personal-info-form";
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeUsers, updateAdresse, updateProfile} from "../../actions";
+import {getRealtimeUsers, updateAdresse} from "../../actions";
 import Web3 from "web3";
+import Settings_form from "../../components/UI/Personal-info-form";
 
 /**
- * @author
- * @function Header
+ * @author Jufg
+ * @function SettingsPage
  */
 
-const SettingsPage = (props) => {
+const SettingsPage = () => {
 
     const dispatch = useDispatch();
     const auth = useSelector(state => state.auth);
     const user = useSelector(state => state.user);
-
-    // States
-    const [username, setUsername] = useState('');
-    const [email, setEmail] = useState('');
-    const [newPass, setNewPass] = useState('');
-    const [pass, setPass] = useState('');
 
     let unsubscribe;
 
@@ -35,27 +31,6 @@ const SettingsPage = (props) => {
             })
 
     }, []);
-
-    // DB communication
-    const updateUser = (e) => {
-        e.preventDefault();
-
-        let userDetails = {
-            username,
-            email,
-            newPass,
-            pass
-        }
-
-        if (userDetails.pass !== '') {
-            dispatch(updateProfile(auth.uid, userDetails));
-        }
-
-        setUsername('');
-        setEmail('');
-        setNewPass('');
-        setPass('');
-    }
 
     // Web3
     let ethereum;
@@ -136,50 +111,7 @@ const SettingsPage = (props) => {
                         Personal Information
                     </div>
                 </div>
-                <form onSubmit={updateUser}>
-                    <div className="settings-box">
-                        <div className="settings-child">
-                            <label>change username</label>
-                            <input
-                                type='text'
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                        </div>
-                        <div className="settings-child">
-                            <label>E-mail</label>
-                            <input
-                                type='email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="settings-child">
-                            change password
-                            <label>new Password</label>
-                            <input
-                                type='text'
-                                value={newPass}
-                                onChange={(e) => setNewPass(e.target.value)}
-                            />
-                        </div>
-                        <div className="settings-child">
-                            Confirm settings
-                            <label>Current Password</label>
-                            <input
-                                type='password'
-                                required={true}
-                                value={pass}
-                                onChange={(e) => setPass(e.target.value)}
-                            />
-                            <button
-                                type="submit"
-                            >
-                                Confirm
-                            </button>
-                        </div>
-                    </div>
-                </form>
+               <Personal_info_form/>
             </div>
         </Layout>
     );
