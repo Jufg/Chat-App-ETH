@@ -26,7 +26,8 @@ export const signup = (user) => {
                                 uid: data.user.uid,
                                 createdAt: new Date(),
                                 isOnline: true,
-                                ETH_Adress: null
+                                ETH_Adress: null,
+                                IPFS_ProfilePicHash: null
                             })
                             .then(() => {
                                 // successful

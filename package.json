@@ -1,6 +1,6 @@
 {
   "name": "chat-app-2",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
@@ -11,8 +11,9 @@
     "@testing-library/user-event": "^7.2.1",
     "dotenv": "^8.2.0",
     "firebase": "^7.22.1",
-    "ipfs": "^0.54.4",
+    "ipfs": "^0.54.5",
     "ipfs-http-client": "^49.0.4",
+    "orbit-db": "^0.26.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-redux": "^7.2.1",
