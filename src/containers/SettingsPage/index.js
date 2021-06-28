@@ -81,7 +81,7 @@ const SettingsPage = () => {
                             window.web3 !== undefined ?
                                 window.web3.currentProvider.selectedAddress ?
                                     <button
-                                        className="wallet-button"
+                                        className="app-btn settings"
                                         style={{
                                             cursor: 'not-allowed'
                                         }}>
@@ -89,14 +89,14 @@ const SettingsPage = () => {
                                     </button>
                                     :
                                     <button
-                                        className="wallet-button"
+                                        className="app-btn settings"
                                         onClick={connectWallet}
                                     >
                                         Connect
                                     </button>
                                 :
                                 <button
-                                    className="wallet-button"
+                                    className="app-btn settings"
                                     style={{
                                         cursor: 'not-allowed',
                                     }}>

@@ -1,0 +1,62 @@
+.settings-form {
+    padding: 25px 30px;
+    margin: 0 5vh;
+}
+
+.settings-form .user-details {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.settings-form .user-details .input-box {
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 15px;
+}
+
+.user-details .input-box .details {
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.user-details .input-box input {
+    height: 45px;
+    width: 70%;
+    margin-right: 30%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all .3s ease;
+}
+
+.user-details .input-box input:focus,
+.user-details .input-box input:valid {
+    border-color: #9b59b6;
+}
+
+.settings-form .settings-button {
+    height: 45px;
+    margin: 45px 0;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.settings:before {
+    background: #FAD961;
+    background: -moz-linear-gradient(135deg, #FAD961 0%, #F76B1C 100%);
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, #FAD961), color-stop(100%, #F76B1C));
+    background: -webkit-linear-gradient(135deg, #FAD961 0%, #F76B1C 100%);
+    background: -o-linear-gradient(135deg, #FAD961 0%, #F76B1C 100%);
+    background: -ms-linear-gradient(135deg, #FAD961 0%, #F76B1C 100%);
+    background: linear-gradient(135deg, #FAD961 0%, #F76B1C 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FAD961', endColorstr='#F76B1C', GradientType=1);
+}
+
+.settings:after {
+    background-color: #0a0d11;
+}
