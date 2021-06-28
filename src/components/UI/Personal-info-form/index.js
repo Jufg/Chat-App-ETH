@@ -57,43 +57,46 @@ const Personal_info_form = () => {
     }
 
     return (
-        <form className="settings-form">
+        <form
+            onSubmit={updateUser}
+            className="settings-form"
+        >
             <div className="user-details">
                 <div className="input-box">
-                    <span className="details">Username</span>
                     <input
                         type='text'
                         value={username}
                         onChange={(e) => setUsername(e.target.value)}
                         placeholder="Enter your new Username"
                     />
+                    <label className="login-label" htmlFor="email">Username</label>
                 </div>
                 <div className="input-box">
-                    <span className="details">E-Mail</span>
                     <input
-                        type='text'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type='email'
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
                         placeholder="Enter your new E-Mail"
                     />
+                    <label className="login-label" htmlFor="email">Email Adress</label>
                 </div>
                 <div className="input-box">
-                    <span className="details">Password</span>
                     <input
-                        type='text'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type='password'
+                        value={newPass}
+                        onChange={(e) => setNewPass(e.target.value)}
                         placeholder="Enter your new Password"
                     />
+                    <label className="login-label" htmlFor="email">New Password</label>
                 </div>
                 <div className="input-box">
-                    <span className="details">Confirm changes</span>
                     <input
-                        type='text'
-                        value={username}
-                        onChange={(e) => setUsername(e.target.value)}
+                        type='password'
+                        value={pass}
+                        onChange={(e) => setPass(e.target.value)}
                         placeholder="Confirm changes with your old Password"
                     />
+                    <label className="login-label" htmlFor="email">Old Password</label>
                 </div>
             </div>
             <div className="settings-button">
@@ -105,51 +108,6 @@ const Personal_info_form = () => {
                 </button>
             </div>
         </form>
-
-        /**
-         <form onSubmit={updateUser}>
-         <div className="settings-con">
-         <div className="settings-child">
-         <label>Username</label>
-         <input
-         type='text'
-         value={username}
-         onChange={(e) => setUsername(e.target.value)}
-         />
-         </div>
-         <div className="settings-child">
-         <label>E-mail</label>
-         <input
-         type='email'
-         value={email}
-         onChange={(e) => setEmail(e.target.value)}
-         />
-         </div>
-         <div className="settings-child">
-         <label>new Password</label>
-         <input
-         type='text'
-         value={newPass}
-         onChange={(e) => setNewPass(e.target.value)}
-         />
-         </div>
-         <div className="settings-child">
-         Confirm settings
-         <label>Current Password</label>
-         <input
-         type='password'
-         required={true}
-         value={pass}
-         onChange={(e) => setPass(e.target.value)}
-         />
-         <button
-         type="submit"
-         >
-         Confirm
-         </button>
-         </div>
-         </div>
-         </form>**/
     );
 }
 

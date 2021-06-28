@@ -93,7 +93,7 @@ const LoginPage = (props) => {
                         </div>
 
                         <div className="submit-box">
-                            <button className="app-btn settings" type="submit">Login</button>
+                            <button className="app-btn submit" type="submit">Login</button>
                         </div>
 
                         <div style={{
