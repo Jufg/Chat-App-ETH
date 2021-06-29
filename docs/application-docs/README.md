@@ -1,6 +1,6 @@
 *Work in Progress !*
 
-# Etheruem Chat App - Documentation
+# Etheruem Chat-App - Documentation
 
 ## Abstract
 
@@ -22,9 +22,34 @@ Metamask</a>.
     * #### [Cryptocurrencies](#21-Cryptocurrencies)
         + #### [Development of cryptocurrencies](#211-Development-of-cryptocurrencies)
         + #### [How transactions work in a blockchain](#212-How-transactions-work-in-a-blockchain)
-- #### [Weaknesses of current transaction platforms](#3-Weaknesses-of-current-transaction-platforms)
-- #### [Decentralised transaction mechanisms as a solution approach](#4-Decentralised-transaction-mechanisms-as-a-solution-approach)
+        + #### [Ethereum and Smart Contracts](#213-Ethereum-and-Smart-Contracts)
+        + #### [Potential and current purpose of cryptocurrencies](#214-Potential-and-current-purpose-of-cryptocurrencies)
+    * #### [Weaknesses of current transaction platforms](#22-Weaknesses-of-current-transaction-platforms)
+    * #### [Current state of research](#23-Current-state-of-research)
+    * #### [Decentralised transaction mechanisms as a solution approach](#24-Decentralised-transaction-mechanisms-as-a-solution-approach)
+- #### [The development of an application for decentralised transactions](#3-The-development-of-an-application-for-decentralised-transactions)
+    * #### [Objectives and methodology](#31-Objectives-and-methodology)
+        + #### [Functions and purpose of the application](#311-Functions-and-purpose-of-the-application)
+        + #### [Realisation](#312-Realisation)
+    * #### [Structure and functioning of the application](#32-Structure-and-functioning-of-the-application)
+        + #### [Communication with the user - React.js](#321-Communication-with-the-user---React.js)
+        + #### [Communication with Ethereum - Metamask](#322-Communication-with-Ethereum---Metamask)
+        + #### [Data storage and processing - Firebase](#323-Data-storage-and-processing---Firebase)
+    * #### [Conventional and innovative elements of the application](#33-Conventional-and-innovative-elements-of-the-application)
+    * #### [Outlook](#34-Outlook)
+        + #### [Decentralised data storage with IPFS](#341-Decentralised-data-storage-with-IPFS)
+        + #### [ERC-20 token integration](#342-ERC-20-token-integration)
+        + #### [Group chats with smart contracts](#343-Group-chats-with-smart-contracts)
+- #### [Documentation](#4-Documentation)
+    * #### [Representation of the work process](#41-Representation of the work process)
+        + #### [First planning and sketches](#411-First-planning-and-sketches)
+        + #### [Development of a first messenger application](#412-Development-of-a-first-messenger-application)
+        + #### [Extended planning](#413-Extended-planning)
+        + #### [Development of a private messenger application](#414-Development-of-a-private-messenger-application)
+        + #### [Extending the application with the Metamask Wallet](#415-Extending-the-application-with-the-Metamask-Wallet)
 - #### [The development of an application for decentralised transactions](#5-The-development-of-an-application-for-decentralised-transactions)
+    * #### [General conditions of the paper](#51-General-conditions-of-the-paper)
+    * #### [Challenges during the development process](#52-Challenges-during-the-development-process)
 - #### [Evaluative summary of the result](#6-Evaluative-summary-of-the-result)
 - #### [List of Figures](#List-of-figures-1)
 - #### [Bibliography](#Bibliography-1)
@@ -100,11 +125,61 @@ Ethereum.
 
 #### 2.1.2 How transactions work in a blockchain
 
-### 3 Weaknesses of current transaction platforms
+#### 2.1.3 Ethereum and Smart Contracts
 
-### 4 Decentralised transaction mechanisms as a solution approach
+#### 2.1.4 Potential and current purpose of cryptocurrencies
 
-### 5 The development of an application for decentralised transactions
+#### 2.2 Weaknesses of current transaction platforms
+
+#### 2.3 Current state of research
+
+#### 2.4 Decentralised transaction mechanisms as a solution approach
+
+### 3 The development of an application for decentralised transactions
+
+#### 3.1 Objectives and methodology
+
+#### 3.1.1 Functions and purpose of the application
+
+#### 3.1.2 Realisation
+
+#### 3.2 Structure and functioning of the application
+
+#### 3.2.1 Communication with the user - React.js
+
+#### 3.2.2 Communication with Ethereum - Metamask
+
+#### 3.2.3 Data storage and processing - Firebase
+
+#### 3.3 Conventional and innovative elements of the application
+
+#### 3.4 Outlook
+
+#### 3.4.1 Decentralised data storage with IPFS
+
+#### 3.4.2 ERC-20 token integration
+
+#### 3.4.3 Group chats with smart contracts
+
+### 4 Documentation
+
+#### 4.1 Representation of the work process
+
+#### 4.1.1 First planning and sketches
+
+#### 4.1.2 Development of a first messenger application
+
+#### 4.1.3 Extended planning
+
+#### 4.1.4 Development of a private messenger application
+
+#### 4.1.5 Extending the application with the Metamask Wallet
+
+### 5 Critical reflection
+
+#### 5.1 General conditions of the paper
+
+#### 5.2 Challenges during the development process
 
 ### 6 Evaluative summary of the result
 
