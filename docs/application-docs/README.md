@@ -41,7 +41,7 @@ Metamask</a>.
         + #### [ERC-20 token integration](#342-ERC-20-token-integration)
         + #### [Group chats with smart contracts](#343-Group-chats-with-smart-contracts)
 - #### [Documentation](#4-Documentation)
-    * #### [Representation of the work process](#41-Representation of the work process)
+    * #### [Representation of the work process](#41-Representation-of-the-work-process)
         + #### [First planning and sketches](#411-First-planning-and-sketches)
         + #### [Development of a first messenger application](#412-Development-of-a-first-messenger-application)
         + #### [Extended planning](#413-Extended-planning)
@@ -125,6 +125,20 @@ Ethereum.
 
 #### 2.1.2 How transactions work in a blockchain
 
+As described in [1], a blockchain is to be understood as a decentralised, cryptographically secured "directory" of all
+transactions made in the network. This directory is called "ledger". The unique aspect is that the transactions stored
+in the blockchain can be viewed publicly by anyone, but they cannot be assigned to a person. This means that the Bitcoin
+network, for example, is anonymous.
+
+In order for a user to be able to execute a Bitcoin transaction, he needs a cryptographically generated key pair. This
+consists of the "Public Key" and the "Private Key". Both keys consist of a sequence of numbers and letters. The public
+key is public and can be seen by anyone, while the private key is private and only known by the owner. From the private
+key several associated public keys can be generated, so that one account can have several different addresses.
+
+[<img src="https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao" alt="Figure 1: Transactions in the Bitcoin network [4]." width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
+
+*Figure 1: Transactions in the Bitcoin network [4].*
+
 #### 2.1.3 Ethereum and Smart Contracts
 
 #### 2.1.4 Potential and current purpose of cryptocurrencies
@@ -187,14 +201,18 @@ Ethereum.
 
 ### Bibliography
 
-[1] CoinMarketCap, „What Is a Cryptocurrency?”, 2021
+[1] *CoinMarketCap*, „What Is a Cryptocurrency?”, 2021
 <br>https://coinmarketcap.com/alexandria/glossary/cryptocurrency
 <br>(last accessed 23.03.2021)
 
-[2] Chaum, David, „Blind signatures for untraceable payments“, Boston SpringerVerlag 1983, pp. 199-203
+[2] *Chaum, David*, „Blind signatures for untraceable payments“, Boston SpringerVerlag 1983, pp. 199-203
 <br>https://www.chaum.com/publications/Chaum-blind-signatures.PDF
 <br>(last accessed 23.03.2021)
 
-[3] CoinMarketCap, „Today's Cryptocurrency Prices by Market Cap“, 2021
+[3] *CoinMarketCap*, „Today's Cryptocurrency Prices by Market Cap“, 2021
 <br>https://coinmarketcap.com/
+<br>(last accessed 29.03.2021)
+
+[4] *Nakamoto, Satoshi*, „Bitcoin: A Peer-to-Peer Electronic Cash System”, 2008
+<br>https://bitcoin.org/bitcoin.pdf
 <br>(last accessed 29.03.2021) 
