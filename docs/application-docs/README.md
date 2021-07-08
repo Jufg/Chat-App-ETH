@@ -2,6 +2,8 @@
 
 # Etheruem Chat-App - Documentation
 
+The original paper in German is available [here](https://ipfs.io/ipfs/QmfSWG5eb9C7S8cWxfSkTarMva7xyn92qzgGRoTTJtL64y).
+
 ## Abstract
 
 <p style="text-align: justify">
