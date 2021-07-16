@@ -6,16 +6,13 @@ The original paper in German is available [here](https://ipfs.io/ipfs/QmfSWG5eb9
 
 ## Abstract
 
-<p style="text-align: justify">
 The world has become a globalised service society in recent years, with payments increasingly being made online by third
 parties such as banks and other service providers. Users need to trust that this third party will execute transactions
 correctly and that data will be managed correctly so that it is not accessible to the public. Cryptocurrencies offer a
 fully decentralised way of executing and storing transactions using blockchain technology, so that there is no need to
 trust any third party. With the Ethereum network, it is also possible to program applications on the blockchain. The
 following application is designed to provide a decentralised and anonymous way of chatting and sending money to friends
-using the <a href="https://ethereum.org/">Ethereum</a> network and the browser extension <a href="https://metamask.io/">
-Metamask</a>.
-</p>
+using the [Ethereum](https://ethereum.org/) network and the browser extension [Metamask](https://metamask.io/).
 
 ## Table of Contents
 
@@ -60,40 +57,30 @@ Metamask</a>.
 
 ### 1 Introduction
 
-<p style="text-align: justify">
 In recent decades, the world has developed into a digital service society in which almost everything is done online.
 Also Payments are mostly done on the Internet. This even happens when paying in retail stores with a credit or girocard.
 In many places, it is common to pay with a smartphone or smartwatch.
-</p>
 
-<p style="text-align: justify">
 In order to execute a payment, third party service providers are required. These service providers can be banks or
-online payment services such as <I>PayPal</I> and <I>Sofortüberweisung</I>. In the case of payment by smartphone or
-smartwatch, large companies like <I>Google</I> or <I>Apple</I> stand in between as intermediaries. The responsibility
-for the transaction from one party to another is therefore transferred to a third party, which receives all the
-information necessary or available to execute the transaction. This information contains not only data on the accounts
-between which the money is to be transferred, but also of the persons to which the accounts can be assigned, and in some
-cases, the purpose for which the transaction is to take place. In this way, the third-party knows who the holder of the
-card or device is, in which supermarket he spends how much money and in some cases, what he has bought.
-</p>
+online payment services such as *PayPal* and *Sofortüberweisung*. In the case of payment by smartphone or smartwatch,
+large companies like *Google* or *Apple* stand in between as intermediaries. The responsibility for the transaction from
+one party to another is therefore transferred to a third party, which receives all the information necessary or
+available to execute the transaction. This information contains not only data on the accounts between which the money is
+to be transferred, but also of the persons to which the accounts can be assigned, and in some cases, the purpose for
+which the transaction is to take place. In this way, the third-party knows who the holder of the card or device is, in
+which supermarket he spends how much money and in some cases, what he has bought.
 
-<p style="text-align: justify">
 Consumers not only need to trust that service providers will execute transactions correctly, it must also be taken into
 account that payment data will be shared, for example with advertisers or for credit rating. A completely anonymous way
 of transferring money, as it is the case with analogue money, so cash, cannot be guaranteed with our current financial
 system for immaterial transactions.
-</p>
 
-<p style="text-align: justify">
 Decentralised cryptocurrencies offer a solution. Decentralised infrastructures allow transactions without a third party
 and offer anonymity.
-</p>
 
-<p style="text-align: justify">
 The basis of the present paper is the development of an application that makes it possible to get in touch with other
 people, to network and communicate. The linked people can then use the application to make anonymous payments to each
 other based on a cryptocurrency.
-</p>
 
 ### 2 Initial position
 
@@ -101,36 +88,29 @@ other based on a cryptocurrency.
 
 #### 2.1.1 Development of cryptocurrencies
 
-<p style="text-align: justify">
-As explained in [1], a cryptocurrency can be described as a digital currency secured by cryptography. It is intended to
-be an independent, decentralised and secure alternative to our current payment system.
-</p>
+As explained in [[1]](#Bibliography-1), a cryptocurrency can be described as a digital currency secured by cryptography.
+It is intended to be an independent, decentralised and secure alternative to our current payment system.
 
-<p style="text-align: justify">
-The first cryptocurrency eCash was developed in 1983 by the American cryptographer David Chaum. As he describes in [2],
-eCash was supposed to make it possible to execute transactions between two parties digitally. The new cryptographic
-technique "blind signatures" was to be used for this. The currency did not succeed; the company behind it, DigiCash, had
-to file for bankruptcy in 1998.
-</p>
+The first cryptocurrency eCash was developed in 1983 by the American cryptographer David Chaum. As he describes
+in [[2]](#Bibliography-1), eCash was supposed to make it possible to execute transactions between two parties digitally.
+The new cryptographic technique "blind signatures" was to be used for this. The currency did not succeed; the company
+behind it, DigiCash, had to file for bankruptcy in 1998.
 
-<p style="text-align: justify">
 The first cryptocurrency which achieved mainstream recognition was Bitcoin in 2009. It was developed during the
 financial crisis of 2008 by the pseudonym Satoshi Nakamoto and, together with blockchain technology, it represents a
 fundamental innovation in the development of cryptocurrencies. Based on Bitcoin, many new cryptocurrencies have
-developed since 2008. According to [3], more than 4,500 cryptocurrencies are now listed on CoinMarketCap.
-</p>
+developed since 2008. According to [[3]](#Bibliography-1), more than 4,500 cryptocurrencies are now listed on
+CoinMarketCap.
 
-<p style="text-align: justify">
 Among the many digital currencies is the cryptocurrency Ether. It is the currency on the decentralised platform
 Ethereum.
-</p>
 
 #### 2.1.2 How transactions work in a blockchain
 
-As described in [1], a blockchain is to be understood as a decentralised, cryptographically secured "directory" of all
-transactions made in the network. This directory is called "ledger". The unique aspect is that the transactions stored
-in the blockchain can be viewed publicly by anyone, but they cannot be assigned to a person. This means that the Bitcoin
-network, for example, is anonymous.
+As described in [[1]](#Bibliography-1), a blockchain is to be understood as a decentralised, cryptographically secured "
+directory" of all transactions made in the network. This directory is called "ledger". The unique aspect is that the
+transactions stored in the blockchain can be viewed publicly by anyone, but they cannot be assigned to a person. This
+means that the Bitcoin network, for example, is anonymous.
 
 In order for a user to be able to execute a Bitcoin transaction, he needs a cryptographically generated key pair. This
 consists of the "Public Key" and the "Private Key". Both keys consist of a sequence of numbers and letters. The public
@@ -139,7 +119,73 @@ key several associated public keys can be generated, so that one account can hav
 
 [<img src="https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao" alt="Figure 1: Transactions in the Bitcoin network [4]." width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
 
-*Figure 1: Transactions in the Bitcoin network [4].*
+*Figure 1: Transactions in the Bitcoin network [[4]](#Bibliography-1).*
+
+The public key is the address of a Bitcoin account, the so called "wallet ", to which bitcoins can be sent. The private
+key and the transaction data can then be used to create a cryptographic signature. The transaction data, the signature
+and the public key can then be used to verify whether the signature actually belongs to the private key. In this way, a
+transaction can be signed and verified without the private key having to be publicly known, because only the signature
+is sent to the network. Each transaction receives a hash value (cf. Figure 1). A hash value is a unique value that is
+formed using the hash function "SHA-256". A cryptographic hash function always returns the same unique value for the
+same input. The input cannot be restored from the value [[5]](#Bibliography-1). A cryptographic hash value can therefore
+be understood as a fingerprint of data. Each signature is therefore unique, even though the same transaction is
+executed. The signature can be compared with physical signatures. But the signatures on the Bitcoin network are more
+unique and secure. [[4]](#Bibliography-1)
+
+[<img src="https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym" alt="Figure 2: The Bitcoin Blockchain [4]." width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
+
+*Figure 2: The Bitcoin Blockchain [[4]](#Bibliography-1).*
+
+Once a transaction has been signed with the private key and verified with an associated public key, the transactions are
+stored in a block. This block is attached to the blockchain. Thereby, the blockchain represents a simple chained list in
+which each block points to the following block in which the successor contains the hash of the predecessor (cf. figure
+2).
+
+In order for a block to be verified on the network, a certain number must be found so that the hash of the block starts
+with a certain number of zeros. This number is called "nonce" and is also stored in the block. To find the nonce, every
+possible combination of numbers is tried until the hash value starts with a certain number of zeros. The one, who finds
+the nonce receives the "block reward" and the transaction fees that the user can provide so that his transaction is
+preferentially executed. In order to keep the amount of bitcoins limited at 21 million, the block rewards are halved
+every 210,000 blocks. This process is called "halving". Satoshi Nakamoto describes finding a nonce as
+proof-of-work [[4]](#Bibliography-1), as this process uses physical computing power to check a block. Because new
+Bitcoins are created here, this process is called "mining". This is to guarantee security in the network. The number of
+zeros is then indicated by the so called "Difficulty", which results from the computing power in the network. Because
+the higher the Difficulty, more zeros must be placed at the beginning of the hash value, and with each additional zero,
+the work required to find the nonce grows exponentially. To create an interest in finding the nonce of a block, the
+person who finds the nonce receives a reward in the form of Bitcoin. The Difficulty is adjusted in the Bitcoin network
+in such a way that, with the appropriate computing power, it takes about 10 minutes to find the nonce and verify the
+block and the transactions it contains. [[4]](#Bibliography-1)
+
+The individual transactions are stored in a so called "Merkle Tree". A Merkle Tree can be understood like a binary tree,
+except that in the Merkle Tree the root is generated from the leaves of the tree (cf. Figure 3). For this purpose, the
+hash values of the transactions are stored in the leaves. From two leaves the node above it is created. It contains a
+hash value that is formed from the two leaves. In the end, only the root of the tree remains. This hash value is also
+called "root hash" and is stored in the block.
+
+[<img src="https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv" alt="Figure 3: Merkle Tree in Bitcoin [6]." width="750"/>](https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv)
+
+*Figure 3: Merkle Tree in Bitcoin [[6]](#Bibliography-1).*
+
+Because a hash value is unique and differs significantly from its predecessor with only a small change in the input, the
+change in a transaction is reflected directly in the root hash. This change changes the hash value of an entire block
+and therefore the hash value of all following blocks. Therefore, the nonce of the following blocks is no longer valid,
+and a new nonce would have to be found for all following blocks. It is then impossible to later change transactions in
+the blockchain. According to Buterin [[6]](#Bibliography-1), this type of data structure of the blockchain results in
+great scalability, as only the hash value is stored and therefore many transactions can be stored securely and with
+little effort. [[4]](#Bibliography-1)
+
+In order for a consensus to emerge on a currency, there are the so called "nodes". They store the entire blockchain and
+search for new transactions to store in a new block. The node checks whether the transactions are valid and tries to
+find the matching nonce for the block. Once the nonce is found, the block is appended to the blockchain and communicated
+to all other nodes in the network. These then check whether the nonce is correct, i.e. whether there are enough zeros at
+the beginning of the hash value to match the difficulty. The nodes at the same time search for many other blockchains in
+the network. Only the blockchain with the most blocks is accepted. An added block is only accepted if it is still
+present in the blockchain after a long time, i.e. if it has been accepted by a particularly large number of nodes. This
+makes the blockchain particularly secure and decentralised. Because in order to forge a transaction, it would be
+necessary to have at least 51% of the computing power in the network to validate the other blocks with a nonce faster
+than the rest of the network it does over a longer period of time - a so-called 51% attack [[7]](#Bibliography-1).
+Running a node is possible for any user without much hardware effort (as long as the user doesn't want to mine) and
+allows him to contribute to the security of the network. [[4]](#Bibliography-1)
 
 #### 2.1.3 Ethereum and Smart Contracts
 
@@ -203,18 +249,30 @@ key several associated public keys can be generated, so that one account can hav
 
 ### Bibliography
 
-[1] *CoinMarketCap*, „What Is a Cryptocurrency?”, 2021
+[1] *CoinMarketCap*, "What Is a Cryptocurrency?", 2021
 <br>https://coinmarketcap.com/alexandria/glossary/cryptocurrency
 <br>(last accessed 23.03.2021)
 
-[2] *Chaum, David*, „Blind signatures for untraceable payments“, Boston SpringerVerlag 1983, pp. 199-203
+[2] *Chaum, David*, "Blind signatures for untraceable payments", Boston SpringerVerlag 1983, pp. 199-203
 <br>https://www.chaum.com/publications/Chaum-blind-signatures.PDF
 <br>(last accessed 23.03.2021)
 
-[3] *CoinMarketCap*, „Today's Cryptocurrency Prices by Market Cap“, 2021
+[3] *CoinMarketCap*, "Today's Cryptocurrency Prices by Market Cap", 2021
 <br>https://coinmarketcap.com/
 <br>(last accessed 29.03.2021)
 
-[4] *Nakamoto, Satoshi*, „Bitcoin: A Peer-to-Peer Electronic Cash System”, 2008
+[4] *Nakamoto, Satoshi*, "Bitcoin: A Peer-to-Peer Electronic Cash System", 2008
 <br>https://bitcoin.org/bitcoin.pdf
-<br>(last accessed 29.03.2021) 
+<br>(last accessed 29.03.2021)
+
+[5] *CoinMarketCap*, "What Is a Cryptographic Hash Function?", 2021
+<br>https://coinmarketcap.com/alexandria/glossary/cryptographic-hash-function
+<br>(last accessed 31.03.2021)
+
+[6] *Buterin, Vitalik*, "A Next-Generation Smart Contract and Decentralized Application Platform", 2013
+<br>https://ethereum.org/de/whitepaper/
+<br>(last accessed 29.03.2021)
+
+[7] *Beigel, Ofir*, "51% Attack Explained – a Beginner’s Guide", 99Bitcoins 2020
+<br>https://99bitcoins.com/51-percent-attack/
+<br>(last accessed 30.03.2021)
