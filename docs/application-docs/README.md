@@ -2,7 +2,7 @@
 
 # Etheruem Chat-App - Documentation
 
-The original paper in German is available [here](https://ipfs.io/ipfs/QmfSWG5eb9C7S8cWxfSkTarMva7xyn92qzgGRoTTJtL64y).
+The original paper in German is available [here](https://ipfs.io/ipfs/QmUM7XV6z44oXp1jGWzNjnqrApnec5HpBo3VTUr81ivKP8).
 
 ## Abstract
 
@@ -132,7 +132,7 @@ be understood as a fingerprint of data. Each signature is therefore unique, even
 executed. The signature can be compared with physical signatures. But the signatures on the Bitcoin network are more
 unique and secure. [[4]](#Bibliography-1)
 
-[<img src="https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym" alt="Figure 2: The Bitcoin Blockchain [4]." width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
+[<img src="https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym" alt="Figure 2: The Bitcoin Blockchain [4]." width="750"/>](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
 
 *Figure 2: The Bitcoin Blockchain [[4]](#Bibliography-1).*
 
@@ -188,6 +188,51 @@ Running a node is possible for any user without much hardware effort (as long as
 allows him to contribute to the security of the network. [[4]](#Bibliography-1)
 
 #### 2.1.3 Ethereum and Smart Contracts
+
+According to [[3]](#Bibliography-1), Ether is currently the second largest cryptocurrency behind Bitcoin and has a
+market capitalisation of around 200 billion US dollars. Vitalik Buterin describes Ethereum as an "operating system for
+the blockchain" on which new applications for various use cases can always be developed [[8]](#Bibliography-1). These
+applications are then executed decentrally on the blockchain and not centrally on a server like conventional
+applications.
+
+In the white paper of Ethereum [[6]](#Bibliography-1), Buterin explains how blockchain technology can be used not only
+to store transactions and thereby achieve a consensus of a currency, but also to execute programmes on the blockchain.
+Like Bitcoin, Ethereum also uses blockchain technology. The way both cryptocurrencies work is the same. Ethereum uses
+Ethash as its hash algorithm, and the confirmation time of a block is on average only 13.4s, which is significantly
+faster than in the Bitcoin network [[9]](#Bibliography-1) [[10]](#Bibliography-1).
+
+In order to be able to execute programmes on the Ethereum Blockchain, there are so-called "smart contracts". They
+represent a kind of contract in the network and are visible to everyone through the blockchain. They are defined by
+programmable code and executed exactly as they are programmed. Such a contract is executed, for example, when a certain
+amount of Ether has been transferred to the contract. An application can therefore be written in Ethereum with such
+contracts. There are two types of accounts in the Ethereum network: User accounts, which are controlled with a private
+key like in Bitcoin, and contracts, which are controlled by the predefined code. These contracts can be used to form
+autonomous decentralised organisations (DAOs).
+
+In order for such contracts to be stored and the code to be executed on the network, a block on the network does not
+simply consist of transactions, but of functions that can define a transaction, but also other operations, which are
+then executed by the Ethereum Virtual Machine (EVM). The EVM is located on the blockchain and thus on every node of the
+Ethereum network. This means that the code of a smart contract is executed almost at the same time on each node and
+therefore on the Ethereum network as soon as a block has been validated [[11]](#Bibliography-1). [[6]](#Bibliography-1)
+
+Accordingly, decentralised and secure applications can be developed on the Ethereum blockchain that not only transfer
+money decentrally, but also store data decentrally and securely. These applications are also called decentralised
+applications (dApps) because of their decentralised nature. In order to execute smart contracts and store data on
+Ethereum, a fee must be paid because a node performs such operations like transactions in the EVM. These fees are
+expressed as Giga-Wei (GWEI). Wei is the smallest unit in the network and is equivalent to 10<sup>18</sub>
+ether [[12]](#Bibliography-1). Ether or GWEI is a kind of fuel in the network and is therefore also called
+gas. [[6]](#Bibliography-1)
+
+In contrast to the Bitcoin network, the Ethereum network is not static and is being further developed by many different
+developer teams worldwide from the Ethereum ecosystem. The biggest upgrade since its launch in 2015 is Ethereum 2.0.
+This upgrade is intended to make the Ethereum network more scalable, secure and efficient. This is to be achieved by
+moving from a proof-of-work consensus to a proof-of-stake consensus. In the process, new blocks are to be validated by
+holding Ether. This eliminates the computationally intensive mining process and makes the network more economical and
+decentralised, as it is not large data centres that validate the blocks, but those with a particularly high amount of
+Ether. With regulated staking pools, associations of many small Ether holders, anyone can participate in staking, even
+with only a little amount of Ether. Most importantly, the upgrade should result in lower fees on the network, which not
+only makes transactions cheaper, but also makes dApps with smart contracts more appealing and more secure through more
+decentralisation. [[13]](#Bibliography-1) [[14]](#Bibliography-1)
 
 #### 2.1.4 Potential and current purpose of cryptocurrencies
 
@@ -276,3 +321,31 @@ allows him to contribute to the security of the network. [[4]](#Bibliography-1)
 [7] *Beigel, Ofir*, "51% Attack Explained – a Beginner’s Guide", 99Bitcoins 2020
 <br>https://99bitcoins.com/51-percent-attack/
 <br>(last accessed 30.03.2021)
+
+[8] *Buterin, Vitalik*, "Understanding the Ethereum Blockchain Protocol", London 2015, min. 2:00-4:00
+<br>https://archive.devcon.org/devcon-1/details/
+<br>(last accessed 30.03.2021)
+
+[9] *BitInfoCharts*, "Ethereum (ETH) statistiken und informationen", 2021
+<br>https://bitinfocharts.com/de/ethereum/
+<br>(last accessed 30.03.2021)
+
+[10] *Ward, Chris*, "Ethash", Ethereum Wiki 2020
+<br>https://eth.wiki/en/concepts/ethash/ethash
+<br>(last accessed 30.03.2021)
+
+[11] *Beregszászi, Alex*, "Ethereum Virtual Machine (EVM)", Ethereum.org 2021
+<br>https://ethereum.org/en/developers/docs/evm/
+<br>(last accessed 30.03.2021)
+
+[12] *Wood, Gavin*, "Ethereum: A secure decentralised generalised transaction ledger", Petersburg Version 41c1837 2021
+<br>https://github.com/ethereum/yellowpaper
+<br>(last accessed 03.04.2021)
+
+[13] *Ethereum.org*, "A digital future on a global scale", 2021
+<br>https://ethereum.org/en/eth2/vision/
+<br>(last accessed 02.04.2021)
+
+[14] *Dog, Decentralized*, "A Dive Into Ethereum 2.0", CoinMarketCap 2020
+<br>https://coinmarketcap.com/alexandria/article/a-dive-into-ethereum-2-0
+<br>(last accessed 02.04.2021)
