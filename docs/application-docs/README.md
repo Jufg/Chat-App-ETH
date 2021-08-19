@@ -236,6 +236,54 @@ decentralisation. [[13]](#Bibliography-1) [[14]](#Bibliography-1)
 
 #### 2.1.4 Potential and current purpose of cryptocurrencies
 
+Cryptocurrencies now have a global market capitalisation of 1.97 trillion US dollars [[3]](#Bibliography-1). This
+includes not only Bitcoin, but also more than 4,500 other cryptocurrencies that have specialised in other use cases (cf.
+[chap. 2.1.1](#211-Development-of-cryptocurrencies)). But which potential do cryptocurrencies have in our networked
+world and how are they already being used?
+
+Cryptocurrencies use cryptography, decentralised networks and blockchain technology to offer an independent, global,
+anonymous and free means of payment. Because this technology is available to anyone with internet access and anyone can
+work to improve it, cryptocurrencies are a much more democratic monetary system than the current one. What is special
+about cryptocurrencies is not only the technology, but also the global dimension. Cryptocurrencies are particularly
+popular in countries like Nigeria, Vietnam and South Africa [[15]](#Bibliography-1). These are developing or emerging
+countries. There are rather weak and unstable currencies. Citizens there try to change from their currencies into stable
+currencies like the US dollar or the euro. However, these are often highly regulated by local authorities. Therefore,
+cryptocurrencies offer people a safe and anonymous way to store value. Since wallets are secured with a so-called "seed
+phrase", i.e. a random sequence of 12 to 24 words, owners of cryptocurrencies only have to remember this seed phrase.
+With this phrase, people can everywhere recover their wallets and coins and dispose of their money. Since the phrase is
+not written down, the possession of money is protected from illegal or authoritarian access.
+
+Cryptocurrencies and especially the blockchain technology on which they are based are also attractive for broad
+application in the economy. Blockchain makes not only transactions in the financial sector, but also the exchange of
+business and industrial data secure, calculable and fast. The *International Data Spaces Association* (IDSA), which is
+supported by industrial companies, has developed a reference architecture to enable the secure exchange and linking of
+data within business ecosystems [[16]](#Bibliography-1). Reinhold Achatz, chairman of *IDSA*, considers blockchain to be
+an adequate, mature and recognised technology for the operation of data-driven business
+ecosystems [[17]](#Bibliography-1).
+
+Decentralised Finance (DeFi) is popular in the cryptocurrency sector. DeFi aims to bring traditional financial services
+such as loans or exchanges into the cryptocurrency sector [[18]](#Bibliography-1). The DeFi movement is guided by the
+idea that the financial system is not controlled by a central third party, but is decentralised. Most DeFi projects are
+being developed on the Ethereum platform and use smart contract technology. For example, smart contracts on the Ethereum
+platform can be used to programme their own protocols for tokens in order to create stablecoins that are based on US
+dollars or euros. There are also decentralised exchanges such as UniSwap, on which individual tokens can be traded among
+themselves [[19]](#Bibliography-1). On decentralised peer-to-peer lending platforms like Compound, tokens can be lent or
+borrowed for interest [[20]](#Bibliography-1).
+
+There are other projects in the DeFi field in culture: for example, Non Fungible Tokens (NFT) are used to store digital
+artworks such as pictures or music on the Ethereum blockchain and assign them to a specific account. This makes
+counterfeiting and unauthorised copying of artworks no longer possible.
+
+How many people use cryptocurrencies is difficult to find out because of the anonymity of cryptocurrencies, even if
+every transaction is publicly available. With so-called "OnChain analyses", it is possible to approximate how many users
+there are. There are currently between 1.2 and 1.3 million active addresses on the Bitcoin
+network [[21]](#Bibliography-1). However, these addresses can be operated not only by humans but also by computers, and
+humans can also use several addresses simultaneously. Also not included are people who have cryptocurrencies but do not
+actively use them as a means of payment and rarely make transactions. According to GlassnodeStudio, there are
+approximately 30 million addresses on the Bitcoin network that own Bitcoins [[22]](#Bibliography-1). Again, it is possible that one person
+has access to multiple addresses or there is no longer access to the coins because the private key or seed phrase has
+been lost.
+
 #### 2.2 Weaknesses of current transaction platforms
 
 #### 2.3 Current state of research
@@ -349,3 +397,35 @@ decentralisation. [[13]](#Bibliography-1) [[14]](#Bibliography-1)
 [14] *Dog, Decentralized*, "A Dive Into Ethereum 2.0", CoinMarketCap 2020
 <br>https://coinmarketcap.com/alexandria/article/a-dive-into-ethereum-2-0
 <br>(last accessed 02.04.2021)
+
+[15] *Statista Global Consumer Survey*, "Wie verbreitet ist Crypto-Währung", 2020
+<br>https://de.statista.com/infografik/22561/anteil-der-krypto-nutzer-inausgewaehlten-laendern/
+<br>(last accessed 03.04.2021)
+
+[16] *IDSA*, "International Data Spaces (IDS)", International Data Spaces Association, Dortmund 2019
+<br>https://internationaldataspaces.org/wp-content/uploads/IDSA-Brochure-IDSStandard-for-Data-Sovereignty-Indispensible-Element-for-Data-Ecosystems.pdf
+<br>(last accessed 15.04.2021)
+
+[17] *Achatz, Reinhold*, "Blockchain Technology in IDS", International Data Spaces Association, Dortmund 2019
+<br>https://internationaldataspaces.org/wp-content/uploads/IDSA-Position-PaperBlockchain-Technology-in-IDS.pdf
+<br>(last accessed 15.04.2021)
+
+[18] *CoinMarketCap*, "What Is Decentralized Finance (DeFi)?", 2021
+<br>https://coinmarketcap.com/alexandria/glossary/defi
+<br>(last accessed 03.04.2021)
+
+[19] *Uniswap*, "Swap", Uniswap 2021
+<br>https://app.uniswap.org/#/swap
+<br>(last accessed 17.04.2021)
+
+[20] *Compound*, "Dashboard", Compound Labs 2021
+<br>https://app.compound.finance/
+<br>(last accessed 17.04.2021)
+
+[21] *GlassnodeStudio*, "Bitcoin: Number of Active Addresses", Glassnode 2021
+<br>https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.ActiveCount
+<br>(last accessed 04.04.2021)
+
+[22] *GlassnodeStudio*, "Bitcoin: Number of Addresses with a Non-Zero Balance", Glassnode 2021
+<br>https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.NonZeroCount
+<br>(last accessed 04.04.2021)
