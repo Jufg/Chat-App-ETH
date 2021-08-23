@@ -1,0 +1,16 @@
+.wallet-button {
+    background-color: rgb(251, 218, 97);
+    background-image: linear-gradient(45deg, rgb(251, 218, 97) 0%, rgb(255, 90, 205) 100%);
+    color: #ecebeb;
+    cursor: pointer;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+    transition: 5s ease;
+    outline: none;
+}
+
+.wallet-button:hover {
+    background-color: rgb(215, 189, 82);
+    background-image: linear-gradient(45deg, rgb(215, 189, 82) 0%, rgb(210, 73, 170) 100%);
+}

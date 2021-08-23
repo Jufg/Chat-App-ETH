@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from "react";
 import './style.css'
-import '../../../containers/LoginPage/style.css'
+import '../../../../containers/LoginPage/style.css'
 import {useDispatch, useSelector} from "react-redux";
-import {getRealtimeUsers, updateProfile} from "../../../actions";
+import {getRealtimeUsers, updateProfile} from "../../../../actions";
 
 /**
  * @author Jufg
