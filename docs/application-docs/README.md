@@ -219,7 +219,7 @@ Accordingly, decentralised and secure applications can be developed on the Ether
 money decentrally, but also store data decentrally and securely. These applications are also called decentralised
 applications (dApps) because of their decentralised nature. In order to execute smart contracts and store data on
 Ethereum, a fee must be paid because a node performs such operations like transactions in the EVM. These fees are
-expressed as Giga-Wei (GWEI). Wei is the smallest unit in the network and is equivalent to 10<sup>18</sub>
+expressed as Giga-Wei (GWEI). Wei is the smallest unit in the network and is equivalent to 10<sup>18</sup>
 ether [[12]](#Bibliography-1). Ether or GWEI is a kind of fuel in the network and is therefore also called
 gas. [[6]](#Bibliography-1)
 
@@ -280,11 +280,50 @@ there are. There are currently between 1.2 and 1.3 million active addresses on t
 network [[21]](#Bibliography-1). However, these addresses can be operated not only by humans but also by computers, and
 humans can also use several addresses simultaneously. Also not included are people who have cryptocurrencies but do not
 actively use them as a means of payment and rarely make transactions. According to GlassnodeStudio, there are
-approximately 30 million addresses on the Bitcoin network that own Bitcoins [[22]](#Bibliography-1). Again, it is possible that one person
-has access to multiple addresses or there is no longer access to the coins because the private key or seed phrase has
-been lost.
+approximately 30 million addresses on the Bitcoin network that own Bitcoins [[22]](#Bibliography-1). Again, it is
+possible that one person has access to multiple addresses or there is no longer access to the coins because the private
+key or seed phrase has been lost.
 
 #### 2.2 Weaknesses of current transaction platforms
+
+In the traditional financial system, there are two forms of money ownership: cash and online money. Cash is physically
+present and protected from counterfeiting by watermarks and other protective mechanisms. Small amounts of money can be
+stored well in a purse or piggy bank. For large amounts of money, storage becomes difficult because of security and the
+physical quantity. Anyone who wants to have this money available online must be a customer of a bank and trust that the
+bank will keep the money safe, carry out transactions correctly and, above all, store user data and user behaviour
+securely.
+
+To make payments in shops or online commerce, credit cards are used. Here, it is not only the bank that is responsible
+for the correct execution of transactions but also companies such as _Visa_ or _MasterCard_. If money is to be sent from
+person to person, the Single Euro Payments Area (SEPA) procedure can be used. Here, payments are made directly between
+banks within the euro area. Money can be sent easily and flexibly with online payment services such as _PayPal_ or
+_Sofortüberweisung_. Meanwhile, it is possible to pay with your smartphone or smartwatch and the services of _Google
+Pay_ or _Apple Pay_. Via platforms such as _VimPay_, it is also possible to get in touch with other people via chat and
+send money to that person.
+
+These forms of transactions have one problem in common: a third central party is absolutely necessary for the execution
+of the transaction (cf. [chap. 1](#1-Introduction)), and consumers have to trust that payments will be executed
+correctly. The bank or other payment service providers are responsible for ensuring that not too much or too less is
+debited and that the correct destination account is found. In addition, it is unclear to the consumer which companies
+and banks are involved in the transactions and which data is given to them.
+
+Cryptocurrencies are neutral, unlike the traditional financial system. If one wants to open an account at a bank, a
+large amount of personal data is requested and thoroughly checked before it is possible to use the bank account.
+Moreover, transactions are expensive. A business customer at _PayPal_, for example, pays 50 euros for a transaction of
+2,000 euros [[23]](#Bibliography-1). For private customers, a transaction is free in most cases, but if it goes abroad,
+the fees can be up to 3,99 euros [[24]](#Bibliography-1). Transactions can also take a long time. When paying by credit
+card, a transaction takes up to 30 days. During this time, the transaction sender and recipient have no assurance as to
+whether the transaction will be approved or revoked by the credit institution. With _PayPal_, too, it takes a few days
+until money received is available. During this period, the money is capital for the third party.
+
+Another problem with traditional transaction platforms is their centralised structure. Banks and other payment service
+providers are vulnerable to hacker attacks due to their centrality. Thus, usually only a few computers have control over
+the entire banking system. For example, in the "Carbanak incident" [[25]](#Bibliography-1) about 1.2 billion US dollars
+were looted. Here, the money of several thousand customers was stolen, but only one institution was hacked. In the case
+of cryptocurrencies such as Bitcoin or Ethereum, each owner of the money has the private keys and has kept them safe.
+Should a hack occur here, only the individual person is affected and not the entire network. Even in the case of a 51%
+attack (cf. [chap. 2.1.2](#212-How-transactions-work-in-a-blockchain)), the coins in a wallet are safe, as it is not
+possible to change any transactions in the blockchain afterwards [[7]](#Bibliography-1).
 
 #### 2.3 Current state of research
 
@@ -429,3 +468,16 @@ been lost.
 [22] *GlassnodeStudio*, "Bitcoin: Number of Addresses with a Non-Zero Balance", Glassnode 2021
 <br>https://studio.glassnode.com/metrics?a=BTC&category=Addresses&m=addresses.NonZeroCount
 <br>(last accessed 04.04.2021)
+
+[23] *PayPal Inc.*, "Vorzugskonditionen für gewerbliche Verkäufer", 2021
+<br>https://www.paypal.com/de/webapps/mpp/merchant-fees
+<br>(last accessed 06.04.2021)
+
+[24] *PayPal Inc.*, "PayPal-Gebühren für Privatkunden", 2021
+<br>https://www.paypal.com/de/webapps/mpp/paypal-fees
+<br>(last accessed 06.04.2021)
+
+[25] *Devereux, Charlie; Wild, Franz; Robinson, Edward:* "The Biggest Digital Heist in History Isn’t Over Yet",
+Bloomberg L.P. 2018
+<br>https://www.bloomberg.com/news/features/2018-06-25/the-biggest-digitalheist-in-history-isn-t-over-yet
+<br>(last accessed 05.04.2021)
