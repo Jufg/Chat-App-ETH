@@ -182,8 +182,8 @@ the beginning of the hash value to match the difficulty. The nodes at the same t
 the network. Only the blockchain with the most blocks is accepted. An added block is only accepted if it is still
 present in the blockchain after a long time, i.e. if it has been accepted by a particularly large number of nodes. This
 makes the blockchain particularly secure and decentralised. Because in order to forge a transaction, it would be
-necessary to have at least 51% of the computing power in the network to validate the other blocks with a nonce faster
-than the rest of the network it does over a longer period of time - a so-called 51% attack [[7]](#Bibliography-1).
+necessary to have at least 51 % of the computing power in the network to validate the other blocks with a nonce faster
+than the rest of the network it does over a longer period of time - a so-called 51 % attack [[7]](#Bibliography-1).
 Running a node is possible for any user without much hardware effort (as long as the user doesn't want to mine) and
 allows him to contribute to the security of the network. [[4]](#Bibliography-1)
 
@@ -321,11 +321,61 @@ providers are vulnerable to hacker attacks due to their centrality. Thus, usuall
 the entire banking system. For example, in the "Carbanak incident" [[25]](#Bibliography-1) about 1.2 billion US dollars
 were looted. Here, the money of several thousand customers was stolen, but only one institution was hacked. In the case
 of cryptocurrencies such as Bitcoin or Ethereum, each owner of the money has the private keys and has kept them safe.
-Should a hack occur here, only the individual person is affected and not the entire network. Even in the case of a 51%
+Should a hack occur here, only the individual person is affected and not the entire network. Even in the case of a 51 %
 attack (cf. [chap. 2.1.2](#212-How-transactions-work-in-a-blockchain)), the coins in a wallet are safe, as it is not
 possible to change any transactions in the blockchain afterwards [[7]](#Bibliography-1).
 
 #### 2.3 Current state of research
+
+According to Satoshi Nakamoto, Bitcoin relies on a new privacy model [[4]](#Bibliography-1). He describes that the
+traditional financial system achieves privacy by allowing only a limited number of people to have access to transaction
+information, while hiding the identities from the public, i.e. they do not know from whom the money is transferred to
+whom. The new model outlined by Nakamoto, on the other hand, relies on making the transactions available to the public.
+However, these are separated from individual identities. In this way, it is known that money was transferred, but not
+from who to whom. This is achieved by only storing addresses in the blockchain. These addresses are a public key
+generated from the private key (cf. [chap. 2.1.2](#212-How-transactions-work-in-a-blockchain)). To achieve more privacy,
+several public keys can be generated for the same private key, so that a different public key can be written to the
+blockchain for each transaction. Andreas M. Antonopoulos currently estimates anonymity to be lower than it should be,
+but it could become more anonymous through new cryptographic methods [[26]](#Bibliography-1). In fact, there are now
+ways to use coins more anonymously. For example, the Wasabi wallet with mixed transactions guarantees higher anonymity
+than normal transactions in the Bitcoin network [[27]](#Bibliography-1).
+
+Anotonopoulos considers the anonymity of a currency to be very important for the self-determination and free expression
+of a society. Cryptocurrencies are suitable for transferring money across national borders without interference and
+monitoring from third parties. For example, money would be available for political campaigns that would otherwise be
+subject to financial restrictions; the campaigns could be used to express opinions [[26]](#Bibliography-1). Moreover,
+only 69 % of the population worldwide have an account at a financial institution [[28]](#Bibliography-1). This means
+that 31 % of the world's population do not have an account and may not have access to traditional financial services,
+limiting the use of any cash they may have.
+
+Because of the anonymity, cryptocurrencies are assumed to be used for illegal purposes such as drugs and arms dealing.
+In the Visual Objects Digital Currency Survey [[29]](#Bibliography-1), 38 % of respondents said they use
+cryptocurrencies to buy food and 34 % to buy clothes. 29 % of respondents use cryptocurrencies as an investment or store
+of value, and 21 % reported using cryptocurrencies to buy gold. Comparatively less people reported buying weapons (15 %)
+or drugs (11 %). Although 15 and 11 % may seem high for questionable purchases, the survey shows that accepted
+activities are much more represented in cryptocurrencies.
+
+Cryptocurrencies cause high energy consumption. Bitcoin alone consumes about 144.9 TWh per year [[30]](#Bibliography-1).
+That is about as much electricity as Poland (141 TWh) or Egypt (150 TWh) consume [[31]](#Bibliography-1). Therefore, a
+digital currency as a single application consumes as much electricity as an entire country. However, a country is not in
+relation to a global financial system. For this reason, the electricity consumption can be compared with the traditional
+financial system. For example, the global banking system consumes about 650 TWh/year [[32]](#Bibliography-1). That is
+about 4.5 times as much power as bitcoin. Ulrich Gallersdörfer sees the problem not in the cryptocurrencies themselves,
+but where they get their energy from [[33]](#Bibliography-1). As with the data centres of large internet corporations
+and streaming platforms, cryptocurrencies should also be looked at to see how the energy requirements can be made more
+sustainable in general.
+
+Bitcoin and other cryptocurrencies can be a stable currency for people whose country is unstable and marked by
+corruption. However, Antonopoulos reasons that Bitcoin also serves the world's privileged population: cryptocurrencies
+offer cheaper and faster ways to carry out transactions than the traditional financial system, and even the euro is
+affected by a little inflation. Antonopoulos also cites the neutrality of cryptocurrencies as a major advantage. Thanks
+to the decentralised nature of the network, anyone can participate and use its services. This way, someone could take
+out a loan in the form of cryptocurrencies without that person being checked for their origin, religion, skin colour and
+qualifications. [[34]](#Bibliography-1)
+
+According to Fabian Schär, DeFi products can play a particularly important role for the future. He explains how DeFi
+projects replace traditional financial products and make new products available. The technology of smart contracts could
+be a big component in the cryptocurrency sector in the next few years. [[35]](#Bibliography-1)
 
 #### 2.4 Decentralised transaction mechanisms as a solution approach
 
@@ -481,3 +531,48 @@ possible to change any transactions in the blockchain afterwards [[7]](#Bibliogr
 Bloomberg L.P. 2018
 <br>https://www.bloomberg.com/news/features/2018-06-25/the-biggest-digitalheist-in-history-isn-t-over-yet
 <br>(last accessed 05.04.2021)
+
+[26] *Antonopoulos, Andreas M.*, "Andreas M. Antonopoulos über Bitcoin, Datenschutz, Menschenrechte und die Zukunft von
+Bitcoin", Anita Posch 2018
+<br>https://bitcoinundco.com/de/andreas-antonopoulos-bitcoin-zukunft-podcast/
+<br>(last accessed 06.04.2021)
+
+[27] *Kuhlmann, Max*, "Bitcoin anonym aufbewahren: Wasabi-Wallet verspricht mehr Privacy", BTC ECHO 2018
+<br>https://www.btc-echo.de/bitcoin-anonym-aufbewahren-wasabi-walletverspricht-mehr-privacy/
+<br>(last accessed 06.04.2021)
+
+[28] *Demirgüç-Kunt, Asli et al.*, "The Global Findex Database", World Bank Group 2017
+<br>https://openknowledge.worldbank.org/bitstream/handle/10986/29510/211259ov.pdf
+<br>(last accessed 18.04.2021)
+
+[29] *Clark, Emily*, "Cryptocurrency Statistics: What Are The Myths & Realities?",Visual Objects 2020
+<br>https://visualobjects.com/web-development/understanding-cryptocurrencymyths-realities
+<br>(last accessed 06.04.2021)
+
+[30] *Cambridge Centre for Alternative Finance*, "Cambridge Bitcoin Electricity Consumption Index", 2021
+<br>https://cbeci.org/
+<br>(last accessed 06.04.2021)
+
+[31] *LaenderDaten*, "Stromverbrauch", Lexas 2015
+<br>https://www.laenderdaten.de/energiewirtschaft/elektrische_energie/stromverbrauch.aspx
+<br>(last accessed 06.04.2021)
+
+[32] *Bain, Tyler*, "Introducing CBEI: A new way to measure Bitcoin Network electrical consumption", Bitcoin Magazine
+2020
+<br>https://bitcoinmagazine.com/business/introducing-cbei-a-new-way-tomeasure-bitcoin-network-electrical-consumption
+<br>(last accessed 06.04.2021)
+
+[33] *Gallersdörfer, Ulrich*, "Experten-Interview: „Das Bitcoin-Netzwerk emittiert so viel CO2 wie Las Vegas oder ganze
+Staaten“", Kryptoszene 2020
+<br>https://kryptoszene.de/news/experten-interview-das-bitcoin-netzwerk-emittiertso-viel-co2-wie-las-vegas-oder-ganze-staaten/
+<br>(last accessed 06.04.2021)
+
+[34] *Antonopoulos, Andreas M.*, "Bitcoin: Revolution des Geldsystems oder digitales Gold?", Finanzfluss 2021, min. 7:
+00–19:00
+<br>https://www.youtube.com/watch?v=QiEz1Aw8BEk
+<br>(last accessed 06.04.2021)
+
+[35] *Schär, Fabian*, "Krypto-Experte Schär: «DeFi ist höchst interessant – aber für Spekulanten extrem riskant»",
+Watson 2021
+<br>https://www.watson.ch/wirtschaft/wissen/813917630-krypto-experte-schaerdefi-ist-hoechst-interessant-aber-extrem-riskant
+<br>(last accessed 06.04.2021)
