@@ -379,6 +379,35 @@ be a big component in the cryptocurrency sector in the next few years. [[35]](#B
 
 #### 2.4 Decentralised transaction mechanisms as a solution approach
 
+Traditional financial concepts are very inefficient and expensive because of their centralised structure, so
+transactions can take up to a whole month, and especially large sums and international transactions incur high fees (cf.
+[chap. 2.2](#22-Weaknesses-of-current-transaction-platforms)). In addition, they are only slightly anonymous, are based
+on trust and only after a detailed identity check is it possible for the user to use money online. Moreover, currencies
+in the traditional sense are controlled by a central authority. So central banks have an influence on the value of a
+currency.
+
+In order for an application to send money online, users must enter into contracts or a business agreement with banks,
+credit institutions and payment service providers. In doing so, both the user and the application must trust that
+transactions are carried out correctly. In addition, transactions can take a very long time, and large amounts of money
+can incur high fees for a transaction. Another problem in developing a global transaction application are the different
+currency systems. This means that for cross-border transactions - except within the Eurozone - there must always be an
+exchange between the currencies involved. This means effort even for small amounts, as currency pairs have to be traded
+here on many different exchanges so that money can be sent to each nation.
+
+With their decentralised structure, cryptocurrencies create a global currency that is available everywhere online. They
+offer private individuals significantly more security and control over their money through their decentralised
+structure. They are also more democratic, as everyone has access to the network and can participate in it. Those who
+want to own cryptocurrencies do not have to go through elaborate identity checks and have direct access to many
+different financial products.
+
+With smart contracts, the Ethereum platform offers the possibility of programming new applications on the Ethereum
+blockchain (cf. [chap. 2.1.3](#213-Ethereum-and-Smart-Contracts)). This makes it possible to programme decentralised
+applications without having to develop a blockchain with its own currency. To develop a global transaction application,
+Ethereum is particularly well suited. Besides Ethereum, there are alternatives such as Cardano or Algorand, which have
+lower transaction fees than Ethereum. However, these are still undeveloped, so it is not yet possible to programme smart
+contracts, or the developer community is still small, so it is difficult to find good documentation or threads in
+forums.
+
 ### 3 The development of an application for decentralised transactions
 
 #### 3.1 Objectives and methodology
