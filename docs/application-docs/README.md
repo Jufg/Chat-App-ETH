@@ -414,6 +414,25 @@ forums.
 
 #### 3.1.1 Functions and purpose of the application
 
+Cryptocurrencies and blockchain technology are no longer a pioneering topic, but are reaching broad sections of the
+population. It has become easier to own and trade cryptocurrencies in recent years with a wide range of different crypto
+exchanges and wallet providers. However, apart from financial products and a few social networks like _Cent_ and
+_CryptoKitties_, there are only a few use cases for consumers. Therefore, cryptocurrencies are mainly traded as
+speculative assets.
+
+The application that is to be developed is to enable the analogue and anonymous cash transfer in combination with a
+communication dialogue online.
+
+Until now, it was possible to have a dialogue with messenger services. If one party wanted to send money to the other
+party online, a third party such as a bank or _PayPal_ had to be used. If people wanted to remain completely anonymous,
+pioneers had the option of using cryptocurrencies by exchanging addresses and then making a transfer with their wallet.
+Beyond that, only the physical exchange of cash remained.
+
+With the application, it should now be possible to network like a conventional messenger application, i.e. to
+communicate globally with other people. At the same time, the application is supposed to give the user the possibility
+to use the cryptocurrency Ether. People should not only be able to communicate, but also to send money to each other
+easily, quickly and cheaply. This should work completely anonymously for the user.
+
 #### 3.1.2 Realisation
 
 #### 3.2 Structure and functioning of the application
