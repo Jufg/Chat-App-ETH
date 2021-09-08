@@ -435,6 +435,18 @@ easily, quickly and cheaply. This should work completely anonymously for the use
 
 #### 3.1.2 Realisation
 
+The application is to be usable by everyone and accessible via the internet. Accordingly, a web application is to be
+developed that is accessible via the browser. The user is to access the chat page via a user-friendly login with e-mail
+and password. There, they can then communicate with other users in a one-to-one chat. Via "Settings", the user is
+supposed to get from the chat page to the settings, where, in addition to settings about user data, he will also find
+the "Connect Wallet" button, which he can use to connect his wallet to the application.
+
+In order to make the Messenger application as user-friendly as possible and to make it accessible to users with no
+previous knowledge of cryptocurrencies, a wallet is not a requirement for using the application. So data such as
+messages and user data are not stored on the Ethereum blockchain. Instead, the Messenger application should first store
+data centrally on a server in the conventional way. The application should only then communicate with the Ethereum
+network in order to be able to process payments decentrally via the network securely, cheaply, quickly and anonymously.
+
 #### 3.2 Structure and functioning of the application
 
 #### 3.2.1 Communication with the user - React.js
