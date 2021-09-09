@@ -125,7 +125,7 @@ The public key is the address of a Bitcoin account, the so called "wallet ", to 
 key and the transaction data can then be used to create a cryptographic signature. The transaction data, the signature
 and the public key can then be used to verify whether the signature actually belongs to the private key. In this way, a
 transaction can be signed and verified without the private key having to be publicly known, because only the signature
-is sent to the network. Each transaction receives a hash value (cf. Figure 1). A hash value is a unique value that is
+is sent to the network. Each transaction receives a hash value (cf. _figure 1_). A hash value is a unique value that is
 formed using the hash function "SHA-256". A cryptographic hash function always returns the same unique value for the
 same input. The input cannot be restored from the value [[5]](#Bibliography-1). A cryptographic hash value can therefore
 be understood as a fingerprint of data. Each signature is therefore unique, even though the same transaction is
@@ -138,8 +138,8 @@ unique and secure. [[4]](#Bibliography-1)
 
 Once a transaction has been signed with the private key and verified with an associated public key, the transactions are
 stored in a block. This block is attached to the blockchain. Thereby, the blockchain represents a simple chained list in
-which each block points to the following block in which the successor contains the hash of the predecessor (cf. figure
-2).
+which each block points to the following block in which the successor contains the hash of the predecessor (cf. _figure
+2_).
 
 In order for a block to be verified on the network, a certain number must be found so that the hash of the block starts
 with a certain number of zeros. This number is called "nonce" and is also stored in the block. To find the nonce, every
@@ -157,7 +157,7 @@ in such a way that, with the appropriate computing power, it takes about 10 minu
 block and the transactions it contains. [[4]](#Bibliography-1)
 
 The individual transactions are stored in a so called "Merkle Tree". A Merkle Tree can be understood like a binary tree,
-except that in the Merkle Tree the root is generated from the leaves of the tree (cf. Figure 3). For this purpose, the
+except that in the Merkle Tree the root is generated from the leaves of the tree (cf. _figure 3_). For this purpose, the
 hash values of the transactions are stored in the leaves. From two leaves the node above it is created. It contains a
 hash value that is formed from the two leaves. In the end, only the root of the tree remains. This hash value is also
 called "root hash" and is stored in the block.
@@ -448,6 +448,23 @@ data centrally on a server in the conventional way. The application should only 
 network in order to be able to process payments decentrally via the network securely, cheaply, quickly and anonymously.
 
 #### 3.2 Structure and functioning of the application
+
+The application should be accessible as a web application via a browser (cf. [chap. 3.1.2](#312-Realisation)). To
+realise this, the JavaScript library React.js and the programming language JavaScript are used. React.js makes it
+possible to programme user interfaces and web servers for web applications with JavaScript. In this way, a web
+application can be designed dynamically and interactively with React.js-JSX elements. React.js should then communicate
+with the database, Ethereum and the user.
+
+[<img src="https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974" alt="Figure 4: Server communication in the application shown in simplified form." width="750"/>](https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974)
+
+*Figure 4: Server communication in the application shown in simplified form.*
+
+As shown in _figure 4_, the React.js server communicates with the database, which in this case is represented by _Google
+Firebase_. To enable users to store their Ether securely and still use it in a web application, the Metamask extension
+is available for the browser. Metamask forms an Ethereum wallet integrated in the browser, with which applications can
+communicate via the web3.js API. This means the application can perform transactions on the Ethereum network with
+Metamask and the user's permission. dApps like Compound, CryptoKitties and Cent also use Metamask, which means the user
+only needs to have one wallet in the browser to use Ether in many different applications.
 
 #### 3.2.1 Communication with the user - React.js
 
