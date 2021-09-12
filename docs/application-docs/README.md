@@ -117,9 +117,9 @@ consists of the "Public Key" and the "Private Key". Both keys consist of a seque
 key is public and can be seen by anyone, while the private key is private and only known by the owner. From the private
 key several associated public keys can be generated, so that one account can have several different addresses.
 
-[<img src="https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao" alt="Figure 1: Transactions in the Bitcoin network [4]." width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
+[<img src="https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao" alt="Figure 1: Transactions in the Bitcoin network [4]" width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
 
-*Figure 1: Transactions in the Bitcoin network [[4]](#Bibliography-1).*
+*Figure 1: Transactions in the Bitcoin network [[4]](#Bibliography-1)*
 
 The public key is the address of a Bitcoin account, the so called "wallet ", to which bitcoins can be sent. The private
 key and the transaction data can then be used to create a cryptographic signature. The transaction data, the signature
@@ -132,9 +132,9 @@ be understood as a fingerprint of data. Each signature is therefore unique, even
 executed. The signature can be compared with physical signatures. But the signatures on the Bitcoin network are more
 unique and secure. [[4]](#Bibliography-1)
 
-[<img src="https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym" alt="Figure 2: The Bitcoin Blockchain [4]." width="750"/>](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
+[<img src="https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym" alt="Figure 2: The Bitcoin Blockchain [4]" width="750"/>](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
 
-*Figure 2: The Bitcoin Blockchain [[4]](#Bibliography-1).*
+*Figure 2: The Bitcoin Blockchain [[4]](#Bibliography-1)*
 
 Once a transaction has been signed with the private key and verified with an associated public key, the transactions are
 stored in a block. This block is attached to the blockchain. Thereby, the blockchain represents a simple chained list in
@@ -162,9 +162,9 @@ hash values of the transactions are stored in the leaves. From two leaves the no
 hash value that is formed from the two leaves. In the end, only the root of the tree remains. This hash value is also
 called "root hash" and is stored in the block.
 
-[<img src="https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv" alt="Figure 3: Merkle Tree in Bitcoin [6]." width="750"/>](https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv)
+[<img src="https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv" alt="Figure 3: Merkle Tree in Bitcoin [6]" width="750"/>](https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv)
 
-*Figure 3: Merkle Tree in Bitcoin [[6]](#Bibliography-1).*
+*Figure 3: Merkle Tree in Bitcoin [[6]](#Bibliography-1)*
 
 Because a hash value is unique and differs significantly from its predecessor with only a small change in the input, the
 change in a transaction is reflected directly in the root hash. This change changes the hash value of an entire block
@@ -455,9 +455,9 @@ possible to programme user interfaces and web servers for web applications with 
 application can be designed dynamically and interactively with React.js-JSX elements. React.js should then communicate
 with the database, Ethereum and the user.
 
-[<img src="https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974" alt="Figure 4: Server communication in the application shown in simplified form." width="750"/>](https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974)
+[<img src="https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974" alt="Figure 4: Server communication in the application shown in simplified form" width="750"/>](https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974)
 
-*Figure 4: Server communication in the application shown in simplified form.*
+*Figure 4: Server communication in the application shown in simplified form*
 
 As shown in _figure 4_, the React.js server communicates with the database, which in this case is represented by _Google
 Firebase_. To enable users to store their Ether securely and still use it in a web application, the Metamask extension
@@ -467,6 +467,34 @@ Metamask and the user's permission. dApps like Compound, CryptoKitties and Cent 
 only needs to have one wallet in the browser to use Ether in many different applications.
 
 #### 3.2.1 Communication with the user - React.js
+
+The web application consists of three web pages. The login or registration, the homepage and the settings. On the login
+page, the user can log in with his login data and will be redirected to the homepage. On the registration page, the user
+can register with his or her username, e-mail and password and is then also redirected to the homepage. On the homepage,
+the user can access the individual chats with the particular persons via the list of other users. If the user clicks on
+another user, the chat history with the respective user appears; in addition, there is the option to send a message to
+the other user via a text field and the "Send" button.
+
+If both users have linked the Metamask Wallet to the application, a text field and a button appear with which the user
+can send Ether to the other user. If the user clicks on the settings in the navigation bar, he or she is taken to the
+settings. There, the user will find the "Wallet Settings" with the button "Connect Wallet" and the tab "Personal
+Information", where information such as username, email and password can be changed.
+
+The individual pages are programmed in React.js as components. The components can then contain other components that
+display individual elements on the website. The content to be displayed is programmed in these components using the JSX
+syntax.
+
+[<img src="https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX" alt="Figure 5: React Component Message" width="750"/>](https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX)
+
+*Figure 5: React Component Message*
+
+JSX is passed in the return function of the component and represents HTML code with JavaScript elements. The JavaScript
+elements allow the actually static HTML syntax to be programmed here and to adapt dynamically. For example, the
+ClassName attribute in the div in line 27 contains different values depending on whether the condition is true or not.
+
+In order to process user input directly in React.js, JSX offers the option of storing the input in a specific field
+directly in a state of the component. States of components can be equated with attributes from object-oriented
+programming.
 
 #### 3.2.2 Communication with Ethereum - Metamask
 
