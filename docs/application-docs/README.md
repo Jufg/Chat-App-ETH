@@ -125,7 +125,7 @@ The public key is the address of a Bitcoin account, the so called "wallet ", to 
 key and the transaction data can then be used to create a cryptographic signature. The transaction data, the signature
 and the public key can then be used to verify whether the signature actually belongs to the private key. In this way, a
 transaction can be signed and verified without the private key having to be publicly known, because only the signature
-is sent to the network. Each transaction receives a hash value (cf. _figure 1_). A hash value is a unique value that is
+is sent to the network. Each transaction receives a hash value (cf. _Figure 1_). A hash value is a unique value that is
 formed using the hash function "SHA-256". A cryptographic hash function always returns the same unique value for the
 same input. The input cannot be restored from the value [[5]](#Bibliography-1). A cryptographic hash value can therefore
 be understood as a fingerprint of data. Each signature is therefore unique, even though the same transaction is
@@ -138,7 +138,7 @@ unique and secure. [[4]](#Bibliography-1)
 
 Once a transaction has been signed with the private key and verified with an associated public key, the transactions are
 stored in a block. This block is attached to the blockchain. Thereby, the blockchain represents a simple chained list in
-which each block points to the following block in which the successor contains the hash of the predecessor (cf. _figure
+which each block points to the following block in which the successor contains the hash of the predecessor (cf. _Figure
 2_).
 
 In order for a block to be verified on the network, a certain number must be found so that the hash of the block starts
@@ -157,7 +157,7 @@ in such a way that, with the appropriate computing power, it takes about 10 minu
 block and the transactions it contains. [[4]](#Bibliography-1)
 
 The individual transactions are stored in a so called "Merkle Tree". A Merkle Tree can be understood like a binary tree,
-except that in the Merkle Tree the root is generated from the leaves of the tree (cf. _figure 3_). For this purpose, the
+except that in the Merkle Tree the root is generated from the leaves of the tree (cf. _Figure 3_). For this purpose, the
 hash values of the transactions are stored in the leaves. From two leaves the node above it is created. It contains a
 hash value that is formed from the two leaves. In the end, only the root of the tree remains. This hash value is also
 called "root hash" and is stored in the block.
@@ -459,7 +459,7 @@ with the database, Ethereum and the user.
 
 *Figure 4: Server communication in the application shown in simplified form*
 
-As shown in _figure 4_, the React.js server communicates with the database, which in this case is represented by _Google
+As shown in _Figure 4_, the React.js server communicates with the database, which in this case is represented by _Google
 Firebase_. To enable users to store their Ether securely and still use it in a web application, the Metamask extension
 is available for the browser. Metamask forms an Ethereum wallet integrated in the browser, with which applications can
 communicate via the web3.js API. This means the application can perform transactions on the Ethereum network with
@@ -497,6 +497,33 @@ directly in a state of the component. States of components can be equated with a
 programming.
 
 #### 3.2.2 Communication with Ethereum - Metamask
+
+Metamask is a wallet that is located directly in the browser (
+cf. [chap. 3.2](#32-Structure-and-functioning-of-the-application)). It can be installed as a browser extension in most
+browsers. In this wallet, the user can create a new wallet with a new public key and private key to which he can send
+Ether. It is also possible to import an existing wallet with the private key.
+
+The web3.js API can be used to communicate with the Metamask Wallet, if the user has installed the extension in the
+browser. In order for the user to also access the wallet, he or she must give the permission for the application to
+access the wallet. If the user agrees, the respective domain of the application is stored in the wallet. The user can
+remove this at any time so that the application is no longer allowed to communicate with the wallet.
+
+With various API requests, the application can retrieve data from the wallet and send orders to the wallet. For example,
+the application can request the addresses, the current balance and, if applicable, the various tokens.
+
+[<img src="https://ipfs.io/ipfs/QmUfpBBjmsdhkpn6532sQJSBQ1DGVzvCKGiLtwM27nHXct" alt="Figure 6: Function sendETH from HomePage" width="750"/>](https://ipfs.io/ipfs/QmUfpBBjmsdhkpn6532sQJSBQ1DGVzvCKGiLtwM27nHXct)
+
+*Figure 6: Function sendETH from HomePage*
+
+With these requests, the application can request data from the wallet, but also order transactions. This request is
+called up with "eth_sendTransaction", as shown in _Figure 6_. As a parameter, it must be specified from which address
+which amount is to be transferred to which address. The sender address is the address that is currently linked to the
+wallet and the recipient address is the address that the other user last linked to the application. All values must be
+passed as hexadecimal numbers. The addresses are stored as hexadecimal strings and can be transferred without any
+problems. The user specifies the amount to be transferred in Ether and as a decimal number. Therefore, the number must
+first be converted into Wei, the smallest unit in the network, and then into the corresponding hexadecimal number.
+Example: 1 ETH = 10<sup>18</sup> Wei; 10<sup>18</sup> Wei = 0xde0b6b3a7640000 Wei (Hexadecimal numbers are marked in the
+Ethereum network starting with 0x).
 
 #### 3.2.3 Data storage and processing - Firebase
 
