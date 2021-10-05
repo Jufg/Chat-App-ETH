@@ -51,7 +51,7 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
     * #### [Challenges during the development process](#52-Challenges-during-the-development-process)
 - #### [Evaluative summary of the result](#6-Evaluative-summary-of-the-result)
 - #### [List of Figures](#List-of-figures-1)
-- #### [Bibliography](#Bibliography-1)
+- #### [Bibliography](c)
 
 ---
 
@@ -527,6 +527,43 @@ Ethereum network starting with 0x).
 
 #### 3.2.3 Data storage and processing - Firebase
 
+Chat and user data must be stored centrally so that no Ethereum wallet is required to use the application (
+cf. [chap. 3.1.2](#312-Realisation)). The data is stored on _Google Firebase_, as it offers the possibility to manage
+users and to retrieve and edit data in real time. _Firebase_ offers to store data in JSON format. According
+to [[36]](#Bibliography-1), the JSON format is based on the JavaScript programming language and can therefore be used
+well in this language. Firebase was chosen because of its user-friendliness; an alternative is _MongoDB_.
+
+In order for React.js to communicate with _Firebase_ to retrieve and process data, the JavaScript library Redux.js is
+used. Redux.js is used to retrieve data from the database and then make it available to the React Components in a
+bundled and organised way. This means that a data query does not have to be programmed into each React Component
+individually. This makes it easier to use data in an application. [[37]](#Bibliography-1)
+
+In order for a user to register and log in, his or her username, email and password in encrypted form are stored (cf.
+_Figure 7_). In addition, it is stored whether the user is currently online so that this can be displayed to other
+users, when the user created an account and a unique ID so that this object can be referred to in other objects in the
+database. If the user has connected a Metamask Wallet to the application, the address is also stored so that other users
+can make transactions to this address.
+
+[<img src="https://ipfs.io/ipfs/Qmc61MehtwoCyPxu33ZrR4ZsPH4pmzZJ9c5HQ1ufuRKc3q" alt="Figure 7: User data in JSON-Format" width="750"/>](https://ipfs.io/ipfs/Qmc61MehtwoCyPxu33ZrR4ZsPH4pmzZJ9c5HQ1ufuRKc3q)
+
+*Figure 7: User data in JSON-Format*
+
+In order for transactions and messages to be displayed in the chat, they are also stored (cf. _Figure 8_). Again, a
+timestamp indicating when the message or transaction was sent and a unique ID are stored. In order to be able to track
+who sent the message and who should receive it, the ID of the respective user is stored in the JSON object either as
+sender or recipient. To determine whether it is a message or a transaction, this is also stored as a string. If it is a
+message, the message is saved under _message_. If it is a transaction, another object with the transaction data is saved
+under _transaction_. This object contains the hash value of the transaction, the address of the sender and the
+recipient, the amount of Ether transferred in Ether and the transaction fee in Ether.
+
+[<img src="https://ipfs.io/ipfs/QmabwyBhfp7fPjtTCeK9NMuHTfMiD3sEt5g1NnpjXSBMbz" alt="Figure 8: Messages and transactions in JSON-Format" width="750"/>](https://ipfs.io/ipfs/QmabwyBhfp7fPjtTCeK9NMuHTfMiD3sEt5g1NnpjXSBMbz)
+
+*Figure 8: Messages and transactions in JSON-Format*
+
+For simplicity, data such as the messages and transactions are not encrypted here. However, this could be supplemented
+with end-to-end encryption. According to [[38]](#Bibliography-1), with end-to-end encryption it is possible that only the sender and
+receiver can read the messages. On the server, however, the data is encrypted and not readable by the application.
+
 #### 3.3 Conventional and innovative elements of the application
 
 #### 3.4 Outlook
@@ -628,7 +665,7 @@ Ethereum network starting with 0x).
 <br>(last accessed 15.04.2021)
 
 [17] *Achatz, Reinhold*, "Blockchain Technology in IDS", International Data Spaces Association, Dortmund 2019
-<br>https://internationaldataspaces.org/wp-content/uploads/IDSA-Position-PaperBlockchain-Technology-in-IDS.pdf
+<br>https://internationaldataspaces.org/wp-content/uploads/dlm_uploads/IDSA-Position-Paper-Blockchain-Technology-in-IDS.pdf
 <br>(last accessed 15.04.2021)
 
 [18] *CoinMarketCap*, "What Is Decentralized Finance (DeFi)?", 2021
@@ -708,3 +745,15 @@ Staaten“", Kryptoszene 2020
 Watson 2021
 <br>https://www.watson.ch/wirtschaft/wissen/813917630-krypto-experte-schaerdefi-ist-hoechst-interessant-aber-extrem-riskant
 <br>(last accessed 06.04.2021)
+
+[36] *Json.org*, "Introducing Json"
+<br>https://www.json.org/json-en.html
+<br>(last accessed 09.04.2021)
+
+[37] *Abramov, Dan*, "Redux Essentials, Part 1: Redux Overview and Concepts"
+<br>https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+<br>(last accessed 09.04.2021)
+
+[38] *Kaspersky Team*, "Was eine Ende-zu-Ende-Verschlüsselung ist und warum Sie eine benötigen", AO Kaspersky Lab 2020
+<br>https://www.kaspersky.de/blog/what-is-end-to-end-encryption/25190/
+<br>(last accessed 09.04.2021)
