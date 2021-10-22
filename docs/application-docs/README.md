@@ -561,18 +561,102 @@ recipient, the amount of Ether transferred in Ether and the transaction fee in E
 *Figure 8: Messages and transactions in JSON-Format*
 
 For simplicity, data such as the messages and transactions are not encrypted here. However, this could be supplemented
-with end-to-end encryption. According to [[38]](#Bibliography-1), with end-to-end encryption it is possible that only the sender and
-receiver can read the messages. On the server, however, the data is encrypted and not readable by the application.
+with end-to-end encryption. According to [[38]](#Bibliography-1), with end-to-end encryption it is possible that only
+the sender and receiver can read the messages. On the server, however, the data is encrypted and not readable by the
+application.
 
 #### 3.3 Conventional and innovative elements of the application
 
+The application consists of various elements to design a messenger application that supports decentralised transactions.
+It draws on both conventional and innovative elements.
+
+The application has two basic functions: the messenger function and the function to execute decentralised transactions
+on the Ethereum network to other users. The concept of a messenger application is conventional. The first messenger
+service, _ICQ_, appeared in 1996. Since then, many other messenger services have developed, such as _WhatsApp_,
+_Telegram_, _Signal_ or _Threema_. In the present application, data is stored centrally on a server, as in conventional
+messenger services. Accordingly, user data and chat messages are affected by the advantages and disadvantages of a
+central server structure. A third party must be trusted to store the data and there is a higher vulnerability to hacker
+attacks. On the other hand, data can be delivered much faster.
+
+The application, on the other hand, combines this conventional concept of a central messenger service with the
+innovative element of the decentralised transaction mechanism with Ethereum. Established messenger services such as
+_Signal_ also integrate cryptocurrencies [[39]](#Bibliography-1). However, only the cryptocurrency MobileCoin is used
+there. The innovative thing about using Ethereum and Metamask is that not only can a cryptocurrency be used here, it is
+also possible to use tokens. In addition, Metamask is already integrated into many other dApps and is therefore already
+used by those who use dApps and Ethereum.
+
 #### 3.4 Outlook
+
+With its transaction function, the present application offers more than a conventional messenger application. With a
+view to decentralised transactions, it is still one-sided, but can be extended by additional functions.
+
+Cryptocurrencies are in a constant state of change and are supplemented by many new projects. Results of these projects
+can be integrated into the application, for example to make it more secure and user-friendly.
 
 #### 3.4.1 Decentralised data storage with IPFS
 
+The decentralised data storage in the Ethereum network poses two challenges for the application: First, a user must have
+an Ethereum wallet in order for the data to be associated with them, and second, data storage on the EVM is treated like
+transactions [[6]](#Bibliography-1). Therefore, a transaction fee would have to be paid each time a user or a message is
+stored. The Inter Planentary File System (IPFS) offers a possible solution.
+
+IPFS was developed in 2015 by Juan Benet and is a decentralised peer-to-peer file system. Here, files are stored
+decentrally on a network of nodes. The files are stored in an IPFS object. This object has a hash value that can be used
+to identify the object in the network. The IPFS object contains the data of the file and links in which hash values of
+other IPFS objects can be stored in order to link to other files in the network. If a file is to be retrieved in the
+network, the hash value must be specified. The nodes then search the network for this hash value and return the file.
+Because a file is stored on the network with the hash, it is not possible to change the file without changing the hash.
+
+[<img src="https://ipfs.io/ipfs/QmYJ3hbetQBhzdRBcG5KsSCjHWa8YyHJAvz8wvXjJDWrhY" alt="Figure 9: Visualisation of version control in IPFS according to [40]" width="750"/>](https://ipfs.io/ipfs/QmYJ3hbetQBhzdRBcG5KsSCjHWa8YyHJAvz8wvXjJDWrhY)
+
+*Figure 9: Visualisation of version control in IPFS according to [[40]](#Bibliography-1).*
+
+If you want to change a file, you use a version history (cf. _Figure 9_). This consists of several IPFS objects called
+commits, which link to the IPFS object with the current file and to the previous commit. [[40]](#Bibliography-1)
+
+IPFS offers the possibility to store files in a tamper-proof way and to be able to track changes. However, IPFS has
+disadvantages. There is a risk that if a file is stored on only a few nodes, they will lose the file or go offline. This
+means that the file can no longer be found in the network and the user can no longer retrieve the file. According
+to [[41]](#Bibliography-1), the Filecoin project is trying to solve this with a proof-of-replication procedure by
+rewarding nodes for providing storage space and requiring a certain number of nodes to store a file. This way,
+individual users would not have to pay for storage, but the application would. Since the application does not charge
+users, it would have to finance the storage space with advertising or data trading. A suitable solution is being
+searched for.
+
 #### 3.4.2 ERC-20 token integration
 
+The Ethereum Blockchain makes it possible to store tokens on the blockchain using smart contracts and the ERC-20
+standard. These tokens can serve different purposes. For example, they can represent a points system on an online
+platform or represent entirely separate currencies. Among other things, ERC-20 tokens can also be used to represent
+existing conventional currencies such as US dollars or euros. They can also represent gold or other cryptocurrencies
+such as Bitcoin on the Ethereum blockchain. [[42]](#Bibliography-1)
+
+These tokens can be stored in an Ethereum wallet in the same way as Ether, including in the Metamask wallet. The
+application could support different tokens. This would allow users to send not only Ether, but also tokens that
+represent other currencies. So, with Tether-USD (USDT) or USD Coin (USDC), they would be able to send US dollars to
+other people via the application. With the Wrapped-BTC (WBTC) or Tether-Gold (XAUT) token, users could also send bitcoin
+or gold via the Ethereum blockchain.
+
+As Ether is exposed to large price fluctuations, these tokens could allow users to send stable currencies and not take a
+high risk of loss when they want to send coins to other people.
+
 #### 3.4.3 Group chats with smart contracts
+
+So far, it is possible to communicate with individual users in the present application. Group chats, as offered by other
+messenger services, can still be implemented. There, users could simply send money to members of a group. In addition,
+with smart contracts, it would be possible for a group to save together towards a specific goal.
+
+Group members would send Ether or other tokens to a smart contract after previously determining how much money to save
+and to which address the collected money should be sent when the savings target is reached. The smart contract would
+check how much money is in the contract every time money is transferred to it. As soon as this amount equals or exceeds
+the target amount, the coins are paid out to the specified address. If the contract is to be dissolved before the target
+is reached, this can be attached to a transaction as a message and thereby communicated to the contract. If the contract
+receives this message, it sends the received coins back to the corresponding addresses.
+
+This would enable users not only to chat in a group, but also to collect money together. This money can be used for
+various purposes, whereby the savings purpose remains anonymous to third parties. By doing this via a smart contract,
+there is no need to trust a third party that the money will be paid out correctly. The smart contract would always be
+executed by EVM as programmed.
 
 ### 4 Documentation
 
@@ -757,3 +841,19 @@ Watson 2021
 [38] *Kaspersky Team*, "Was eine Ende-zu-Ende-Verschlüsselung ist und warum Sie eine benötigen", AO Kaspersky Lab 2020
 <br>https://www.kaspersky.de/blog/what-is-end-to-end-encryption/25190/
 <br>(last accessed 09.04.2021)
+
+[39] *Beuth, Patrick*, "Signal testet Bezahlfunktion mit Kryptowährung", Der Spiegel Hamburg 2021
+<br>https://www.spiegel.de/netzwelt/apps/messenger-app-signal-testetbezahlfunktion-mit-kryptowaehrung-a-f03e2d66-be58-44fd-b0fd-acfe697078b2
+<br>(last accessed 10.04.2021)
+
+[40] *Benet, Juan*, "IPFS - Content Addressed, Versioned, P2P File System", 2014
+<br>https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-filesystem.pdf
+<br>(last accessed 09.04.2021)
+
+[41] *Benet, Juan; Daylrymple, David; Greco, Nicola*: "Proof of Replication", 2017
+<br>https://research.filecoin.io/papers
+<br>(last accessed 10.04.2021)
+
+[42] *Slyghtlyfloating*: "ERC-20 Token Standard", 2017
+<br>https://ethereum.org/en/developers/docs/standards/tokens/erc-20/
+<br>(last accessed 10.04.2021)
