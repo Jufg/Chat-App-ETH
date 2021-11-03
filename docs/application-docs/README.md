@@ -51,7 +51,8 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
     * #### [Challenges during the development process](#52-Challenges-during-the-development-process)
 - #### [Evaluative summary of the result](#6-Evaluative-summary-of-the-result)
 - #### [List of Figures](#List-of-figures-1)
-- #### [Bibliography](c)
+- #### [Bibliography](#Bibliography-1)
+- #### [Appendix](#Appendix)
 
 ---
 
@@ -238,7 +239,7 @@ decentralisation. [[13]](#Bibliography-1) [[14]](#Bibliography-1)
 
 Cryptocurrencies now have a global market capitalisation of 1.97 trillion US dollars [[3]](#Bibliography-1). This
 includes not only Bitcoin, but also more than 4,500 other cryptocurrencies that have specialised in other use cases (cf.
-[chap. 2.1.1](#211-Development-of-cryptocurrencies)). But which potential do cryptocurrencies have in our networked
+[chapter 2.1.1](#211-Development-of-cryptocurrencies)). But which potential do cryptocurrencies have in our networked
 world and how are they already being used?
 
 Cryptocurrencies use cryptography, decentralised networks and blockchain technology to offer an independent, global,
@@ -302,7 +303,7 @@ Pay_ or _Apple Pay_. Via platforms such as _VimPay_, it is also possible to get 
 send money to that person.
 
 These forms of transactions have one problem in common: a third central party is absolutely necessary for the execution
-of the transaction (cf. [chap. 1](#1-Introduction)), and consumers have to trust that payments will be executed
+of the transaction (cf. [chapter 1](#1-Introduction)), and consumers have to trust that payments will be executed
 correctly. The bank or other payment service providers are responsible for ensuring that not too much or too less is
 debited and that the correct destination account is found. In addition, it is unclear to the consumer which companies
 and banks are involved in the transactions and which data is given to them.
@@ -322,7 +323,7 @@ the entire banking system. For example, in the "Carbanak incident" [[25]](#Bibli
 were looted. Here, the money of several thousand customers was stolen, but only one institution was hacked. In the case
 of cryptocurrencies such as Bitcoin or Ethereum, each owner of the money has the private keys and has kept them safe.
 Should a hack occur here, only the individual person is affected and not the entire network. Even in the case of a 51 %
-attack (cf. [chap. 2.1.2](#212-How-transactions-work-in-a-blockchain)), the coins in a wallet are safe, as it is not
+attack (cf. [chapter 2.1.2](#212-How-transactions-work-in-a-blockchain)), the coins in a wallet are safe, as it is not
 possible to change any transactions in the blockchain afterwards [[7]](#Bibliography-1).
 
 #### 2.3 Current state of research
@@ -333,10 +334,10 @@ information, while hiding the identities from the public, i.e. they do not know 
 whom. The new model outlined by Nakamoto, on the other hand, relies on making the transactions available to the public.
 However, these are separated from individual identities. In this way, it is known that money was transferred, but not
 from who to whom. This is achieved by only storing addresses in the blockchain. These addresses are a public key
-generated from the private key (cf. [chap. 2.1.2](#212-How-transactions-work-in-a-blockchain)). To achieve more privacy,
-several public keys can be generated for the same private key, so that a different public key can be written to the
-blockchain for each transaction. Andreas M. Antonopoulos currently estimates anonymity to be lower than it should be,
-but it could become more anonymous through new cryptographic methods [[26]](#Bibliography-1). In fact, there are now
+generated from the private key (cf. [chapter 2.1.2](#212-How-transactions-work-in-a-blockchain)). To achieve more
+privacy, several public keys can be generated for the same private key, so that a different public key can be written to
+the blockchain for each transaction. Andreas M. Antonopoulos currently estimates anonymity to be lower than it should
+be, but it could become more anonymous through new cryptographic methods [[26]](#Bibliography-1). In fact, there are now
 ways to use coins more anonymously. For example, the Wasabi wallet with mixed transactions guarantees higher anonymity
 than normal transactions in the Bitcoin network [[27]](#Bibliography-1).
 
@@ -381,10 +382,10 @@ be a big component in the cryptocurrency sector in the next few years. [[35]](#B
 
 Traditional financial concepts are very inefficient and expensive because of their centralised structure, so
 transactions can take up to a whole month, and especially large sums and international transactions incur high fees (cf.
-[chap. 2.2](#22-Weaknesses-of-current-transaction-platforms)). In addition, they are only slightly anonymous, are based
-on trust and only after a detailed identity check is it possible for the user to use money online. Moreover, currencies
-in the traditional sense are controlled by a central authority. So central banks have an influence on the value of a
-currency.
+[chapter 2.2](#22-Weaknesses-of-current-transaction-platforms)). In addition, they are only slightly anonymous, are
+based on trust and only after a detailed identity check is it possible for the user to use money online. Moreover,
+currencies in the traditional sense are controlled by a central authority. So central banks have an influence on the
+value of a currency.
 
 In order for an application to send money online, users must enter into contracts or a business agreement with banks,
 credit institutions and payment service providers. In doing so, both the user and the application must trust that
@@ -401,7 +402,7 @@ want to own cryptocurrencies do not have to go through elaborate identity checks
 different financial products.
 
 With smart contracts, the Ethereum platform offers the possibility of programming new applications on the Ethereum
-blockchain (cf. [chap. 2.1.3](#213-Ethereum-and-Smart-Contracts)). This makes it possible to programme decentralised
+blockchain (cf. [chapter 2.1.3](#213-Ethereum-and-Smart-Contracts)). This makes it possible to programme decentralised
 applications without having to develop a blockchain with its own currency. To develop a global transaction application,
 Ethereum is particularly well suited. Besides Ethereum, there are alternatives such as Cardano or Algorand, which have
 lower transaction fees than Ethereum. However, these are still undeveloped, so it is not yet possible to programme smart
@@ -449,7 +450,7 @@ network in order to be able to process payments decentrally via the network secu
 
 #### 3.2 Structure and functioning of the application
 
-The application should be accessible as a web application via a browser (cf. [chap. 3.1.2](#312-Realisation)). To
+The application should be accessible as a web application via a browser (cf. [chapter 3.1.2](#312-Realisation)). To
 realise this, the JavaScript library React.js and the programming language JavaScript are used. React.js makes it
 possible to programme user interfaces and web servers for web applications with JavaScript. In this way, a web
 application can be designed dynamically and interactively with React.js-JSX elements. React.js should then communicate
@@ -499,7 +500,7 @@ programming.
 #### 3.2.2 Communication with Ethereum - Metamask
 
 Metamask is a wallet that is located directly in the browser (
-cf. [chap. 3.2](#32-Structure-and-functioning-of-the-application)). It can be installed as a browser extension in most
+cf. [chapter 3.2](#32-Structure-and-functioning-of-the-application)). It can be installed as a browser extension in most
 browsers. In this wallet, the user can create a new wallet with a new public key and private key to which he can send
 Ether. It is also possible to import an existing wallet with the private key.
 
@@ -528,7 +529,7 @@ Ethereum network starting with 0x).
 #### 3.2.3 Data storage and processing - Firebase
 
 Chat and user data must be stored centrally so that no Ethereum wallet is required to use the application (
-cf. [chap. 3.1.2](#312-Realisation)). The data is stored on _Google Firebase_, as it offers the possibility to manage
+cf. [chapter 3.1.2](#312-Realisation)). The data is stored on _Google Firebase_, as it offers the possibility to manage
 users and to retrieve and edit data in real time. _Firebase_ offers to store data in JSON format. According
 to [[36]](#Bibliography-1), the JSON format is based on the JavaScript programming language and can therefore be used
 well in this language. Firebase was chosen because of its user-friendliness; an alternative is _MongoDB_.
@@ -664,13 +665,109 @@ executed by EVM as programmed.
 
 #### 4.1.1 First planning and sketches
 
+At the beginning of the development, there were considerations about what the application should look like and what it
+has to do. A rough sketch of the application was made, which clarifies the structure and functionality of the
+application.
+
+[<img src="https://ipfs.io/ipfs/QmUSqD2gEjtcND4dRsCjPZ7se1nZjpAzaL7Lf1d6YHsuQ7" alt="Figure 10: First sketch of the application" width="750"/>](https://ipfs.io/ipfs/QmUSqD2gEjtcND4dRsCjPZ7se1nZjpAzaL7Lf1d6YHsuQ7)
+
+*Figure 10: First sketch of the application*
+
+_Figure 10_ shows the sketch of the messenger application in which it should be possible to communicate with other users
+and, as can be seen in the chat history, to send Ether. In this sketch, it is still assumed that it is possible to
+provide the user with their own wallet in the application. In this way, the user would always have to send his Ether to
+the wallet in the application if he wants to dispose of his money there. However, this is inconvenient for the user
+because fees are charged for each transaction and they cannot use their Ether in other applications. In addition, the
+application would have to manage the private keys and keep them safe. This could be a security risk for the application,
+as someone could dispose of the user's coins with the captured keys (
+cf. [chapter 2.1.1](#211-Development-of-cryptocurrencies)).
+
+Since the browser wallet Metamask is considered particularly secure and established and is used by many other dApps, it
+was decided to install it in the browser as an extension (
+cf. [chapter 3.2.2](#322-Communication-with-Ethereum---Metamask)). Private keys are stored in the user's own browser
+instead of with a third party. Users can not only send new coins to the wallet, but also import existing wallets with
+the private key.
+
 #### 4.1.2 Development of a first messenger application
+
+Based on the planning and sketch made beforehand, a web application was then programmed that fulfils the purpose of a
+messenger ([See appendix](#Appendix) for further illustrations).
+
+A web server is needed so that a web application can react dynamically to user input. Since previous experience with
+JavaScript and Node.js is available and React.js is a widely used JavaScript library, Node.js in conjunction with
+React.js was chosen as the web server.
+
+Programming of a simple chat application was started in order to learn how to use a frontend library like React.js and
+to test the data storage in the application. To realise the chat, two servers were programmed: a pure Node.js server and
+a React.js server. The Node.js server communicated only with the database in order to retrieve data in an organised way
+and to pass it bundled to the React.js server. The data was exchanged between the servers using Socket.IO. This then
+processed the data and passed it on as a web page to the browser and therefore to the user.
+
+In this version of the application, it was only possible to communicate with all users in a single chat room, as only
+the content and sender of a message were stored. So the application could assign messages to a user, but not to who it
+was intended for.
 
 #### 4.1.3 Extended planning
 
+The first version of the application was a good way to get used to working with a library like React.js and to learn how
+to build a messenger application. However, the application programmed so far did not fulfil the goal of a one-to-one
+chat with other users, and payments via the Ethereum network were also not yet possible. In addition, the construction
+of the application was complex and inefficient due to the two servers.
+
+Therefore, a new database system was modelled that not only stores who a message comes from, but also to whom it should
+be sent. In addition, this model should also store the Ethereum addresses of the users so that these could be used for
+transactions. This model corresponds to the one currently used (
+cf. [chapter 3.2.3](#323-Data-storage-and-processing---Firebase)).
+
+In order to make the server structure more simple and efficient, two servers should no longer be used, which separately
+represent the backend and frontend of the application, but only one React.js server, which can manage both user input
+and data from the database. Redux.js should be used so that the React.js server can communicate easily and in a
+structured way with the database. With the library, it should be possible to query data from the database within
+React.js and pass it on to the individual React.js components in an organised manner (
+cf. [chapter 3.2.3](#323-Data-storage-and-processing---Firebase)).
+
 #### 4.1.4 Development of a private messenger application
 
+According to the new plan, a second version of the application was developed. Since the server structure of the new
+application was to differ significantly from the first version, a new React.js server was programmed. With this, a
+[repository](https://github.com/Jufg/Chat-App-ETH) was also created on GitHub, where the source code is saved and
+documented (cf. [chapter A.1.1](#Appendix)).
+
+_Google Firebase_ was used as the database for the new application, as it is particularly easy to manage users and data
+here (cf. [chapter 3.2.3](#323-Data-storage-and-processing---Firebase)). Since it was now possible with the new database
+system to assign messages to the sender and recipient, a list of users could be programmed in this version of the
+application. This was done in the same way as in _Figure 10_ and allows the user to open or start a chat with another
+user. It was now possible not only to display the messages of the two users in a chat, but in the chat they could also
+be displayed according to recipient and sender.
+
+Since the user should also be able to connect settings of his login data and later also a wallet to the application, the
+Settings page was programmed. Here, the user can change his or her user data such as username, email and password.
+
 #### 4.1.5 Extending the application with the Metamask Wallet
+
+The application allows users to communicate with each other. With the Metamask Wallet and the Web3.js API, it should now
+be possible for users to send money to each other via decentralised transactions.
+
+In order for users to be able to use the Metamask Wallet in the application, they must first connect it to the
+application and allow the application access to the wallet. The user should be able to define this in the settings. For
+this purpose, a button was programmed on the settings page with which the application sends a request to the Metamask
+extension - provided the user has installed this extension in the browser - asking for access to the wallet. If the user
+agrees, the application can access the addresses of the wallet and send requests for transactions to the wallet. The
+current address is stored in the database.
+
+Since a user can connect their wallet to the application and the Ethereum address is stored in the database, the
+application has enough information to forward a transaction to the Metamask wallet. To make this possible, another text
+field was added in which the user can write the amount of Ether to be sent.
+
+[<img src="https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw" alt="Figure 11: Metamask Transaction Confirmation" width="750"/>](https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw)
+
+*Figure 11: Metamask Transaction Confirmation*
+
+If the user clicks on the button "ETH", a window of the Metamask Extension opens in which all details of the transaction
+are displayed (cf. _Figure 11_). The user can adjust the transaction fees himself. The transaction is confirmed with the
+Confirm button and Metamask signs it with the private key. The transaction can still be cancelled at this point by
+clicking the Decline button. The server saves the transaction as a message in the database and displays it in the chat
+history (cf. [chapter 3.2.3](#323-Data-storage-and-processing---Firebase)).
 
 ### 5 Critical reflection
 
@@ -857,3 +954,5 @@ Watson 2021
 [42] *Slyghtlyfloating*: "ERC-20 Token Standard", 2017
 <br>https://ethereum.org/en/developers/docs/standards/tokens/erc-20/
 <br>(last accessed 10.04.2021)
+
+### Appendix
