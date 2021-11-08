@@ -4,7 +4,6 @@ import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {getRealtimeUsers, updateAdresse, updateProfile, updateProfileHash} from "../../actions";
 import Web3 from "web3";
-import {IPFSaddData, IPFSfetchData} from "../../utils/IPFSfunctions";
 
 /**
  * @author Jufg
@@ -22,8 +21,9 @@ const SettingsPage = (props) => {
     const [email, setEmail] = useState('');
     const [newPass, setNewPass] = useState('');
     const [pass, setPass] = useState('');
+    const [profilePic, setProfilePic] = useState(null);
 
-    let unsubscribe;
+    let unsubscribe
 
     useEffect(() => {
 
@@ -93,15 +93,19 @@ const SettingsPage = (props) => {
         return false;
     }
 
+    const retrieveFile = (e) => {
+        const data = e.target.files[0];
+        const reader = new window.FileReader();
+        reader.readAsArrayBuffer(data);
+        reader.onloadend = () => {
+            setProfilePic(Buffer(reader.result))
+        }
+
+        e.preventDefault();
+    }
+
     const uploadImageToIPFS = () => {
-        IPFSaddData().then(hash => {
-
-        });
-
-        /*IPFSfetchData('QmYKtvp8XiBEVrPK3X9ZQZ1znMuBsKMesUViZ93eGenhGK').then(data => {
-            console.log(data)
-            dispatch(updateProfileHash(auth.uid, data));
-        });*/
+        console.log(profilePic)
     }
 
     return (
@@ -153,13 +157,24 @@ const SettingsPage = (props) => {
                         Profile Picture:
                     </div>
                     <div className="settings-child">
-                        <img src="https://photogrammer.dev/images/galerie-small/IMG_1-Small.png"
+                        <img src=
+                                 {
+                                     user.users.find(({uid}) => uid === auth.uid) !== undefined ?
+                                         user.users.find(({uid}) => uid === auth.uid).IPFS_ProfilePicHash:null
+                                 }
                              style={{width: "200px"}}/>
                     </div>
                     <div className="settings-child">
-                        <button className="wallet-button"
-                                onClick={uploadImageToIPFS}>
-                            upload image
+
+                        <input type='file'
+                               accept=".png , .jpeg, .jpg"
+                               onChange={retrieveFile}>
+                        </input>
+                        <button
+                            className="wallet-button"
+                            onClick={uploadImageToIPFS}
+                        >
+                            Upload file to ipfs
                         </button>
                     </div>
                 </div>

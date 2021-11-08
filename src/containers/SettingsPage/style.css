@@ -15,7 +15,7 @@
 .settings-box {
     display: flex;
     flex-direction: row;
-    justify-content: right;
+
     padding: 0 5vh;
 }
 
