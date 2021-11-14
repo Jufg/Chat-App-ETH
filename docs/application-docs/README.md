@@ -16,6 +16,7 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
 
 ## Table of Contents
 
+- #### [List of abbreviations](#List-of-abbreviations)
 - #### [Introduction](#1-Introduction)
 - #### [Initial position](#2-Initial-position)
     * #### [Cryptocurrencies](#21-Cryptocurrencies)
@@ -55,6 +56,24 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
 - #### [Appendix](#Appendix)
 
 ---
+
+### List of abbreviations
+
+API: Application Programming Interface
+<br>CeFi: Centralised Finance
+<br>DAO: Decentralised Autonomous Organisation
+<br>dApps: Decentralised Applications
+<br>DeFi: Decentralised Finance
+<br>EVM: Ethereum Virtual Machine
+<br>GWEI: Giga-Wei
+<br>IDSA: International Data Spaces Association
+<br>IPFS: Inter Planetary File System
+<br>NFT: Non Fungible Token
+<br>SEPA: Single Euro Payments Area
+<br>USDC: US-Dollar Coin
+<br>USDT: Tether US-Dollar
+<br>WBTC: Wrapped Bitcoin
+<br>XAUT: Tether Gold
 
 ### 1 Introduction
 
@@ -773,9 +792,110 @@ history (cf. [chapter 3.2.3](#323-Data-storage-and-processing---Firebase)).
 
 #### 5.1 General conditions of the paper
 
+At the beginning of the work, cryptocurrencies were rarely used and were little noticed by society or viewed with
+restraint. This was caused, for example, by the fact that cryptocurrencies were associated with illegal darknet
+activities. In addition, the crash of the crypto bubble in 2017 led to cryptocurrencies being seen as investments with
+very high risk.
+
+Since the end of 2020, interest in cryptocurrencies has increased sharply [[43]](#Bibliography-1). After falling to a
+new low in the "covid crash" at the beginning of 2020, cryptocurrencies have repeatedly reached new all-time highs since
+the end of 2020 [[3]](#Bibliography-1). Public confidence in cryptocurrencies and the blockchain technology behind them
+has strengthened. Demand has also surged for DeFi; for example, USDC supply on Compound nearly tripled from February to
+April 2021 [[44]](#Bibliography-1), and liquidity on Uniswap nearly quadrupled from $2.16 billion to $8.27 billion from
+January to April 2021 [[45]](#Bibliography-1). This development confirms the relevance of decentralized transaction
+mechanisms and their platforms.
+
+Also, the high trading volume, which amounts to between one and two billion US dollars per day on
+Uniswap [[45]](#Bibliography-1), confirms that decentralized applications are stable and scalable. Therefore, a global
+transaction application with decentralized mechanisms must be given high importance and high demand is expected. This
+has confirmed and reinforced the intention to develop the present application.
+
+In addition, the potential and functionalities of dApps in combination with the Metamask Wallet have proven to be very
+good. Every user can decide individually where and how he wants to use his Metamask Wallet. The application has no
+control over the private keys and can therefore not dispose of the user's coins. The user can anonymously decide how and
+where to use his money. So, he can use the wallet he uses in the application also in other dApps like Compound or
+Uniswap. In this way, the user can not only send his coins in the application, but also provide them as liquidity on
+Uniswap or lend them on Compound for interest.
+
 #### 5.2 Challenges during the development process
 
+As the application has been developed, situations and insights have arisen that have slowed down and influenced the
+development process.
+
+For example, the library React.js. was a challenge: although it facilitated the development of a dynamic website, there
+are significant differences in contrast to the development with pure JavaScript and Node.js. React.js offers the new
+syntax JSX, which can be used to develop the dynamic elements of a web page. This syntax consists of HTML and JavaScript
+elements (cf. [chapter 3.2.1](#321-Communication-with-the-user---React.js)). With JSX it is possible in React.js to call
+HTML elements functions and states of a React.js component. Since the web server normally only projects an HTML document
+statically onto a web page, the direct interaction between HTML and the JavaScript server had to be learned first.
+
+Another challenge was communicating via an API with the database or the Metamask wallet. This type of communication
+involves asynchronous operations in the program, referred to as "async functions" in JavaScript. These asynchronous
+operations are characterized by the fact that subsequent steps are executed with a time delay. Example: For a database
+query, it is specified that the program waits until data is available before processing it. If it is not specified in
+the program to wait for data, the program executes the following commands in parallel without data being
+present [[46]](#Bibliography-1). This type of JavaScript functions had to be learned first.
+
+The use of Redux.js was also unfamiliar. Redux.js works with so-called "Reducers", in which the queried data from the
+database is merged and made available to the components in an organized manner. This simplifies later access and clarity
+over the data from the database, but is a bit more complex and unfamiliar to program.
+
+The biggest challenge during the development process was the integration of Ethereum. At the beginning of the
+development, it was unclear whether it was possible to store messages and user data centrally or decentrally on the
+blockchain. After extensive review of the technology and the goals of the application, decentralized data storage had to
+be ruled out. In addition, documentation for the development of a dApp is not widely available, and few developers had
+previously explored this type of programming. So it was difficult to figure out how a decentralized application could be
+developed and to find suitable solutions to problems and errors.
+
 ### 6 Evaluative summary of the result
+
+Cryptocurrencies have been in use since 2009 with Bitcoin and are gaining popularity. They have greatly changed the way
+payments are made over the Internet with decentralized networks and cryptographic processes, offering people new ways to
+use and dispose of money online. Moreover, compared to conventional monetary systems, cryptocurrencies are more global,
+free, democratic and economical.
+
+Newer cryptocurrencies use the blockchain technology developed for Bitcoin to solve problems or create new functions.
+For example, for the cryptocurrency Ethereum, blockchain can be used to program decentralized applications that offer
+the same or new functionalities as previous financial services. These applications are called DeFi and represent a
+counter design to the traditional centralized financial system, called Centralised Finance (CeFi). In the innovative
+decentralized finance applications, there is no need for a third party to provide services and control financial flows.
+Compared to the traditional financial system, this saves effort and energy and makes financial transactions more
+anonymous.
+
+Due to their more private, cheaper, and freer nature, cryptocurrencies offer themselves to develop an application that
+allows people not only to connect globally, but also to send money globally. Ethereum, as the largest cryptocurrency
+platform, and Ether, as the second largest cryptocurrency, are very well suited for developing such an application. In
+combination with the browser wallet Metamask, Ethereum can be integrated into the application in a user-friendly way, so
+that users can send coins to other users, but always keep control over their coins.
+
+The application is supposed to be user-friendly and therefore does not require any prior knowledge about
+cryptocurrencies and Ethereum. Only for the use of Ether in the application, the user must be able to operate a wallet.
+To make this possible, user and chat data is stored centrally in JSON format on the _Google Firebase_ database. The
+application runs on a React.js server so that it can react dynamically to user input and process it.
+
+The application consists of a chat page where users can chat with each other in a one-to-one chat after registering and
+logging in. In the settings on the settings page, users can change their login data, but also link a Metamask wallet to
+the application. If the chat partner has also linked a wallet to their application, both can send Ether to each other
+via the Ethereum blockchain. The transactions are executed decentrally and securely through blockchain technology.
+
+With the latest developments from the field of cryptocurrencies, the application can still be improved or expanded. With
+IPFS, it could be possible to store and execute the parts of the application that have been operated centrally so far in
+a decentralized manner. The Filecoin project is trying to use proof-of-replication to solve problems that arise on IPFS.
+The effort to develop a decentralized application in every aspect could also benefit from this.
+
+The Ethereum platform offers the possibility to program directly on the blockchain with smart contracts. With the ERC-20
+standard, this technology offers the possibility to program own tokens on the Ethereum blockchain. These can, for
+example, represent conventional currencies such as the US dollar. The tokens can be integrated into the application and
+thereby enable the user to send other currencies to other users as well.
+
+Smart contract technology can also be used in the application to allow multiple group members to save towards a goal in
+a group chat. This could also be implemented in a decentralized manner without a third party managing the money saved.
+
+The application can be used to send money securely and easily, independently and efficiently to other people who also
+use the application. Both the application and the currency used are neutral with regard to religion, nationality,
+cultural origin or social status. Unlike traditional financial systems, transactions take place in a decentralized
+manner - they can hardly be controlled by third parties, for example authorities. New technologies still hold a lot of
+potential to improve and further develop the application.
 
 ### List of figures
 
@@ -951,8 +1071,24 @@ Watson 2021
 <br>https://research.filecoin.io/papers
 <br>(last accessed 10.04.2021)
 
-[42] *Slyghtlyfloating*: "ERC-20 Token Standard", 2017
+[42] *Slyghtlyfloating*, "ERC-20 Token Standard", 2017
 <br>https://ethereum.org/en/developers/docs/standards/tokens/erc-20/
 <br>(last accessed 10.04.2021)
+
+[43] *Google Trends*, "Suchtrend von Kryptowährung, Bitcoin und DeFi", Google Ireland Limited Irland 2021
+<br>https://trends.google.de/trends/explore?date=today%205-y&q=%2Fm%2F0vpj4_b,%2Fm%2F05p0rrx,DeFi
+<br>(last accessed 16.04.2021)
+
+[44] *Compound.finance*, "USD Coin", Compound Labs 2021
+<br>https://compound.finance/markets/USDC
+<br>(last accessed 16.04.2021)
+
+[45] *Uniswap*, "Uniswap Analytics", Uniswap 2021
+<br>https://info.uniswap.org/home
+<br>(last accessed 16.04.2021)
+
+[46] *MDN Web Docs*, "Async function", Mozilla 2021
+<br>https://developer.mozilla.org/de/docs/Web/JavaScript/Reference/Statements/async_function
+<br>(last accessed 17.04.2021)
 
 ### Appendix
