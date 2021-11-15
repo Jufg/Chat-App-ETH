@@ -1,8 +1,16 @@
-*Work in Progress !*
+# Etheruem Chat-App
 
-# Etheruem Chat-App - Documentation
+### A special learning achievement on the topic "Decentralised Networks and Decentralised Finance" in the subject computer science at the Städtisches Gymnasium Sundern
 
-The original paper in German is available [here](https://ipfs.io/ipfs/QmUM7XV6z44oXp1jGWzNjnqrApnec5HpBo3VTUr81ivKP8).
+Written by: Juri Kembügler
+
+Mentoring teacher: Dr. Sandra Wortmann
+
+Processing period: June 8, 2020 to April 22, 2021
+
+---
+ 
+[To download the paper click here.](https://ipfs.io/ipfs/QmUM7XV6z44oXp1jGWzNjnqrApnec5HpBo3VTUr81ivKP8)
 
 ## Abstract
 
@@ -16,7 +24,7 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
 
 ## Table of Contents
 
-- #### [List of abbreviations](#List-of-abbreviations)
+- #### [List of abbreviations](#list-of-abbreviations-1)
 - #### [Introduction](#1-Introduction)
 - #### [Initial position](#2-Initial-position)
     * #### [Cryptocurrencies](#21-Cryptocurrencies)
@@ -53,27 +61,41 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
 - #### [Evaluative summary of the result](#6-Evaluative-summary-of-the-result)
 - #### [List of Figures](#List-of-figures-1)
 - #### [Bibliography](#Bibliography-1)
-- #### [Appendix](#Appendix)
+- #### [Appendix](#appendix-1)
 
 ---
 
 ### List of abbreviations
 
 API: Application Programming Interface
-<br>CeFi: Centralised Finance
-<br>DAO: Decentralised Autonomous Organisation
-<br>dApps: Decentralised Applications
-<br>DeFi: Decentralised Finance
-<br>EVM: Ethereum Virtual Machine
-<br>GWEI: Giga-Wei
-<br>IDSA: International Data Spaces Association
-<br>IPFS: Inter Planetary File System
-<br>NFT: Non Fungible Token
-<br>SEPA: Single Euro Payments Area
-<br>USDC: US-Dollar Coin
-<br>USDT: Tether US-Dollar
-<br>WBTC: Wrapped Bitcoin
-<br>XAUT: Tether Gold
+
+CeFi: Centralised Finance
+
+DAO: Decentralised Autonomous Organisation
+
+dApps: Decentralised Applications
+
+DeFi: Decentralised Finance
+
+EVM: Ethereum Virtual Machine
+
+GWEI: Giga-Wei
+
+IDSA: International Data Spaces Association
+
+IPFS: Inter Planetary File System
+
+NFT: Non Fungible Token
+
+SEPA: Single Euro Payments Area
+
+USDC: US-Dollar Coin
+
+USDT: Tether US-Dollar
+
+WBTC: Wrapped Bitcoin
+
+XAUT: Tether Gold
 
 ### 1 Introduction
 
@@ -778,7 +800,7 @@ Since a user can connect their wallet to the application and the Ethereum addres
 application has enough information to forward a transaction to the Metamask wallet. To make this possible, another text
 field was added in which the user can write the amount of Ether to be sent.
 
-[<img src="https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw" alt="Figure 11: Metamask Transaction Confirmation" width="750"/>](https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw)
+[<img src="https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw" alt="Figure 11: Metamask Transaction Confirmation" height="750"/>](https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw)
 
 *Figure 11: Metamask Transaction Confirmation*
 
@@ -898,6 +920,44 @@ manner - they can hardly be controlled by third parties, for example authorities
 potential to improve and further develop the application.
 
 ### List of figures
+
+[Figure 1: Transactions on the Bitcoin network [4]](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYra)
+
+[Figure 2: The Bitcoin Blockchain [4]](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
+
+[Figure 3: Merkle Tree in Bitcoin [6]](https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv)
+
+[Figure 4: Server communication in the application shown in simplified form](https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974)
+
+[Figure 5: React Component Message](https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX)
+
+[Figure 6: Function sendETH from HomePage](https://ipfs.io/ipfs/QmUfpBBjmsdhkpn6532sQJSBQ1DGVzvCKGiLtwM27nHXct)
+
+[Figure 7: User data in JSON-Format](https://ipfs.io/ipfs/Qmc61MehtwoCyPxu33ZrR4ZsPH4pmzZJ9c5HQ1ufuRKc3q)
+
+[Figure 8: Messages and transactions in JSON-Format](https://ipfs.io/ipfs/QmabwyBhfp7fPjtTCeK9NMuHTfMiD3sEt5g1NnpjXSBMbz)
+
+[Figure 9: Visualisation of version control in IPFS according to [40]](https://ipfs.io/ipfs/QmYJ3hbetQBhzdRBcG5KsSCjHWa8YyHJAvz8wvXjJDWrhY)
+
+[Figure 10: First sketch of the application](https://ipfs.io/ipfs/QmUSqD2gEjtcND4dRsCjPZ7se1nZjpAzaL7Lf1d6YHsuQ7)
+
+[Figure 11: Metamask Transaction Confirmation](https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw)
+
+[Figure A.12: Login/Register-Page](https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7)
+
+[Figure A.13: Chat in the app without wallet](https://ipfs.io/ipfs/Qmdfu9Q3hevUWnYjMsv3RUU7rUjiZQGSpEyUZpqft1Er5x)
+
+[Figure A.14: Settings page](https://ipfs.io/ipfs/QmaZVFvuMEK5XxNq8wCuGPwDpW8fdrVdJMdiRpNa8E7Gn9)
+
+[Figure A.15: Linking the wallet, Step 1](https://ipfs.io/ipfs/QmRJbCKKtDrSG11NnfCCv9oxHvxreJU98j9e7SokbWU7Jx)
+
+[Figure A.16: Linking the wallet, Step 2](https://ipfs.io/ipfs/QmeEh8aaGz4RaZBfrNbQY6QWeNCZRqDwGbjESGUByiVjqi)
+
+[Figure A.17: Chat with linked wallet](https://ipfs.io/ipfs/QmUiQsFJxavfodNbcUSBgKUVsedjC5hT8SWkN7sLC6DAjk)
+
+[Figure A.18: Transaction to other user](https://ipfs.io/ipfs/QmTF81vHVaoAet21ZVnQ3SrWHxRt9zdoagnD3ANcEE8Ph3)
+
+[Figure A.19: Chat after the transaction has been executed](https://ipfs.io/ipfs/QmfHUqL1kcpQ4YxNDiB67PVyQuZeBHE3cZJBZLtBK8YxYk)
 
 ### Bibliography
 
@@ -1064,7 +1124,7 @@ Watson 2021
 <br>(last accessed 10.04.2021)
 
 [40] *Benet, Juan*, "IPFS - Content Addressed, Versioned, P2P File System", 2014
-<br>https://github.com/ipfs/ipfs/blob/master/papers/ipfs-cap2pfs/ipfs-p2p-filesystem.pdf
+<br>https://ipfs.io/ipfs/QmV9tSDx9UiPeWExXEeH6aoDvmihvx6jD5eLb4jbTaKGps
 <br>(last accessed 09.04.2021)
 
 [41] *Benet, Juan; Daylrymple, David; Greco, Nicola*: "Proof of Replication", 2017
@@ -1092,3 +1152,95 @@ Watson 2021
 <br>(last accessed 17.04.2021)
 
 ### Appendix
+
+#### A.1 Source Code
+
+#### A.1.1 Repository
+
+The source code of the application is located on GitHub. There, the individual production steps of the final version of
+the application are stored by the version control system "Git".
+
+The repository can be found at https://github.com/Jufg/Chat-App-ETH.
+
+#### A.1.2 Auxiliaries
+
+Node.js Dependencies:
+
+- React.js:
+  https://reactjs.org/
+
+
+- Firebase:
+  https://www.npmjs.com/package/firebase
+
+
+- Fontawesome:
+  https://fontawesome.com/how-to-use/on-the-web/using-with/react
+
+
+- Redux:
+  https://redux.js.org/
+
+
+- React-Redux:
+  https://www.npmjs.com/package/react-redux
+
+
+- Redux-thunk:
+  https://www.npmjs.com/package/redux-thunk
+
+
+- Web3
+  https://github.com/ChainSafe/web3.js
+
+
+Programme:
+
+- JetBrains WebStorm:
+  https://www.jetbrains.com/webstorm/
+
+
+- Adobe XD:
+  https://www.adobe.com/de/products/xd.html
+
+
+- Ganache:
+  https://www.trufflesuite.com/ganache 
+
+#### A.2 Graphics of the application 
+
+[<img src="https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7" alt="Figure A.12: Login/Register-Page" width="750"/>](https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7)
+
+*Figure A.12: Login/Register-Page*
+
+[<img src="https://ipfs.io/ipfs/Qmdfu9Q3hevUWnYjMsv3RUU7rUjiZQGSpEyUZpqft1Er5x" alt="Figure A.13: Chat in the app without Wallet" width="750"/>](https://ipfs.io/ipfs/Qmdfu9Q3hevUWnYjMsv3RUU7rUjiZQGSpEyUZpqft1Er5x)
+
+*Figure A.13: Chat in the app without wallet*
+
+[<img src="https://ipfs.io/ipfs/QmaZVFvuMEK5XxNq8wCuGPwDpW8fdrVdJMdiRpNa8E7Gn9" alt="Figure A.14: Settings page" width="750"/>](https://ipfs.io/ipfs/QmaZVFvuMEK5XxNq8wCuGPwDpW8fdrVdJMdiRpNa8E7Gn9)
+
+*Figure A.14: Settings page*
+
+[<img src="https://ipfs.io/ipfs/QmRJbCKKtDrSG11NnfCCv9oxHvxreJU98j9e7SokbWU7Jx" alt="Figure A.15: Linking the Wallet, Step 1" width="750"/>](https://ipfs.io/ipfs/QmRJbCKKtDrSG11NnfCCv9oxHvxreJU98j9e7SokbWU7Jx)
+
+*Figure A.15: Linking the wallet, Step 1*
+
+[<img src="https://ipfs.io/ipfs/QmeEh8aaGz4RaZBfrNbQY6QWeNCZRqDwGbjESGUByiVjqi" alt="Figure A.16: Linking the Wallet, Step 2" width="750"/>](https://ipfs.io/ipfs/QmeEh8aaGz4RaZBfrNbQY6QWeNCZRqDwGbjESGUByiVjqi)
+
+*Figure A.16: Linking the wallet, Step 2*
+
+[<img src="https://ipfs.io/ipfs/QmUiQsFJxavfodNbcUSBgKUVsedjC5hT8SWkN7sLC6DAjk" alt="Figure A.17: Chat with linked wallet" width="750"/>](https://ipfs.io/ipfs/QmUiQsFJxavfodNbcUSBgKUVsedjC5hT8SWkN7sLC6DAjk)
+
+*Figure A.17: Chat with linked wallet*
+
+[<img src="https://ipfs.io/ipfs/QmTF81vHVaoAet21ZVnQ3SrWHxRt9zdoagnD3ANcEE8Ph3" alt="Figure A.18: Transaction to other user" width="750"/>](https://ipfs.io/ipfs/QmTF81vHVaoAet21ZVnQ3SrWHxRt9zdoagnD3ANcEE8Ph3)
+
+*Figure A.18: Transaction to other user*
+
+[<img src="https://ipfs.io/ipfs/QmfHUqL1kcpQ4YxNDiB67PVyQuZeBHE3cZJBZLtBK8YxYk" alt="Figure A.19: Chat after the transaction has been executed" width="750"/>](https://ipfs.io/ipfs/QmfHUqL1kcpQ4YxNDiB67PVyQuZeBHE3cZJBZLtBK8YxYk)
+
+*Figure A.19: Chat after the transaction has been executed*
+
+All graphics used in this work can be accessed and downloaded in full resolution via the following link:
+
+- https://ipfs.io/ipfs/QmQr7gpL6BzwKAwGUScBV7n8PBWQP9ZE8pKcRqtW9PCeQr 
