@@ -9,8 +9,8 @@ Mentoring teacher: Dr. Sandra Wortmann
 Processing period: June 8, 2020 to April 22, 2021
 
 ---
- 
-[To download the paper click here.](https://ipfs.io/ipfs/QmUM7XV6z44oXp1jGWzNjnqrApnec5HpBo3VTUr81ivKP8)
+
+[To download the paper click here.](https://ipfs.io/ipfs/QmQj3hvFkCHMoXjyWb5a2UiNzNHPKYw2sqq3MCFHnofGqZ)
 
 ## Abstract
 
@@ -40,9 +40,9 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
         + #### [Functions and purpose of the application](#311-Functions-and-purpose-of-the-application)
         + #### [Realisation](#312-Realisation)
     * #### [Structure and functioning of the application](#32-Structure-and-functioning-of-the-application)
-        + #### [Communication with the user - React.js](#321-Communication-with-the-user---React.js)
-        + #### [Communication with Ethereum - Metamask](#322-Communication-with-Ethereum---Metamask)
-        + #### [Data storage and processing - Firebase](#323-Data-storage-and-processing---Firebase)
+        + #### [Communication with the user – React.js](#321-Communication-with-the-user-–-React.js)
+        + #### [Communication with Ethereum – Metamask](#322-Communication-with-Ethereum-–-Metamask)
+        + #### [Data storage and processing – Firebase](#323-Data-storage-and-processing-–-Firebase)
     * #### [Conventional and innovative elements of the application](#33-Conventional-and-innovative-elements-of-the-application)
     * #### [Outlook](#34-Outlook)
         + #### [Decentralised data storage with IPFS](#341-Decentralised-data-storage-with-IPFS)
@@ -55,7 +55,7 @@ using the [Ethereum](https://ethereum.org/) network and the browser extension [M
         + #### [Extended planning](#413-Extended-planning)
         + #### [Development of a private messenger application](#414-Development-of-a-private-messenger-application)
         + #### [Extending the application with the Metamask Wallet](#415-Extending-the-application-with-the-Metamask-Wallet)
-- #### [The development of an application for decentralised transactions](#5-The-development-of-an-application-for-decentralised-transactions)
+- #### [Critical reflection](#5-Critical-reflection)
     * #### [General conditions of the paper](#51-General-conditions-of-the-paper)
     * #### [Challenges during the development process](#52-Challenges-during-the-development-process)
 - #### [Evaluative summary of the result](#6-Evaluative-summary-of-the-result)
@@ -165,7 +165,7 @@ key several associated public keys can be generated, so that one account can hav
 
 The public key is the address of a Bitcoin account, the so called "wallet ", to which bitcoins can be sent. The private
 key and the transaction data can then be used to create a cryptographic signature. The transaction data, the signature
-and the public key can then be used to verify whether the signature actually belongs to the private key. In this way, a
+and the public key can then be used to verify whether the signature belongs to the private key. In this way, a
 transaction can be signed and verified without the private key having to be publicly known, because only the signature
 is sent to the network. Each transaction receives a hash value (cf. _Figure 1_). A hash value is a unique value that is
 formed using the hash function "SHA-256". A cryptographic hash function always returns the same unique value for the
@@ -221,7 +221,7 @@ search for new transactions to store in a new block. The node checks whether the
 find the matching nonce for the block. Once the nonce is found, the block is appended to the blockchain and communicated
 to all other nodes in the network. These then check whether the nonce is correct, i.e. whether there are enough zeros at
 the beginning of the hash value to match the difficulty. The nodes at the same time search for many other blockchains in
-the network. Only the blockchain with the most blocks is accepted. An added block is only accepted if it is still
+the network. Only the blockchain with the most blocks are accepted. An added block is only accepted if it is still
 present in the blockchain after a long time, i.e. if it has been accepted by a particularly large number of nodes. This
 makes the blockchain particularly secure and decentralised. Because in order to forge a transaction, it would be
 necessary to have at least 51 % of the computing power in the network to validate the other blocks with a nonce faster
@@ -261,7 +261,7 @@ Accordingly, decentralised and secure applications can be developed on the Ether
 money decentrally, but also store data decentrally and securely. These applications are also called decentralised
 applications (dApps) because of their decentralised nature. In order to execute smart contracts and store data on
 Ethereum, a fee must be paid because a node performs such operations like transactions in the EVM. These fees are
-expressed as Giga-Wei (GWEI). Wei is the smallest unit in the network and is equivalent to 10<sup>18</sup>
+expressed as Giga-Wei (GWEI). Wei is the smallest unit in the network and is equivalent to 10<sup>-18</sup>
 ether [[12]](#Bibliography-1). Ether or GWEI is a kind of fuel in the network and is therefore also called
 gas. [[6]](#Bibliography-1)
 
@@ -484,7 +484,7 @@ supposed to get from the chat page to the settings, where, in addition to settin
 the "Connect Wallet" button, which he can use to connect his wallet to the application.
 
 In order to make the Messenger application as user-friendly as possible and to make it accessible to users with no
-previous knowledge of cryptocurrencies, a wallet is not a requirement for using the application. So data such as
+previous knowledge of cryptocurrencies, a wallet is not a requirement for using the application. So, data such as
 messages and user data are not stored on the Ethereum blockchain. Instead, the Messenger application should first store
 data centrally on a server in the conventional way. The application should only then communicate with the Ethereum
 network in order to be able to process payments decentrally via the network securely, cheaply, quickly and anonymously.
@@ -508,7 +508,7 @@ communicate via the web3.js API. This means the application can perform transact
 Metamask and the user's permission. dApps like Compound, CryptoKitties and Cent also use Metamask, which means the user
 only needs to have one wallet in the browser to use Ether in many different applications.
 
-#### 3.2.1 Communication with the user - React.js
+#### 3.2.1 Communication with the user – React.js
 
 The web application consists of three web pages. The login or registration, the homepage and the settings. On the login
 page, the user can log in with his login data and will be redirected to the homepage. On the registration page, the user
@@ -538,14 +538,14 @@ In order to process user input directly in React.js, JSX offers the option of st
 directly in a state of the component. States of components can be equated with attributes from object-oriented
 programming.
 
-#### 3.2.2 Communication with Ethereum - Metamask
+#### 3.2.2 Communication with Ethereum – Metamask
 
 Metamask is a wallet that is located directly in the browser (
 cf. [chapter 3.2](#32-Structure-and-functioning-of-the-application)). It can be installed as a browser extension in most
 browsers. In this wallet, the user can create a new wallet with a new public key and private key to which he can send
 Ether. It is also possible to import an existing wallet with the private key.
 
-The web3.js API can be used to communicate with the Metamask Wallet, if the user has installed the extension in the
+The web3.js API can be used to communicate with the Metamask Wallet if the user has installed the extension in the
 browser. In order for the user to also access the wallet, he or she must give the permission for the application to
 access the wallet. If the user agrees, the respective domain of the application is stored in the wallet. The user can
 remove this at any time so that the application is no longer allowed to communicate with the wallet.
@@ -567,7 +567,7 @@ first be converted into Wei, the smallest unit in the network, and then into the
 Example: 1 ETH = 10<sup>18</sup> Wei; 10<sup>18</sup> Wei = 0xde0b6b3a7640000 Wei (Hexadecimal numbers are marked in the
 Ethereum network starting with 0x).
 
-#### 3.2.3 Data storage and processing - Firebase
+#### 3.2.3 Data storage and processing – Firebase
 
 Chat and user data must be stored centrally so that no Ethereum wallet is required to use the application (
 cf. [chapter 3.1.2](#312-Realisation)). The data is stored on _Google Firebase_, as it offers the possibility to manage
@@ -778,7 +778,7 @@ _Google Firebase_ was used as the database for the new application, as it is par
 here (cf. [chapter 3.2.3](#323-Data-storage-and-processing---Firebase)). Since it was now possible with the new database
 system to assign messages to the sender and recipient, a list of users could be programmed in this version of the
 application. This was done in the same way as in _Figure 10_ and allows the user to open or start a chat with another
-user. It was now possible not only to display the messages of the two users in a chat, but in the chat they could also
+user. It was now possible not only to display the messages of the two users in a chat, but in the chat, they could also
 be displayed according to recipient and sender.
 
 Since the user should also be able to connect settings of his login data and later also a wallet to the application, the
@@ -860,13 +860,13 @@ present [[46]](#Bibliography-1). This type of JavaScript functions had to be lea
 
 The use of Redux.js was also unfamiliar. Redux.js works with so-called "Reducers", in which the queried data from the
 database is merged and made available to the components in an organized manner. This simplifies later access and clarity
-over the data from the database, but is a bit more complex and unfamiliar to program.
+over the data from the database but is a bit more complex and unfamiliar to program.
 
 The biggest challenge during the development process was the integration of Ethereum. At the beginning of the
 development, it was unclear whether it was possible to store messages and user data centrally or decentrally on the
 blockchain. After extensive review of the technology and the goals of the application, decentralized data storage had to
 be ruled out. In addition, documentation for the development of a dApp is not widely available, and few developers had
-previously explored this type of programming. So it was difficult to figure out how a decentralized application could be
+previously explored this type of programming. So, it was difficult to figure out how a decentralized application could be
 developed and to find suitable solutions to problems and errors.
 
 ### 6 Evaluative summary of the result
@@ -921,7 +921,7 @@ potential to improve and further develop the application.
 
 ### List of figures
 
-[Figure 1: Transactions on the Bitcoin network [4]](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYra)
+[Figure 1: Transactions on the Bitcoin network [4]](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
 
 [Figure 2: The Bitcoin Blockchain [4]](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
 
@@ -1193,7 +1193,6 @@ Node.js Dependencies:
 - Web3
   https://github.com/ChainSafe/web3.js
 
-
 Programme:
 
 - JetBrains WebStorm:
@@ -1205,9 +1204,9 @@ Programme:
 
 
 - Ganache:
-  https://www.trufflesuite.com/ganache 
+  https://www.trufflesuite.com/ganache
 
-#### A.2 Graphics of the application 
+#### A.2 Graphics of the application
 
 [<img src="https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7" alt="Figure A.12: Login/Register-Page" width="750"/>](https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7)
 

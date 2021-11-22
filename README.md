@@ -10,7 +10,7 @@ Files, user data, chats and transactions are to function and be stored decentral
 
 ## Documentation
 
-[Here](docs/papers/Ethereum Chat-App-English.md) you can find the Documentation of the Project. It contains a description of what
+[Here](https://github.com/Jufg/Chat-App-ETH/tree/main/docs/papers/) you can find the Documentation of the Project. It contains a description of what
 the application wants to achieve, why this application is needed and how it works.
 
 ## Branches
