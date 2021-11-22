@@ -29,12 +29,12 @@ Geld an Freunde zu senden.
 - #### [Abkürzungsverzeichnis](#Abkürzungsverzeichnis-1)
 - #### [Einleitung](#1-Einleitung)
 - #### [Ausgangslage](#2-Ausgangslage)
-    * #### [Kryptowährungen](#21-kryptowhrungen)
-        + #### [Entstehung von Kryptowährungen](#211-entstehung-von-kryptowhrungen)
+    * #### [Kryptowährungen](#21-Kryptowährungen)
+        + #### [Entstehung von Kryptowährungen](#211-Entstehung-von-Kryptowährungen)
         + #### [Funktionsweise von Transaktionen in einer Blockchain](#212-Funktionsweise-von-Transaktionen-in-einer-Blockchain)
         + #### [Ethereum und Smart Contracts](#213-Ethereum-und-Smart-Contracts)
         + #### [Potenzial und aktueller Anwendungszweck von Kryptowährungen](#214-Potenzial-und-aktueller-Anwendungszweck-von-Kryptowährungen)
-    * #### [Mängel derzeitiger Transaktionsplattformen](#22-mngel-derzeitiger-transaktionsplattformen)
+    * #### [Mängel derzeitiger Transaktionsplattformen](#22-Mängel-derzeitiger-Transaktionsplattformen)
     * #### [Stand der Forschung](#23-Stand-der-Forschung)
     * #### [Dezentrale Transaktionsmechanismen als Lösungsansatz](#24-Dezentrale-Transaktionsmechanismen-als-Lösungsansatz)
 - #### [Die Entwicklung einer Anwendung für dezentrale Transaktionen](#3-Die-Entwicklung-einer-Anwendung-für-dezentrale-Transaktionen)
@@ -296,7 +296,7 @@ durch mehr Dezentralität sicherer macht. [[13]](#Literaturverzeichnis-1) [[14]]
 Mittlerweile weisen Kryptowährungen eine globale Marktkapitalisierung von 1,97 Billionen US-Dollar
 auf [[3]](#Literaturverzeichnis-1). Darin ist nicht nur Bitcoin enthalten, sondern mittlerweile über 4.500 andere
 Kryptowährungen, die sich auf andere Anwendungsfälle spezialisiert haben
-(vgl. [Kap. 2.1.1](#211-entstehung-von-kryptowhrungen)). Doch welches Potenzial haben Kryptowährungen in unserer
+(vgl. [Kap. 2.1.1](#211-Entstehung-von-Kryptowährungen)). Doch welches Potenzial haben Kryptowährungen in unserer
 vernetzten Welt und wie werden sie bereits eingesetzt?
 
 Kryptowährungen bieten mit Hilfe von Kryptografie, dezentralen Netzwerken und der Blockchain-Technologie ein
@@ -451,7 +451,7 @@ in den nächsten Jahren einen großen Bestandteil im Kryptowährungs-Sektor dars
 
 Traditionelle Finanzkonzepte sind durch ihre zentrale Struktur sehr ineffizient und teuer, so dass Transaktionen bis zu
 einen ganzen Monat dauern können, und gerade bei großen Summen und internationalen Transaktionen fallen hohe Gebühren
-an (vgl. [Kap. 2.2](#22-mngel-derzeitiger-transaktionsplattformen)). Zudem sind sie nur wenig anonym, basieren auf
+an (vgl. [Kap. 2.2](#22-Mängel-derzeitiger-Transaktionsplattformen)). Zudem sind sie nur wenig anonym, basieren auf
 Vertrauen und erst nach einer ausführlichen Identitätsprüfung ist es dem Nutzer möglich, online Geld zu verwenden. Zudem
 werden Währungen im herkömmlichen Sinne von einer zentralen Instanz gesteuert. So haben Zentralbanken Einfluss auf den
 Wert einer Währung.
@@ -559,7 +559,7 @@ Die einzelnen Seiten werden in React.js als Components programmiert. Die Compone
 enthalten, die einzelne Elemente auf der Webseite darstellen. In diesen Components wird der darzustellende Inhalt mit
 der JSX Syntax programmiert.
 
-[<img src="https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX" alt="Figure 5: React Component Message" width="750"/>](https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX)
+[<img src="https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX" alt="Abbildung 5: React Component Message" width="750"/>](https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX)
 
 *Abbildung 5: React Component Message*
 
@@ -769,7 +769,7 @@ in der Anwendung senden, wenn er dort über sein Geld verfügen möchte. Dies is
 jeder Transaktion Gebühren anfallen und er sein Ether nicht in anderen Anwendungen nutzen kann. Darüber hinaus müsste
 die Anwendung die Private Keys verwalten und sicher aufbewahren. Dies könnte ein Sicherheitsrisiko für die Anwendung
 sein, da jemand mit den erbeuteten Keys über die Coins der Nutzer verfügen könnte (
-vgl. [Kap. 2.1.1](#211-entstehung-von-kryptowhrungen)).
+vgl. [Kap. 2.1.1](#211-Entstehung-von-Kryptowährungen)).
 
 Da die Browser Wallet Metamask als besonders sicher und etabliert gilt und von vielen anderen dApps verwendet wird,
 wurde entschieden, diese im Browser als Extension zu installieren (
@@ -780,7 +780,7 @@ Wallets mit dem Private Key importieren.
 #### 4.1.2 Entwicklung einer ersten Messenger-Anwendung
 
 Anhand der zuvor angefertigten Planung und Skizze wurde dann eine Webanwendung programmiert, die den Zweck eines
-Messengers erfüllt (Weitere Abbildungen [siehe Anhang](#anhang)).
+Messengers erfüllt (Weitere Abbildungen [siehe Anhang](#anhang-1)).
 
 Damit eine Webanwendung dynamisch auf Nutzereingaben reagieren kann, wird ein Webserver benötigt. Da Vorerfahrungen mit
 JavaScript und Node.js vorhanden sind und React.js eine weit verbreitete JavaScript-Bibliothek ist, wurde als Webserver
@@ -821,7 +821,7 @@ weiterzugeben (vgl. [Kap. 3.2.3](#323-datenspeicherung-und-verarbeitung--firebas
 Nach dem neuen Plan wurde eine zweite Version der Anwendung entwickelt. Da sich die Server-Struktur der neuen Anwendung
 erheblich von der ersten Version unterscheiden sollte, wurde ein neuer React.js-Server programmiert. Damit wurde auch
 ein [Repository](https://github.com/Jufg/Chat-App-ETH) auf GitHub angelegt, in dem der Source Code gesichert und
-dokumentiert wird (vgl. [Kap. A.1.1](#anhang)).
+dokumentiert wird (vgl. [Kap. A.1.1](#anhang-1)).
 
 Für die neue Anwendung wurde als Datenbank _Google Firebase_ eingesetzt, da hier besonders einfach Nutzer und Daten
 verwaltet werden können (vgl. [Kap. 3.2.3](#323-datenspeicherung-und-verarbeitung--firebase)). Da es nun mit dem neuen
