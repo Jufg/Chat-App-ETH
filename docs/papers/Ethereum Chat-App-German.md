@@ -10,7 +10,7 @@ Bearbeitungszeitraum: June 8, 2020 to April 22, 2021
 
 ---
 
-[Hier der PDF Download](https://ipfs.io/ipfs/QmQj3hvFkCHMoXjyWb5a2UiNzNHPKYw2sqq3MCFHnofGqZ)
+[Hier der PDF Download.](https://ipfs.io/ipfs/QmQj3hvFkCHMoXjyWb5a2UiNzNHPKYw2sqq3MCFHnofGqZ)
 
 ## Abstract
 

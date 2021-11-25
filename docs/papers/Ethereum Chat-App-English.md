@@ -10,7 +10,7 @@ Processing period: June 8, 2020 to April 22, 2021
 
 ---
 
-[To download the paper click here.](https://ipfs.io/QmTWXsmAqEXZ9XiBvkpvukWp6Rdgdbg71pyqdiyqDQwUoQ)
+[To download the paper click here.](https://ipfs.io/ipfs/QmTWXsmAqEXZ9XiBvkpvukWp6Rdgdbg71pyqdiyqDQwUoQ)
 
 ## Abstract
 
