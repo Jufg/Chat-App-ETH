@@ -72,7 +72,9 @@ const SettingsPage = (props) => {
                 .then(() => {
                     ethereum.request({method: 'eth_accounts'})
                         .then((accounts) => {
-                            if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
+                            if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress === null) {
+                                dispatch(updateAdresse(auth.uid, accounts[0]));
+                            } else if (accounts.length !== 0 && user.users.find(uid => uid = auth.uid).ETH_Adress[0] !== accounts[0]) {
                                 dispatch(updateAdresse(auth.uid, accounts[0]));
                             }
                         })
