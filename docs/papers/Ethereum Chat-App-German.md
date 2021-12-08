@@ -10,7 +10,7 @@ Bearbeitungszeitraum: June 8, 2020 to April 22, 2021
 
 ---
 
-[Hier der PDF Download](https://ipfs.io/ipfs/QmQj3hvFkCHMoXjyWb5a2UiNzNHPKYw2sqq3MCFHnofGqZ)
+[Hier der PDF Download](https://ipfs.io/ipfs/QmexYXWWVQdRJu2Uqt3jiFAVYFSfVHvWPqvv21bKWpbvrk)
 
 ## Abstract
 
@@ -49,7 +49,7 @@ Geld an Freunde zu senden.
     * #### [Ausblick](#34-Ausblick)
         + #### [Dezentrale Datenspeicherung mit IPFS](#341-Dezentrale-Datenspeicherung-mit-IPFS)
         + #### [Integrierung von ERC-20 Tokens](#342-Integrierung-von-ERC-20-Tokens)
-        + #### [Group chats with smart contracts](#343-Group-chats-with-smart-contracts)
+        + #### [Gruppenchats mit Smart Contracts](#343-gruppenchats-mit-smart-contracts)
 - #### [Dokumentation](#4-Dokumentation)
     * #### [Darstellung des Arbeitsprozesses](#41-Darstellung-des-Arbeitsprozesses)
         + #### [Erste Planung und Skizzen](#411-Erste-Planung-und-Skizzen)
