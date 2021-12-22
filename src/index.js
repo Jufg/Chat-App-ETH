@@ -6,7 +6,6 @@ import * as serviceWorker from './serviceWorker';
 import firebase from "firebase";
 import {Provider} from 'react-redux';
 import store from "./store";
-import ipfs from 'ipfs';
 
 require('dotenv').config()
 

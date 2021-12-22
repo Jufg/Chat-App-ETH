@@ -4,6 +4,10 @@ import Layout from "../../components/Layout";
 import {useDispatch, useSelector} from "react-redux";
 import {getRealtimeUsers, updateAdresse, updateProfile, updateProfileHash} from "../../actions";
 import Web3 from "web3";
+import {create} from "ipfs-http-client";
+
+// Ipfs gateway
+const client = create('https://ipfs.infura.io:5001/api/v0');
 
 /**
  * @author Jufg
@@ -22,6 +26,7 @@ const SettingsPage = (props) => {
     const [newPass, setNewPass] = useState('');
     const [pass, setPass] = useState('');
     const [profilePic, setProfilePic] = useState(null);
+    const [urlArr, setUrlArr] = useState([]);
 
     let unsubscribe
 
@@ -42,10 +47,7 @@ const SettingsPage = (props) => {
         e.preventDefault();
 
         let userDetails = {
-            username,
-            email,
-            newPass,
-            pass
+            username, email, newPass, pass
         }
 
         if (userDetails.pass !== '') {
@@ -78,10 +80,8 @@ const SettingsPage = (props) => {
                             }
                         })
                         .catch((error) => {
-                            console.error(
-                                `Error fetching accounts: ${error.message}.
-       Code: ${error.code}. Data: ${error.data}`
-                            );
+                            console.error(`Error fetching accounts: ${error.message}.
+       Code: ${error.code}. Data: ${error.data}`);
                         });
                 })
                 .catch(e => {
@@ -104,133 +104,129 @@ const SettingsPage = (props) => {
         e.preventDefault();
     }
 
-    const uploadImageToIPFS = () => {
-        console.log(profilePic)
-    }
+    const uploadImageToIPFS = async (e) => {
+        e.preventDefault();
+        try {
+            const created = await client.add(profilePic);
+            const url = `https://ipfs.infura.io/ipfs/${created.path}`;
+            setUrlArr(prev => [...prev, url]);
 
-    return (
-        <Layout>
-            <div className="settings-container">
-                <div className="settings-box">
-                    <div className="settings-header">
-                        Wallet Settings
-                    </div>
-                </div>
-                <div className="settings-box">
-                    <div className="settings-child">
-                        {
-                            window.web3 !== undefined ?
-                                window.web3.currentProvider.selectedAddress ?
-                                    <button
-                                        className="wallet-button"
-                                        style={{
-                                            cursor: 'not-allowed'
-                                        }}>
-                                        Connect
-                                    </button>
-                                    :
-                                    <button
-                                        className="wallet-button"
-                                        onClick={connectWallet}
-                                    >
-                                        Connect
-                                    </button>
-                                :
-                                <button
-                                    className="wallet-button"
-                                    style={{
-                                        cursor: 'not-allowed',
-                                    }}>
-                                    Connect
-                                </button>
-                        }
-                    </div>
-                </div>
-                <hr className="settings-line"/>
-                <div className="settings-box">
-                    <div className="settings-header">
-                        Personal Information
-                    </div>
-                </div>
-                <div className="settings-box">
-                    <div className="settings-child">
-                        Profile Picture:
-                    </div>
-                    <div className="settings-child">
-                        <img src=
-                                 {
-                                     user.users.find(({uid}) => uid === auth.uid) !== undefined ?
-                                         user.users.find(({uid}) => uid === auth.uid).IPFS_ProfilePicHash:null
-                                 }
-                             style={{width: "200px"}}/>
-                    </div>
-                    <div className="settings-child">
+            dispatch(updateProfileHash(auth.uid, created.cid));
+        } catch (error) {
+            console.log(error.message);
+        }
+    };
 
-                        <input type='file'
-                               accept=".png , .jpeg, .jpg"
-                               onChange={retrieveFile}>
-                        </input>
+    return (<Layout>
+        <div className="settings-container">
+            <div className="settings-box">
+                <div className="settings-header">
+                    Wallet Settings
+                </div>
+            </div>
+            <div className="settings-box">
+                <div className="settings-child">
+                    {window.web3 !== undefined ? window.web3.currentProvider.selectedAddress ? <button
+                        className="wallet-button"
+                        style={{
+                            cursor: 'not-allowed'
+                        }}>
+                        Connect
+                    </button> : <button
+                        className="wallet-button"
+                        onClick={connectWallet}
+                    >
+                        Connect
+                    </button> : <button
+                        className="wallet-button"
+                        style={{
+                            cursor: 'not-allowed',
+                        }}>
+                        Connect
+                    </button>}
+                </div>
+            </div>
+            <hr className="settings-line"/>
+            <div className="settings-box">
+                <div className="settings-header">
+                    Personal Information
+                </div>
+            </div>
+            <div className="settings-box">
+                <div className="settings-child">
+                    Profile Picture:
+                </div>
+                <div className="settings-child">
+                    <img src=
+                             {'https://ipfs.infura.io/ipfs/' + (user.users.find(({uid}) => uid === auth.uid) !== undefined ? user.users.find(({uid}) => uid === auth.uid).IPFS_ProfilePicHash : null)}
+                         style={{width: "200px"}}/>
+                </div>
+                <div className="settings-child">
+
+                    <input type='file'
+                           accept=".png , .jpeg, .jpg"
+                           onChange={retrieveFile}>
+                    </input>
+                    <button
+                        className="wallet-button"
+                        onClick={uploadImageToIPFS}
+                    >
+                        Upload file to ipfs
+                    </button>
+                </div>
+            </div>
+            <hr className="settings-line"/>
+            <div className="settings-box">
+                <div className="settings-header">
+                    Personal Information
+                </div>
+            </div>
+            <form onSubmit={updateUser}>
+                <div className="settings-box">
+                    <div className="settings-child">
+                        <label>change username</label>
+                        <input
+                            type='text'
+                            value={username}
+                            onChange={(e) => setUsername(e.target.value)}
+                        />
+                    </div>
+                    <div className="settings-child">
+                        <label>E-mail</label>
+                        <input
+                            type='email'
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                        />
+                    </div>
+                    <div className="settings-child">
+                        change password
+                        <label>new Password</label>
+                        <input
+                            type='text'
+                            value={newPass}
+                            onChange={(e) => setNewPass(e.target.value)}
+                        />
+                    </div>
+                    <div className="settings-child">
+                        Confirm settings
+                        <label>Current Password</label>
+                        <input
+                            type='password'
+                            required={true}
+                            value={pass}
+                            onChange={(e) => setPass(e.target.value)}
+                        />
                         <button
-                            className="wallet-button"
-                            onClick={uploadImageToIPFS}
+                            type="submit"
                         >
-                            Upload file to ipfs
+                            Confirm
                         </button>
                     </div>
                 </div>
-                <hr className="settings-line"/>
-                <div className="settings-box">
-                    <div className="settings-header">
-                        Personal Information
-                    </div>
-                </div>
-                <form onSubmit={updateUser}>
-                    <div className="settings-box">
-                        <div className="settings-child">
-                            <label>change username</label>
-                            <input
-                                type='text'
-                                value={username}
-                                onChange={(e) => setUsername(e.target.value)}
-                            />
-                        </div>
-                        <div className="settings-child">
-                            <label>E-mail</label>
-                            <input
-                                type='email'
-                                value={email}
-                                onChange={(e) => setEmail(e.target.value)}
-                            />
-                        </div>
-                        <div className="settings-child">
-                            change password
-                            <label>new Password</label>
-                            <input
-                                type='text'
-                                value={newPass}
-                                onChange={(e) => setNewPass(e.target.value)}
-                            />
-                        </div>
-                        <div className="settings-child">
-                            Confirm settings
-                            <label>Current Password</label>
-                            <input
-                                type='password'
-                                required={true}
-                                value={pass}
-                                onChange={(e) => setPass(e.target.value)}
-                            />
-                            <button
-                                type="submit"
-                            >
-                                Confirm
-                            </button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </Layout>
-    );
+            </form>
+        </div>
+    </Layout>);
 };
 
 export default SettingsPage;
