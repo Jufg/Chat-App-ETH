@@ -59,6 +59,8 @@ export default (state = initState, action) => {
 
             break;
 
+        default:
+            break;
     }
 
     return state;

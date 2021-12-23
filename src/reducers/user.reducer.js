@@ -25,6 +25,9 @@ export default (state = initState, action) => {
                 chats: action.payload.chats
             }
             break;
+
+        default:
+            break;
     }
 
     return state;

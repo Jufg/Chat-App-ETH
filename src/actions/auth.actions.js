@@ -90,11 +90,11 @@ export const signin = (user) => {
                         })
                     })
                     .catch(error => {
-                        console.log(error);
+                        //console.log(error);
                     })
             })
             .catch(error => {
-                console.log(error);
+                //console.log(error);
 
                 dispatch({
                     type: `${authConstant.USER_LOGIN}_FAILURE`,

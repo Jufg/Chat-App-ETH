@@ -16,6 +16,7 @@
     margin: 0 50px;
     padding: 20px 30px;
     background-color: #323232;
+    border-radius:12px;
 }
 
 .input-form {
@@ -49,6 +50,10 @@
     background-color: #323232;
     background-image: linear-gradient(90deg, rgba(139, 198, 236, 0.5) 0%, rgba(149, 153, 226, 0.5) 100%);
     border-radius: 5px 5px 0 0;
+}
+
+.input-required {
+    background-image: linear-gradient(90deg, rgba(203, 45, 62, 0.5) 0%, rgba(239, 71, 58, 0.5) 100%);
 }
 
 .login-input::placeholder {
@@ -102,4 +107,26 @@
 
 .submit:after {
     background-color: #323232;
+}
+
+.error-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 35px 20px 10px 20px;
+    padding: 10px;
+    border-radius: 5px;
+    color: #323232;
+    background-color: white;
+    text-align: center;
+}
+
+.error-box p {
+    font-size: 14px;
+}
+
+.exclamation-icon {
+    margin-right: 15px;
+    font-size: 17px;
+    color: #EF473A;
 }
