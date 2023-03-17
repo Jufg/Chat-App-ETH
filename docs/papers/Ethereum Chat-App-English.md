@@ -10,7 +10,7 @@ Processing period: June 8, 2020 to April 22, 2021
 
 ---
 
-[To download the paper click here.](https://ipfs.io/ipfs/QmTWXsmAqEXZ9XiBvkpvukWp6Rdgdbg71pyqdiyqDQwUoQ)
+[To download the paper click here.](https://ipfs.io/ipfs/bafybeichxpylt2afsbjmavsw3slbybu4khn6kun7dvex7upqagoko3ck7m)
 
 ## Abstract
 
@@ -159,7 +159,7 @@ consists of the "Public Key" and the "Private Key". Both keys consist of a seque
 key is public and can be seen by anyone, while the private key is private and only known by the owner. From the private
 key several associated public keys can be generated, so that one account can have several different addresses.
 
-[<img src="https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao" alt="Figure 1: Transactions in the Bitcoin network [4]" width="750"/>](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
+[<img src="https://ipfs.io/ipfs/bafkreigqlhpd4qifm7blz3ncs5eme7u56gr7yglmlkzsdex7ogxbynahpy" alt="Figure 1: Transactions in the Bitcoin network [4]" width="750"/>](https://ipfs.io/ipfs/bafkreigqlhpd4qifm7blz3ncs5eme7u56gr7yglmlkzsdex7ogxbynahpy)
 
 *Figure 1: Transactions in the Bitcoin network [[4]](#Bibliography-1)*
 
@@ -174,7 +174,7 @@ be understood as a fingerprint of data. Each signature is therefore unique, even
 executed. The signature can be compared with physical signatures. But the signatures on the Bitcoin network are more
 unique and secure. [[4]](#Bibliography-1)
 
-[<img src="https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym" alt="Figure 2: The Bitcoin Blockchain [4]" width="750"/>](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
+[<img src="https://ipfs.io/ipfs/bafkreih2h4djxp5txmwpeuwd67mb52ngjwyzoqug3kzpkbqiqbkqyquwbq" alt="Figure 2: The Bitcoin Blockchain [4]" width="750"/>](https://ipfs.io/ipfs/bafkreih2h4djxp5txmwpeuwd67mb52ngjwyzoqug3kzpkbqiqbkqyquwbq)
 
 *Figure 2: The Bitcoin Blockchain [[4]](#Bibliography-1)*
 
@@ -204,7 +204,7 @@ hash values of the transactions are stored in the leaves. From two leaves the no
 hash value that is formed from the two leaves. In the end, only the root of the tree remains. This hash value is also
 called "root hash" and is stored in the block.
 
-[<img src="https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv" alt="Figure 3: Merkle Tree in Bitcoin [6]" width="750"/>](https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv)
+[<img src="https://ipfs.io/ipfs/bafkreid65ilyvgpukj73fsgjbofkvv745h3v4k6bpmm554aglfdej72dli" alt="Figure 3: Merkle Tree in Bitcoin [6]" width="750"/>](https://ipfs.io/ipfs/bafkreid65ilyvgpukj73fsgjbofkvv745h3v4k6bpmm554aglfdej72dli)
 
 *Figure 3: Merkle Tree in Bitcoin [[6]](#Bibliography-1)*
 
@@ -497,7 +497,7 @@ possible to programme user interfaces and web servers for web applications with 
 application can be designed dynamically and interactively with React.js-JSX elements. React.js should then communicate
 with the database, Ethereum and the user.
 
-[<img src="https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974" alt="Figure 4: Server communication in the application shown in simplified form" width="750"/>](https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974)
+[<img src="https://ipfs.io/ipfs/bafkreibhg76cxdr43wdfazu7dqh5ja2xwnxaekzxfp3lna4weibo5ip3sq" alt="Figure 4: Server communication in the application shown in simplified form" width="750"/>](https://ipfs.io/ipfs/bafkreibhg76cxdr43wdfazu7dqh5ja2xwnxaekzxfp3lna4weibo5ip3sq)
 
 *Figure 4: Server communication in the application shown in simplified form*
 
@@ -526,7 +526,7 @@ The individual pages are programmed in React.js as components. The components ca
 display individual elements on the website. The content to be displayed is programmed in these components using the JSX
 syntax.
 
-[<img src="https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX" alt="Figure 5: React Component Message" width="750"/>](https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX)
+[<img src="https://ipfs.io/ipfs/bafkreif7pc5dobqxxfnqqz6ojwhgqhqhzcwd46g7jxhv5ufah36foipogm" alt="Figure 5: React Component Message" width="750"/>](https://ipfs.io/ipfs/bafkreif7pc5dobqxxfnqqz6ojwhgqhqhzcwd46g7jxhv5ufah36foipogm)
 
 *Figure 5: React Component Message*
 
@@ -553,7 +553,7 @@ remove this at any time so that the application is no longer allowed to communic
 With various API requests, the application can retrieve data from the wallet and send orders to the wallet. For example,
 the application can request the addresses, the current balance and, if applicable, the various tokens.
 
-[<img src="https://ipfs.io/ipfs/QmUfpBBjmsdhkpn6532sQJSBQ1DGVzvCKGiLtwM27nHXct" alt="Figure 6: Function sendETH from HomePage" width="750"/>](https://ipfs.io/ipfs/QmUfpBBjmsdhkpn6532sQJSBQ1DGVzvCKGiLtwM27nHXct)
+[<img src="https://ipfs.io/ipfs/bafkreihhtx5a6zpatac356muxurlumma3d6eoqg4xawy3u57pxmwegtmei" alt="Figure 6: Function sendETH from HomePage" width="750"/>](https://ipfs.io/ipfs/bafkreihhtx5a6zpatac356muxurlumma3d6eoqg4xawy3u57pxmwegtmei)
 
 *Figure 6: Function sendETH from HomePage*
 
@@ -586,7 +586,7 @@ users, when the user created an account and a unique ID so that this object can 
 database. If the user has connected a Metamask Wallet to the application, the address is also stored so that other users
 can make transactions to this address.
 
-[<img src="https://ipfs.io/ipfs/Qmc61MehtwoCyPxu33ZrR4ZsPH4pmzZJ9c5HQ1ufuRKc3q" alt="Figure 7: User data in JSON-Format" width="750"/>](https://ipfs.io/ipfs/Qmc61MehtwoCyPxu33ZrR4ZsPH4pmzZJ9c5HQ1ufuRKc3q)
+[<img src="https://ipfs.io/ipfs/bafkreibmtcrdgaejekwsykpv4kk7whiont3sb3pzsimruzvkro37mtc4je" alt="Figure 7: User data in JSON-Format" width="750"/>](https://ipfs.io/ipfs/bafkreibmtcrdgaejekwsykpv4kk7whiont3sb3pzsimruzvkro37mtc4je)
 
 *Figure 7: User data in JSON-Format*
 
@@ -598,7 +598,7 @@ message, the message is saved under _message_. If it is a transaction, another o
 under _transaction_. This object contains the hash value of the transaction, the address of the sender and the
 recipient, the amount of Ether transferred in Ether and the transaction fee in Ether.
 
-[<img src="https://ipfs.io/ipfs/QmabwyBhfp7fPjtTCeK9NMuHTfMiD3sEt5g1NnpjXSBMbz" alt="Figure 8: Messages and transactions in JSON-Format" width="750"/>](https://ipfs.io/ipfs/QmabwyBhfp7fPjtTCeK9NMuHTfMiD3sEt5g1NnpjXSBMbz)
+[<img src="https://ipfs.io/ipfs/bafkreiaig6amvu3xa2wrfbd657vtlltouksfx3t6czbro6zot4slm46uwi" alt="Figure 8: Messages and transactions in JSON-Format" width="750"/>](https://ipfs.io/ipfs/bafkreiaig6amvu3xa2wrfbd657vtlltouksfx3t6czbro6zot4slm46uwi)
 
 *Figure 8: Messages and transactions in JSON-Format*
 
@@ -649,7 +649,7 @@ other IPFS objects can be stored in order to link to other files in the network.
 network, the hash value must be specified. The nodes then search the network for this hash value and return the file.
 Because a file is stored on the network with the hash, it is not possible to change the file without changing the hash.
 
-[<img src="https://ipfs.io/ipfs/QmYJ3hbetQBhzdRBcG5KsSCjHWa8YyHJAvz8wvXjJDWrhY" alt="Figure 9: Visualisation of version control in IPFS according to [40]" width="750"/>](https://ipfs.io/ipfs/QmYJ3hbetQBhzdRBcG5KsSCjHWa8YyHJAvz8wvXjJDWrhY)
+[<img src="https://ipfs.io/ipfs/bafkreibgnwo76hmompaksjy7sd4pvw3ww4v25s4rx7ujf3pl6pca5jybri" alt="Figure 9: Visualisation of version control in IPFS according to [40]" width="750"/>](https://ipfs.io/ipfs/bafkreibgnwo76hmompaksjy7sd4pvw3ww4v25s4rx7ujf3pl6pca5jybri)
 
 *Figure 9: Visualisation of version control in IPFS according to [[40]](#Bibliography-1).*
 
@@ -710,7 +710,7 @@ At the beginning of the development, there were considerations about what the ap
 has to do. A rough sketch of the application was made, which clarifies the structure and functionality of the
 application.
 
-[<img src="https://ipfs.io/ipfs/QmUSqD2gEjtcND4dRsCjPZ7se1nZjpAzaL7Lf1d6YHsuQ7" alt="Figure 10: First sketch of the application" width="750"/>](https://ipfs.io/ipfs/QmUSqD2gEjtcND4dRsCjPZ7se1nZjpAzaL7Lf1d6YHsuQ7)
+[<img src="https://ipfs.io/ipfs/bafkreict7noynowok6wxe6pxeaqa7acdyhxvshpwkbgvnwbke6ombw5mle" alt="Figure 10: First sketch of the application" width="750"/>](https://ipfs.io/ipfs/bafkreict7noynowok6wxe6pxeaqa7acdyhxvshpwkbgvnwbke6ombw5mle)
 
 *Figure 10: First sketch of the application*
 
@@ -800,7 +800,7 @@ Since a user can connect their wallet to the application and the Ethereum addres
 application has enough information to forward a transaction to the Metamask wallet. To make this possible, another text
 field was added in which the user can write the amount of Ether to be sent.
 
-[<img src="https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw" alt="Figure 11: Metamask Transaction Confirmation" height="750"/>](https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw)
+[<img src="https://ipfs.io/ipfs/bafkreigvxana4vyco54dy7zascj72beyu2vnzihvj7l3exrkl52j4kstxe" alt="Figure 11: Metamask Transaction Confirmation" height="750"/>](https://ipfs.io/ipfs/bafkreigvxana4vyco54dy7zascj72beyu2vnzihvj7l3exrkl52j4kstxe)
 
 *Figure 11: Metamask Transaction Confirmation*
 
@@ -921,43 +921,43 @@ potential to improve and further develop the application.
 
 ### List of figures
 
-[Figure 1: Transactions on the Bitcoin network [4]](https://ipfs.io/ipfs/QmRUkU87phupg8Hou1446GpFpjgfWvKEmJGKw9x6KVYrao)
+[Figure 1: Transactions on the Bitcoin network [4]](https://ipfs.io/ipfs/bafkreigqlhpd4qifm7blz3ncs5eme7u56gr7yglmlkzsdex7ogxbynahpy)
 
-[Figure 2: The Bitcoin Blockchain [4]](https://ipfs.io/ipfs/QmPMPYZV8yfBhoAq1YN8PKF1GxpiJMuwJ8qNYWsdkF57Ym)
+[Figure 2: The Bitcoin Blockchain [4]](https://ipfs.io/ipfs/bafkreih2h4djxp5txmwpeuwd67mb52ngjwyzoqug3kzpkbqiqbkqyquwbq)
 
-[Figure 3: Merkle Tree in Bitcoin [6]](https://ipfs.io/ipfs/QmTN2vABMDnUfrRQuJQEqDWziSzAV6NiDTLjjL5NxqutCv)
+[Figure 3: Merkle Tree in Bitcoin [6]](https://ipfs.io/ipfs/bafkreid65ilyvgpukj73fsgjbofkvv745h3v4k6bpmm554aglfdej72dli)
 
-[Figure 4: Server communication in the application shown in simplified form](https://ipfs.io/ipfs/QmWGaf4BdbnVpbpUawbHv67Gb79s33LBLRTZtDVRSw5974)
+[Figure 4: Server communication in the application shown in simplified form](https://ipfs.io/ipfs/bafkreibhg76cxdr43wdfazu7dqh5ja2xwnxaekzxfp3lna4weibo5ip3sq)
 
-[Figure 5: React Component Message](https://ipfs.io/ipfs/QmfYGU6xGqLEY4KpXE5xSTS9pogBp1Y74jPWzUA4LZQTpX)
+[Figure 5: React Component Message](https://ipfs.io/ipfs/bafkreif7pc5dobqxxfnqqz6ojwhgqhqhzcwd46g7jxhv5ufah36foipogm)
 
-[Figure 6: Function sendETH from HomePage](https://ipfs.io/ipfs/QmUfpBBjmsdhkpn6532sQJSBQ1DGVzvCKGiLtwM27nHXct)
+[Figure 6: Function sendETH from HomePage](https://ipfs.io/ipfs/bafkreihhtx5a6zpatac356muxurlumma3d6eoqg4xawy3u57pxmwegtmei)
 
-[Figure 7: User data in JSON-Format](https://ipfs.io/ipfs/Qmc61MehtwoCyPxu33ZrR4ZsPH4pmzZJ9c5HQ1ufuRKc3q)
+[Figure 7: User data in JSON-Format](https://ipfs.io/ipfs/bafkreibmtcrdgaejekwsykpv4kk7whiont3sb3pzsimruzvkro37mtc4je)
 
-[Figure 8: Messages and transactions in JSON-Format](https://ipfs.io/ipfs/QmabwyBhfp7fPjtTCeK9NMuHTfMiD3sEt5g1NnpjXSBMbz)
+[Figure 8: Messages and transactions in JSON-Format](https://ipfs.io/ipfs/bafkreiaig6amvu3xa2wrfbd657vtlltouksfx3t6czbro6zot4slm46uwi)
 
-[Figure 9: Visualisation of version control in IPFS according to [40]](https://ipfs.io/ipfs/QmYJ3hbetQBhzdRBcG5KsSCjHWa8YyHJAvz8wvXjJDWrhY)
+[Figure 9: Visualisation of version control in IPFS according to [40]](https://ipfs.io/ipfs/bafkreibgnwo76hmompaksjy7sd4pvw3ww4v25s4rx7ujf3pl6pca5jybri)
 
-[Figure 10: First sketch of the application](https://ipfs.io/ipfs/QmUSqD2gEjtcND4dRsCjPZ7se1nZjpAzaL7Lf1d6YHsuQ7)
+[Figure 10: First sketch of the application](https://ipfs.io/ipfs/bafkreict7noynowok6wxe6pxeaqa7acdyhxvshpwkbgvnwbke6ombw5mle)
 
-[Figure 11: Metamask Transaction Confirmation](https://ipfs.io/ipfs/QmS6HohRfTEMqXNQAcxEcQTD3XPjmJyTgFSQLwYVp8aKdw)
+[Figure 11: Metamask Transaction Confirmation](https://ipfs.io/ipfs/bafkreigvxana4vyco54dy7zascj72beyu2vnzihvj7l3exrkl52j4kstxe)
 
-[Figure A.12: Login/Register-Page](https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7)
+[Figure A.12: Login/Register-Page](https://ipfs.io/ipfs/bafybeieumw25uhnkgqo6bskhk5ljknczmysdfeg7wr7muwo5mwg6x5jxky)
 
-[Figure A.13: Chat in the app without wallet](https://ipfs.io/ipfs/Qmdfu9Q3hevUWnYjMsv3RUU7rUjiZQGSpEyUZpqft1Er5x)
+[Figure A.13: Chat in the app without wallet](https://ipfs.io/ipfs/bafkreic7t2mib3eqbvax36i27yu7asqoz3fvey3elbll6mvfwx3nkxhev4)
 
-[Figure A.14: Settings page](https://ipfs.io/ipfs/QmaZVFvuMEK5XxNq8wCuGPwDpW8fdrVdJMdiRpNa8E7Gn9)
+[Figure A.14: Settings page](https://ipfs.io/ipfs/bafkreib5msw4a3l7yigjxkvyiuaxlhjbdb4a6un43juhbkg5ebftsxvlca)
 
-[Figure A.15: Linking the wallet, Step 1](https://ipfs.io/ipfs/QmRJbCKKtDrSG11NnfCCv9oxHvxreJU98j9e7SokbWU7Jx)
+[Figure A.15: Linking the wallet, Step 1](https://ipfs.io/ipfs/bafkreiaw6psldp7mixtl4ip6isomgdwnitr6wynjiqqx3v5clr4iqrswza)
 
-[Figure A.16: Linking the wallet, Step 2](https://ipfs.io/ipfs/QmeEh8aaGz4RaZBfrNbQY6QWeNCZRqDwGbjESGUByiVjqi)
+[Figure A.16: Linking the wallet, Step 2](https://ipfs.io/ipfs/bafkreiaw5zddboqnfyl6ew6q6bibyq32k25sdpdzdxfl25rvloybpwr6em)
 
-[Figure A.17: Chat with linked wallet](https://ipfs.io/ipfs/QmUiQsFJxavfodNbcUSBgKUVsedjC5hT8SWkN7sLC6DAjk)
+[Figure A.17: Chat with linked wallet](https://ipfs.io/ipfs/bafkreigbrk4zthzhsufcfmasuc672qeee5x74n7lgn7cfhmxbjrnln2dsy)
 
-[Figure A.18: Transaction to other user](https://ipfs.io/ipfs/QmTF81vHVaoAet21ZVnQ3SrWHxRt9zdoagnD3ANcEE8Ph3)
+[Figure A.18: Transaction to other user](https://ipfs.io/ipfs/bafkreig7ffru77zowi4xaocnzqic4p74f5su4dlrfa2tvxivis4lczbjny)
 
-[Figure A.19: Chat after the transaction has been executed](https://ipfs.io/ipfs/QmfHUqL1kcpQ4YxNDiB67PVyQuZeBHE3cZJBZLtBK8YxYk)
+[Figure A.19: Chat after the transaction has been executed](https://ipfs.io/ipfs/bafkreihfhaqph7r3x2igzpzujq3mduj3osidaz7gr4x4czgh6wibwkt3oq)
 
 ### Bibliography
 
@@ -1208,38 +1208,38 @@ Programme:
 
 #### A.2 Graphics of the application
 
-[<img src="https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7" alt="Figure A.12: Login/Register-Page" width="750"/>](https://ipfs.io/ipfs/QmeaUiWVRBd1wXcvJSsY5A1TRaeQ9vbaacj87XyvaBLRD7)
+[<img src="https://ipfs.io/ipfs/bafybeieumw25uhnkgqo6bskhk5ljknczmysdfeg7wr7muwo5mwg6x5jxky" alt="Figure A.12: Login/Register-Page" width="750"/>](https://ipfs.io/ipfs/bafybeieumw25uhnkgqo6bskhk5ljknczmysdfeg7wr7muwo5mwg6x5jxky)
 
 *Figure A.12: Login/Register-Page*
 
-[<img src="https://ipfs.io/ipfs/Qmdfu9Q3hevUWnYjMsv3RUU7rUjiZQGSpEyUZpqft1Er5x" alt="Figure A.13: Chat in the app without Wallet" width="750"/>](https://ipfs.io/ipfs/Qmdfu9Q3hevUWnYjMsv3RUU7rUjiZQGSpEyUZpqft1Er5x)
+[<img src="https://ipfs.io/ipfs/bafkreic7t2mib3eqbvax36i27yu7asqoz3fvey3elbll6mvfwx3nkxhev4" alt="Figure A.13: Chat in the app without Wallet" width="750"/>](https://ipfs.io/ipfs/bafkreic7t2mib3eqbvax36i27yu7asqoz3fvey3elbll6mvfwx3nkxhev4)
 
 *Figure A.13: Chat in the app without wallet*
 
-[<img src="https://ipfs.io/ipfs/QmaZVFvuMEK5XxNq8wCuGPwDpW8fdrVdJMdiRpNa8E7Gn9" alt="Figure A.14: Settings page" width="750"/>](https://ipfs.io/ipfs/QmaZVFvuMEK5XxNq8wCuGPwDpW8fdrVdJMdiRpNa8E7Gn9)
+[<img src="https://ipfs.io/ipfs/bafkreib5msw4a3l7yigjxkvyiuaxlhjbdb4a6un43juhbkg5ebftsxvlca" alt="Figure A.14: Settings page" width="750"/>](https://ipfs.io/ipfs/bafkreib5msw4a3l7yigjxkvyiuaxlhjbdb4a6un43juhbkg5ebftsxvlca)
 
 *Figure A.14: Settings page*
 
-[<img src="https://ipfs.io/ipfs/QmRJbCKKtDrSG11NnfCCv9oxHvxreJU98j9e7SokbWU7Jx" alt="Figure A.15: Linking the Wallet, Step 1" width="750"/>](https://ipfs.io/ipfs/QmRJbCKKtDrSG11NnfCCv9oxHvxreJU98j9e7SokbWU7Jx)
+[<img src="https://ipfs.io/ipfs/bafkreiaw6psldp7mixtl4ip6isomgdwnitr6wynjiqqx3v5clr4iqrswza" alt="Figure A.15: Linking the Wallet, Step 1" width="750"/>](https://ipfs.io/ipfs/bafkreiaw6psldp7mixtl4ip6isomgdwnitr6wynjiqqx3v5clr4iqrswza)
 
 *Figure A.15: Linking the wallet, Step 1*
 
-[<img src="https://ipfs.io/ipfs/QmeEh8aaGz4RaZBfrNbQY6QWeNCZRqDwGbjESGUByiVjqi" alt="Figure A.16: Linking the Wallet, Step 2" width="750"/>](https://ipfs.io/ipfs/QmeEh8aaGz4RaZBfrNbQY6QWeNCZRqDwGbjESGUByiVjqi)
+[<img src="https://ipfs.io/ipfs/bafkreiaw5zddboqnfyl6ew6q6bibyq32k25sdpdzdxfl25rvloybpwr6em" alt="Figure A.16: Linking the Wallet, Step 2" width="750"/>](https://ipfs.io/ipfs/bafkreiaw5zddboqnfyl6ew6q6bibyq32k25sdpdzdxfl25rvloybpwr6em)
 
 *Figure A.16: Linking the wallet, Step 2*
 
-[<img src="https://ipfs.io/ipfs/QmUiQsFJxavfodNbcUSBgKUVsedjC5hT8SWkN7sLC6DAjk" alt="Figure A.17: Chat with linked wallet" width="750"/>](https://ipfs.io/ipfs/QmUiQsFJxavfodNbcUSBgKUVsedjC5hT8SWkN7sLC6DAjk)
+[<img src="https://ipfs.io/ipfs/bafkreigbrk4zthzhsufcfmasuc672qeee5x74n7lgn7cfhmxbjrnln2dsy" alt="Figure A.17: Chat with linked wallet" width="750"/>](https://ipfs.io/ipfs/bafkreigbrk4zthzhsufcfmasuc672qeee5x74n7lgn7cfhmxbjrnln2dsy)
 
 *Figure A.17: Chat with linked wallet*
 
-[<img src="https://ipfs.io/ipfs/QmTF81vHVaoAet21ZVnQ3SrWHxRt9zdoagnD3ANcEE8Ph3" alt="Figure A.18: Transaction to other user" width="750"/>](https://ipfs.io/ipfs/QmTF81vHVaoAet21ZVnQ3SrWHxRt9zdoagnD3ANcEE8Ph3)
+[<img src="https://ipfs.io/ipfs/bafkreig7ffru77zowi4xaocnzqic4p74f5su4dlrfa2tvxivis4lczbjny" alt="Figure A.18: Transaction to other user" width="750"/>](https://ipfs.io/ipfs/bafkreig7ffru77zowi4xaocnzqic4p74f5su4dlrfa2tvxivis4lczbjny)
 
 *Figure A.18: Transaction to other user*
 
-[<img src="https://ipfs.io/ipfs/QmfHUqL1kcpQ4YxNDiB67PVyQuZeBHE3cZJBZLtBK8YxYk" alt="Figure A.19: Chat after the transaction has been executed" width="750"/>](https://ipfs.io/ipfs/QmfHUqL1kcpQ4YxNDiB67PVyQuZeBHE3cZJBZLtBK8YxYk)
+[<img src="https://ipfs.io/ipfs/bafkreihfhaqph7r3x2igzpzujq3mduj3osidaz7gr4x4czgh6wibwkt3oq" alt="Figure A.19: Chat after the transaction has been executed" width="750"/>](https://ipfs.io/ipfs/bafkreihfhaqph7r3x2igzpzujq3mduj3osidaz7gr4x4czgh6wibwkt3oq)
 
 *Figure A.19: Chat after the transaction has been executed*
 
 All graphics used in this work can be accessed and downloaded in full resolution via the following link:
 
-- https://ipfs.io/ipfs/QmQr7gpL6BzwKAwGUScBV7n8PBWQP9ZE8pKcRqtW9PCeQr 
+- https://ipfs.io/ipfs/QmQkDVL2z1Gp6YAZddfbYoembXqc3eBYexdDHFyPApMHJY 
